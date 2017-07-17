@@ -17,14 +17,14 @@
         body: "sample note body",
         author_id: 1,
         notebook_id: 1,
-        tags: [1, 2]
+        tags: ["tag1", "tag2"]
       },
       2 : {
         title: "Sample Note2",
         body: "sample note body",
         author_id: 1,
         notebook_id: 2,
-        tags: [3, 4]
+        tags: ["tag3", "tag4"]
       },
     }
   },
@@ -44,21 +44,21 @@
     }
   }
   tags: {
-    allIds: [1, 2, 3, 4],
-    byId: {
-      1: {
+    allNames: ["tag1", "tag2", "tag3", "tag4"],
+    byName: {
+      "tag1": {
         id: 1,
         name: tag1
       },
-      2: {
+      "tag2": {
         id: 2,
         name: tag2
       },
-      3: {
+      "tag3": {
         id: 1,
         name: tag3
       },
-      4: {
+      "tag4": {
         id: 1,
         name: tag4
       }

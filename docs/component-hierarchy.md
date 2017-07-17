@@ -87,4 +87,4 @@ Path  | Component
 '/search-results'  | SearchContainer
 '/home/notes/:noteId'  | NotesContainer
 '/home/notebooks/:notebookId/notes/:noteId'  | NotebookContainer
-'/home/tags/:tagId/notes/:noteId'  | TagContainer
+'/home/tags/:tagName/notes/:noteId'  | TagContainer
