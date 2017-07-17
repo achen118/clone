@@ -1,6 +1,4 @@
-Production README
-
-CleverNote
+#CleverNote
 
 Heroku Link
 https://guarded-fjord-61038.herokuapp.com/
