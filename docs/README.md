@@ -18,7 +18,7 @@
 
 ## Design Docs ##
 
-[View Wireframes]("https://github.com/achen118/full-stack-project/tree/master/docs/wireframes)
+[View Wireframes](https://github.com/achen118/full-stack-project/tree/master/docs/wireframes)
 <br />
 [React Components](https://github.com/achen118/full-stack-project/blob/master/docs/component-hierarchy.md)
 <br />
