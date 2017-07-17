@@ -4,15 +4,11 @@
     id: 1,
     username: "demo-login"
   },
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
-    createNote: {errors: []}
-  },
   notes: {
     allIds: [1, 2],
     byId:
       1: {
+        id: 1,
         title: "Sample Note1",
         body: "sample note body",
         author_id: 1,
@@ -20,6 +16,7 @@
         tags: ["tag1", "tag2"]
       },
       2 : {
+        id: 2
         title: "Sample Note2",
         body: "sample note body",
         author_id: 1,
@@ -32,11 +29,13 @@
     allIds: [1, 2],
     byId: {
       1: {
+        id: 1
         title: "Sample Notebook1",
         author_id: 1,
         description: "sample notebook description"
       },
       2: {
+        id: 2
         title: "Sample Notebook2",
         author_id: 1,
         description: "sample notebook description"
@@ -63,6 +62,7 @@
         name: tag4
       }
     }
-  }
+  },
+  errors: []
 }
 ```

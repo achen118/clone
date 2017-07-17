@@ -1,14 +1,13 @@
 # Component Hierarchy #
 
+### App ###
+* Sidebar
+
 ### AuthFormContainer ###
 * AuthForm
 
 ### SidebarContainer ###
 * Sidebar
-
-### HomeContainer ###
-* Sidebar
-* NotesContainer
 
 ### NotesIndexContainer ###
 * NotesIndex
@@ -18,8 +17,8 @@
 
 ### NotesContainer ###
 * NotesHeader
-* NotesIndex
-* NoteDetail
+* NotesIndexContainer
+* NoteDetailContainer
 
 ### NoteDetailContainer ###
 * NoteDetail
@@ -27,13 +26,13 @@
 
 ### NotebookContainer ###
 * NotebookHeader
-* NotesIndex
-* NoteDetail
+* NotesIndexContainer
+* NoteDetailContainer
 
 ### TagContainer ###
 * TagHeader
-* NotesIndex
-* NoteDetail
+* NotesIndexContainer
+* NoteDetailContainer
 
 ### NotebooksIndexContainer ###
 * NotebooksIndex
@@ -50,20 +49,19 @@
 ### NewNoteContainer ###
 * NewNote
 
-### CreateNotebookContainer ###
-* CreateNotebook
+### NewNotebookContainer ###
+* NewNotebook
 
-### CreateTagContainer ###
-* CreateTag
+### NewTagContainer ###
+* NewTag
 
-### SearchContainer ###
-* SearchHeader
-* NotesIndex
-* NoteDetail
+### SearchResultsContainer ###
+* SearchBarContainer
+* NotesIndexContainer
+* NoteDetailContainer
 
-### SearchPageContainer ###
-* Sidebar
-* Search
+### SearchBarContainer ###
+* SearchBar
 
 ### NotebookSearchContainer ###
 * NotebookSearch
@@ -77,14 +75,13 @@ Path  | Component
 ------------- | -------------
 '/sign-up'  | AuthFormContainer
 '/sign-in'  | AuthFormContainer
-'/home'  | HomeContainer
 '/new-note'  | NewNoteContainer
-'/create-notebook'  | CreateNotebookContainer
-'/create-tag'  | CreateTagContainer
-'/search'  | SearchPageContainer
-'/notebook-search'  | NotebookSearchContainer
-'/tag-search'  | TagSearchContainer
-'/search-results'  | SearchContainer
-'/home/notes/:noteId'  | NotesContainer
-'/home/notebooks/:notebookId/notes/:noteId'  | NotebookContainer
-'/home/tags/:tagName/notes/:noteId'  | TagContainer
+'/new-notebook'  | NewNotebookContainer
+'/new-tag'  | NewTagContainer
+'/search'  | SearchBarContainer
+<!-- '/notebook-search'  | NotebookSearchContainer
+'/tag-search'  | TagSearchContainer -->
+'/search-results'  | SearchResultsContainer
+'/notes/:noteId'  | NotesContainer
+'/notebooks/:notebookId/notes/:noteId'  | NotebookContainer
+'/tags/:tagName/notes/:noteId'  | TagContainer

@@ -50,9 +50,9 @@
 
 **Objective:** Allow rich text editing of notes
 
-### Phase 6: - Infinite scroll (1 day) ###
+### Phase 6: - Bonuses (2 days)
 
-**Objective:** Add infinite scroll to Notes Index
+**Objective:** Add bonus features
 
 ### Bonus Features (TBD) ###
 

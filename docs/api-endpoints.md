@@ -17,7 +17,6 @@
 
 ### Notes ###
 * Fetch all notes for index/search: ```GET /api/notes```
-  * allows infinite scroll
   * accepts tag_name query param to list notes by tag
 * Add new note: ```POST /api/notes/```
 * Fetch note by ID: ```GET /api/notes/:note_id```

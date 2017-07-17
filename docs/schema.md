@@ -9,6 +9,7 @@ username | string | null = false, unique = true, indexed
 email | string | null = false, unique = true, indexed
 session_token | string | null = false, unique = true, indexed
 password_digest | string | null = false
+image_url | string |
 
 ## notes ##
 
