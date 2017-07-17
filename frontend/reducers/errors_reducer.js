@@ -6,11 +6,10 @@ const ErrorsReducer = (state = [], action) => {
   let nextState = merge({}, state);
   switch(action.type) {
     case RECEIVE_ERRORS:
-      nextState.errors.concat(action.errors);
+      nextState.concat(action.errors);
       return nextState;
     case CLEAR_ERRORS:
-      nextState.errors = [];
-      return nextState;
+      return [];
     default:
       return state;
   }
