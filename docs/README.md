@@ -1,6 +1,7 @@
 <h1>CleverNote</h1>
 
 <a href="https://guarded-fjord-61038.herokuapp.com/">Heroku Link</a>
+<br />
 <a href="https://trello.com/b/KlfGkxLX/clevernote">Trello link</a>
 
 <h2>Minimum Viable Product</h2>
@@ -17,7 +18,7 @@
 
 <h2>Design Docs</h2>
 
-View Wireframes
+<a href="https://github.com/achen118/full-stack-project/tree/master/docs/wireframes">View Wireframes</a>
 React Components
 API endpoints
 DB schema
