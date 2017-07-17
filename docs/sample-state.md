@@ -47,19 +47,19 @@
     byName: {
       "tag1": {
         id: 1,
-        name: tag1
+        name: "tag1"
       },
       "tag2": {
         id: 2,
-        name: tag2
+        name: "tag2"
       },
       "tag3": {
         id: 1,
-        name: tag3
+        name: "tag3"
       },
       "tag4": {
         id: 1,
-        name: tag4
+        name: "tag4"
       }
     }
   },
