@@ -3,8 +3,8 @@
 ### App ###
 * Sidebar
 
-### AuthFormContainer ###
-* AuthForm
+### SessionFormContainer ###
+* SessionForm
 
 ### SidebarContainer ###
 * Sidebar
@@ -73,8 +73,8 @@
 
 Path  | Component
 ------------- | -------------
-'/sign-up'  | AuthFormContainer
-'/sign-in'  | AuthFormContainer
+'/sign-up'  | SessionFormContainer
+'/sign-in'  | SessionFormContainer
 '/new-note'  | NewNoteContainer
 '/new-notebook'  | NewNotebookContainer
 '/new-tag'  | NewTagContainer
