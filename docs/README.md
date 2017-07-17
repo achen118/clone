@@ -19,39 +19,44 @@
 <h2>Design Docs</h2>
 
 <a href="https://github.com/achen118/full-stack-project/tree/master/docs/wireframes">View Wireframes</a>
-React Components
-API endpoints
-DB schema
-Sample State
-Implementation Timeline
+<br />
+<a href="https://github.com/achen118/full-stack-project/blob/master/docs/component-hierarchy.md">React Components</a>
+<br />
+<a href="https://github.com/achen118/full-stack-project/blob/master/docs/api-endpoints.md">API endpoints</a>
+<br />
+<a href="https://github.com/achen118/full-stack-project/blob/master/docs/schema.md">DB schema</a>
+<br />
+<a href="https://github.com/achen118/full-stack-project/blob/master/docs/sample-state.md">Sample State</a>
 
-Phase 1: Backend setup and Front End User Authentication (2 days)
+<h2>Implementation Timeline</h2>
 
-Objective: Functioning rails project with front-end Authentication
+<h3>Phase 1: Backend setup and Front End User Authentication (2 days)</h3>
 
-Phase 2: Notes Model, API, and components (2 days)
+<strong>Objective:</strong> Functioning rails project with front-end Authentication
 
-Objective: Notes can be created, read, edited and destroyed through the API.
+<h3>Phase 2: Notes Model, API, and components (2 days)</h3>
 
-Phase 3: Notebooks (2 days)
+<strong>Objective:</strong> Notes can be created, read, edited and destroyed through the API.
 
-Objective: Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+<h3>Phase 3: Notebooks (2 days)</h3>
 
-Phase 4: Tags (1 day)
+<strong>Objective:</strong> Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
 
-Objective: Notes can be tagged with multiple tags, and tags are searchable.
+<h3>Phase 4: Tags (1 day)</h3>
 
-Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm)
+<strong>Objective:</strong> Notes can be tagged with multiple tags, and tags are searchable.
 
-Objective: Allow rich text editing of notes.
+<h3>Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm)</h3>
 
-Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+<strong>Objective:</strong> Allow rich text editing of notes.
 
-Objective: Add infinite scroll to Notes Index
+<h3>Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)</h3>
 
-Bonus Features (TBD)
+<strong>Objective:</strong> Add infinite scroll to Notes Index
 
- Search notes by content
- Set reminders on notes
- Changelogs for Notes
- Multiple sessions
+<h3>Bonus Features (TBD)</h3>
+
+- [ ] Search notes by content
+- [ ] Set reminders on notes
+- [ ] Changelogs for Notes
+- [ ] Multiple sessions
