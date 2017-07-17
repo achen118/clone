@@ -65,3 +65,21 @@
 
 ### TagSearchContainer ###
 * TagSearch
+
+# Routes #
+
+Path  | Component
+------------- | -------------
+'/sign-up'  | AuthFormContainer
+'/sign-in'  | AuthFormContainer
+'/home'  | NotesContainer
+'/new-note'  | NewNoteContainer
+'/create-notebook'  | CreateNotebookContainer
+'/create-tag'  | CreateTagContainer
+'/search'  | SearchPageContainer
+'/notebook-search'  | NotebookSearchContainer
+'/tag-search'  | TagSearchContainer
+'/search-results'  | SearchContainer
+'/notes/:noteId'  | NotesContainer
+'/notebooks/:notebookId/notes/:noteId'  | NotebookContainer
+'/tags/:tagId/notes/:noteId'  | TagContainer
