@@ -6,6 +6,10 @@
 ### SidebarContainer ###
 * Sidebar
 
+### HomeContainer ###
+* Sidebar
+* NotesContainer
+
 ### NotesIndexContainer ###
 * NotesIndex
 
@@ -58,6 +62,7 @@
 * NoteDetail
 
 ### SearchPageContainer ###
+* Sidebar
 * Search
 
 ### NotebookSearchContainer ###
@@ -72,7 +77,7 @@ Path  | Component
 ------------- | -------------
 '/sign-up'  | AuthFormContainer
 '/sign-in'  | AuthFormContainer
-'/home'  | NotesContainer
+'/home'  | HomeContainer
 '/new-note'  | NewNoteContainer
 '/create-notebook'  | CreateNotebookContainer
 '/create-tag'  | CreateTagContainer
@@ -80,6 +85,6 @@ Path  | Component
 '/notebook-search'  | NotebookSearchContainer
 '/tag-search'  | TagSearchContainer
 '/search-results'  | SearchContainer
-'/notes/:noteId'  | NotesContainer
-'/notebooks/:notebookId/notes/:noteId'  | NotebookContainer
-'/tags/:tagId/notes/:noteId'  | TagContainer
+'/home/notes/:noteId'  | NotesContainer
+'/home/notebooks/:notebookId/notes/:noteId'  | NotebookContainer
+'/home/tags/:tagId/notes/:noteId'  | TagContainer
