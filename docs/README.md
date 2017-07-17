@@ -36,27 +36,29 @@
 
 ### Phase 2: Notes Model, API, and components (2 days) ###
 
-**Objective:** Notes can be created, read, edited and destroyed through the API.
+**Objective:** Notes can be created, read, edited and destroyed through the API
 
 ### Phase 3: Notebooks (2 days) ###
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API
 
 ### Phase 4: Tags (1 day) ###
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Notes can be tagged with multiple tags that are created and destroyed through the API
 
-### Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm) ###
+### Phase 5: Rich Text Editor (1 day) ###
 
-**Objective:** Allow rich text editing of notes.
+**Objective:** Allow rich text editing of notes
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm) ###
+### Phase 6: - Infinite scroll (1 day) ###
 
 **Objective:** Add infinite scroll to Notes Index
 
 ### Bonus Features (TBD) ###
 
 - [ ] Search notes by content
+- [ ] Search notebooks and tags
 - [ ] Set reminders on notes
-- [ ] Changelogs for Notes
+- [ ] Add shortcuts
+- [ ] Work Chat
 - [ ] Multiple sessions

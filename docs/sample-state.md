@@ -7,7 +7,7 @@
   forms: {
     signUp: {errors: []},
     logIn: {errors: []},
-    createNote: {errors: ["body can't be blank"]}
+    createNote: {errors: []}
   },
   notes: {
     allIds: [1, 2],
