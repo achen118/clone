@@ -2,6 +2,8 @@
 
 ## HTML API ##
 
+### Root ###
+* Render React web app: ```GET /```
 
 ## JSON API ##
 
