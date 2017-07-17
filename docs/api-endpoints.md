@@ -33,5 +33,6 @@
 
 ### Tags ###
 * Fetch all tags: ```GET /api/tags```
+* Add new tag: ```POST /api/tags```
 * Add new tag to a note: ```POST /api/notes/:note_id/tags```
 * Delete tag from note by tag name: ```DELETE /api/notes/:note_id/tags/:tag_name```
