@@ -2,32 +2,124 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// html {
+//   background: url(http://res.cloudinary.com/malice/image/upload/v1500393891/jonatan-pie-234237_mcy0qa.jpg) no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
+
+body {
+  background-color: #F6F6F6;
+}
+
 .session-page {
   width: 100%;
+  border-top: 4px solid #DBE60;
 }
 
 .session-page-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  flex-direction: column;
   padding: 15px 15px 10px 15px;
   background-color: #F6F6F6;
+  margin-top: 100px;
 }
 
 header img {
-  margin-right: 7px;
-  width: 30px;
+  width: 120px;
+  margin-bottom: 30px;
 }
 
 .header-name {
-  font-size: 20px;
+  font-size: 48px;
   color: #2DBE60;
-  font-family: 'Caecilia Bold';
+  font-family: 'Caecilia';
 }
 
-// $green = #2DBE60;
-
-.session_page form {
+.session-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 3px;
+  width: 22%;
   margin: 0 auto;
+  padding: 40px;
+}
+
+.session-form, .session-form form input {
+  border: 1.5px solid #DEDEDE;
+}
+
+.session-form form {
+  text-align: center;
+  width: 100%;
+}
+
+.session-form form input, .session-form button {
+  padding: 15px;
+  margin: 10px;
+  width: 90%;
+  font-family: 'Gotham Medium';
+  font-size: 26px;
+  border-radius: 7px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #9B9B9B;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #9B9B9B;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #9B9B9B;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #9B9B9B;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #9B9B9B;
+}
+
+*:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: 0px 0px 1px 1px #2DBE60;
+  border-radius: 7px;
+}
+
+.session-form button {
+  background-color: #2DBE60;
+  color: white;
+  padding: 20px 0;
+}
+
+.session-links {
+  text-align: center;
+  margin: 30px;
+}
+
+.already-have-account {
+  font-family: 'Gotham Medium';
+}
+
+.session-title {
+  font-family: 'Caecilia';
+  color: #6A6A6A;
+  font-size: 36px;
+}
+
+.session-link {
+  font-size: 20px;
 }

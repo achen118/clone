@@ -10,8 +10,8 @@ export const receiveCurrentUser = currentUser => {
   };
 };
 
-export const login = user => dispatch => {
-  return sessionAPIUtil.login(user)
+export const signin = user => dispatch => {
+  return sessionAPIUtil.signin(user)
     .then(currentUser => {
       dispatch(receiveCurrentUser(currentUser));
       dispatch(clearErrors());

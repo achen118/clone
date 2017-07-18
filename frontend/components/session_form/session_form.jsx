@@ -37,31 +37,54 @@ class SessionForm extends React.Component {
           </figure>
           <h1 className="header-name">CLEVERNOTE</h1>
         </header>
-        <form onSubmit={ this.handleSubmit }>
-          <h1>{ formType === 'login' ? 'Log In' : 'Sign Up' }</h1>
-          <ul>
-            { errors.map((error, idx) => <li key={ idx }>{ error }</li>) }
-          </ul>
-          <input
-            type="text"
-            onChange={ this.update('userCredential') }
-            value={ this.state.userCredential }
-            placeholder={ formType === 'login' ?
-              "Email address or username" :
-              "Email address" }
-          />
-          <input
-            type="password"
-            onChange={ this.update('password') }
-            value={ this.state.password }
-            placeholder="Password"
-          />
-          <button>Submit</button>
-        </form>
-        { formType === 'login' ?
-          <Link to='/signup'>Sign Up</Link> :
-            <Link to='login'>Log In</Link>
-        }
+        <section className="session-form">
+          <form onSubmit={ this.handleSubmit }>
+            <h1 className="session-title">
+              { formType === 'signup' ? 'Create Account' : 'Sign in' }
+            </h1>
+            <br />
+            <ul>
+              { errors.map((error, idx) => <li key={ idx }>{ error }</li>) }
+            </ul>
+            <input
+              type="text"
+              onChange={ this.update('userCredential') }
+              value={ this.state.userCredential }
+              placeholder={ formType === 'signup' ?
+                "Your email address" :
+                "Email address or username"
+              }
+            />
+            <br />
+            <input
+              type="password"
+              onChange={ this.update('password') }
+              value={ this.state.password }
+              placeholder={ formType === 'signup' ?
+                "Create a password" :
+                "Password"
+              }
+            />
+            <br />
+            <button>
+              { formType === 'signup' ? 'Create Account' : 'Sign in' }
+            </button>
+          </form>
+        </section>
+        <section className="session-links">
+          { formType === 'signup' ?
+            <div>
+              <p className="already-have-account">Already have an account?</p>
+              <br />
+              <Link to='/signin' className="session-link">Sign in</Link>
+            </div> :
+            <div>
+              <p>Don't have an account?</p>
+              <br />
+              <Link to='signup' className="session-link">Create account</Link>
+            </div>
+          }
+        </section>
       </div>
     );
   }
