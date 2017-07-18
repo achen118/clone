@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: CleverNote2_development
+  database: CleverNote_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: CleverNote2_test
+  database: CleverNote_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: CleverNote2_production
-  username: CleverNote2
-  password: <%= ENV['CLEVERNOTE2_DATABASE_PASSWORD'] %>
+  database: CleverNote_production
+  username: CleverNote
+  password: <%= ENV['CLEVERNOTE_DATABASE_PASSWORD'] %>

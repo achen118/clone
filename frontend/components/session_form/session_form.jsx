@@ -5,7 +5,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      usernameOrEmail: "",
       password: ""
     };
     this.update = this.update.bind(this);
@@ -22,12 +22,12 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { formType, loggedIn, errors } = this.props;
     let redirect;
     if (loggedIn) {
       redirect = <Redirect to='/' />;
     }
+    const isEmail = new RegExp('\@');
     return (
       <div>
         { redirect }
@@ -40,13 +40,15 @@ class SessionForm extends React.Component {
           </ul>
           <input
             type="text"
-            onChange={ this.update('username') }
-            value={ this.state.username }
+            onChange={ this.update('usernameOrEmail') }
+            value={ this.state.usernameOrEmail }
+            placeholder="Email address or username"
           />
           <input
             type="password"
             onChange={ this.update('password') }
             value={ this.state.password }
+            placeholder="Password"
           />
           <button>Submit</button>
         </form>
