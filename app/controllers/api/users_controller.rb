@@ -5,7 +5,11 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new({
+      username: /[^@]*/.match(params[:user][:user_credential]),
+      email: params[:user][:user_credential],
+      password: params[:user][:password]
+    })
     if @user.save
       render json: @user
     else
@@ -22,7 +26,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:user_credential, :password)
   end
 
 end

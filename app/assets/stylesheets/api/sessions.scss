@@ -1,3 +1,18 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header > figure {
+  margin-right: 7px;
+}
+
+header > span {
+  font-size: 22px;
+}

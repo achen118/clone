@@ -5,9 +5,6 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <header>
-      <h1>CleverNote</h1>
-    </header>
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>

@@ -5,7 +5,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      usernameOrEmail: "",
+      userCredential: "",
       password: ""
     };
     this.update = this.update.bind(this);
@@ -31,18 +31,24 @@ class SessionForm extends React.Component {
     return (
       <div>
         { redirect }
+        <header>
+          <figure>
+            <img src='http://res.cloudinary.com/malice/image/upload/v1500352765/b67ad20a28598055a2bb0950e8135d5d_nei98q.png' width='40' alt='CleverNote Logo' />
+          </figure>
+          <span className="header-name">CLEVERNOTE</span>
+        </header>
         <form onSubmit={ this.handleSubmit }>
-          <header>
-            <h1>{ formType === 'login' ? 'Log In' : 'Sign Up' }</h1>
-          </header>
+          <h1>{ formType === 'login' ? 'Log In' : 'Sign Up' }</h1>
           <ul>
             { errors.map((error, idx) => <li key={ idx }>{ error }</li>) }
           </ul>
           <input
             type="text"
-            onChange={ this.update('usernameOrEmail') }
-            value={ this.state.usernameOrEmail }
-            placeholder="Email address or username"
+            onChange={ this.update('userCredential') }
+            value={ this.state.userCredential }
+            placeholder={ formType === 'login' ?
+              "Email address or username" :
+              "Email address" }
           />
           <input
             type="password"
