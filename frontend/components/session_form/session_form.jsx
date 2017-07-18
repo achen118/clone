@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
         { redirect }
         <header className="session-page-header">
           <figure>
-            <img src='http://res.cloudinary.com/malice/image/upload/v1500352765/b67ad20a28598055a2bb0950e8135d5d_nei98q.png' alt='CleverNote Logo' />
+            <img src='http://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png' alt='CleverNote Logo' />
           </figure>
           <h1 className="header-name">CLEVERNOTE</h1>
         </header>
