@@ -2,17 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header {
+.session-page {
+  width: 100%;
+}
+
+.session-page-header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  padding: 10px 15px;
+  background-color: #F6F6F6;
 }
 
-header > figure {
+header img {
   margin-right: 7px;
+  width: 35px;
 }
 
 header > span {
   font-size: 22px;
+  color: #2DBE60;
+}
+
+.session_page form {
+  margin: 0 auto;
 }

@@ -29,11 +29,11 @@ class SessionForm extends React.Component {
     }
     const isEmail = new RegExp('\@');
     return (
-      <div>
+      <div className="session-page">
         { redirect }
-        <header>
+        <header className="session-page-header">
           <figure>
-            <img src='http://res.cloudinary.com/malice/image/upload/v1500352765/b67ad20a28598055a2bb0950e8135d5d_nei98q.png' width='40' alt='CleverNote Logo' />
+            <img src='http://res.cloudinary.com/malice/image/upload/v1500352765/b67ad20a28598055a2bb0950e8135d5d_nei98q.png' alt='CleverNote Logo' />
           </figure>
           <span className="header-name">CLEVERNOTE</span>
         </header>
