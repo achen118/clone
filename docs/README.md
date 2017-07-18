@@ -56,6 +56,7 @@
 
 ### Bonus Features (TBD) ###
 
+- [ ] Autosave
 - [ ] Search notes by content
 - [ ] Search notebooks and tags
 - [ ] Set reminders on notes
