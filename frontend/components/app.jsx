@@ -5,8 +5,7 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
+    <AuthRoute path="/" component={SessionFormContainer} />
   </div>
 );
 

@@ -11,18 +11,19 @@
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  padding: 10px 15px;
+  padding: 15px 15px 10px 15px;
   background-color: #F6F6F6;
 }
 
 header img {
   margin-right: 7px;
-  width: 35px;
+  width: 30px;
 }
 
-header > span {
-  font-size: 22px;
+.header-name {
+  font-size: 20px;
   color: #2DBE60;
+  font-family: 'Caecilia Bold';
 }
 
 .session_page form {

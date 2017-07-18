@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
           <figure>
             <img src='http://res.cloudinary.com/malice/image/upload/v1500352765/b67ad20a28598055a2bb0950e8135d5d_nei98q.png' alt='CleverNote Logo' />
           </figure>
-          <span className="header-name">CLEVERNOTE</span>
+          <h1 className="header-name">CLEVERNOTE</h1>
         </header>
         <form onSubmit={ this.handleSubmit }>
           <h1>{ formType === 'login' ? 'Log In' : 'Sign Up' }</h1>

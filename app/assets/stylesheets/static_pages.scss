@@ -2,6 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face {
+  font-family: 'Gotham Medium';
+  src:asset-url('GothamMedium.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Gotham Book';
+  src:asset-url('GothamBook.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Caecilia Small Caps';
+  src:asset-url('Caecilia-RomanSC.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Caecilia Bold';
+  src:asset-url('Caecilia-LT-Std-75-Bold_8986.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Caecilia Italic';
+  src:asset-url('Caecilia-LT-Std-56-Italic_8985.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Caecilia';
+  src:asset-url('Caecilia-LT-Std-55-Roman_8984.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Caecilia Light';
+  src:asset-url('Caecilia-LT-Std-45-Light_8982.ttf') format("truetype");
+}
+
 body {
   width: 100%;
 }
