@@ -20,10 +20,20 @@ class Sidebar extends React.Component {
 
   render() {
     const { currentUser } = this.props;
+    let userInfo =
+      <figure className="user-pic">
+        <img src="https://res.cloudinary.com/malice/image/upload/c_scale,w_100/v1500414084/default-profile-pic_bhulg4.svg" alt="Default Profile Picture" />
+      </figure>;
+    if (currentUser) {
+      userInfo =
+        <figure className="user-pic">
+          <img src={ currentUser.image_url } />
+        </figure>;
+      }
     return (
       <div className="sidebar-container">
         <figure className="logo">
-          <img src="http://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png" alt="CleverNote Logo" />
+          <img src="https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png" alt="CleverNote Logo" />
         </figure>
         <figure className="new-note">
         </figure>
@@ -35,8 +45,7 @@ class Sidebar extends React.Component {
         </figure>
         <figure className="tags">
         </figure>
-        <figure>
-        </figure>
+        { userInfo }
       </div>
     );
   }

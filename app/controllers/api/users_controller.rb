@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
       username: /[^@]*/.match(params[:user][:user_credential]),
       email: params[:user][:user_credential],
       password: params[:user][:password],
-      image_url: "http://res.cloudinary.com/malice/image/upload/c_scale,w_100/v1500414084/default-profile-pic_bhulg4.svg"
+      image_url: "https://res.cloudinary.com/malice/image/upload/c_scale,w_100/v1500414084/default-profile-pic_bhulg4.svg"
     })
     if @user.save
       render json: @user

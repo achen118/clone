@@ -1,7 +1,7 @@
 .sidebar-container {
   width: 42px;
   height:100vh;
-  padding: 12px 17px;
+  padding: 12px 17px 0 17px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -16,60 +16,69 @@
 }
 
 .new-note, .search, .notes, .notebooks, .tags {
+  margin-bottom: 13px;
+}
+
+.new-note, .search, .notes, .notebooks, .tags, .user-pic {
   width: 36px;
   height: 36px;
-  margin-bottom: 13px;
   cursor: pointer;
 }
 
 .new-note {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410337/plus_ljiox4.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/plus_ljiox4.png') no-repeat center center;
 }
 
 .new-note:hover {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410337/plus-hover_dtjetq.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/plus-hover_dtjetq.png') no-repeat center center;
   background-size: 36px;
 }
 
 
 .search {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410338/search_zqxngc.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410338/search_zqxngc.png') no-repeat center center;
 }
 
 .search:hover {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410338/search-hover_a6zptx.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410338/search-hover_a6zptx.png') no-repeat center center;
   background-size: 36px;
 }
 
 .notes {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410337/note_wyhtsu.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/note_wyhtsu.png') no-repeat center center;
   margin-top: 90px;
 }
 
 .notes:hover {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410337/note-hover_h3ozkl.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/note-hover_h3ozkl.png') no-repeat center center;
   margin-top: 90px;
   background-size: 36px;
 }
 
 // .notes:target {
-//   background: url('http://res.cloudinary.com/malice/image/upload/v1500410337/note-selected_onycvm.png') no-repeat center center;
+//   background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/note-selected_onycvm.png') no-repeat center center;
 // }
 
 .notebooks {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410337/notebook_dqo08r.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/notebook_dqo08r.png') no-repeat center center;
 }
 
 .notebooks:hover {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410337/notebook-hover_q7teqo.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/notebook-hover_q7teqo.png') no-repeat center center;
   background-size: 36px;
 }
 
 .tags {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410338/tag_bheb2i.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410338/tag_bheb2i.png') no-repeat center center;
 }
 
 .tags:hover {
-  background: url('http://res.cloudinary.com/malice/image/upload/v1500410338/tag-hover_afcspp.png') no-repeat center center;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500410338/tag-hover_afcspp.png') no-repeat center center;
   background-size: 36px;
+}
+
+.user-pic {
+
+  // border: 4px solid ECECEC;
+  // padding-top: 10px;
 }

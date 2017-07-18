@@ -27,29 +27,28 @@ body {
   flex-direction: column;
   padding: 15px 15px 10px 15px;
   background-color: #F6F6F6;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 header img {
-  width: 120px;
+  width: 100px;
   margin-bottom: 30px;
 }
 
 .header-name {
-  font-size: 48px;
+  font-size: 36px;
   color: #2DBE60;
   font-family: 'Caecilia';
 }
 
 .session-form {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: white;
   border-radius: 3px;
-  width: 22%;
+  width: 25%;
   margin: 0 auto;
   padding: 40px;
 }
@@ -59,7 +58,10 @@ header img {
 }
 
 .session-form form {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -67,9 +69,13 @@ header img {
   padding: 15px;
   margin: 10px;
   width: 90%;
-  font-family: 'Gotham Medium';
-  font-size: 26px;
+  font-family: 'Gotham Book';
+  font-size: 16px;
   border-radius: 7px;
+}
+
+.session-form button {
+  font-family: 'Gotham Medium'
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -117,9 +123,9 @@ header img {
 .session-title {
   font-family: 'Caecilia';
   color: #6A6A6A;
-  font-size: 36px;
+  font-size: 28px;
 }
 
 .session-link {
-  font-size: 20px;
+  font-size: 16px;
 }
