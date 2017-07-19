@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
   handleDemo(event) {
     event.preventDefault();
     this.props.signin({
-      userCredential: "demo@appacademy.com",
+      userCredential: "demo@appacademy.io",
       password: "password"
     });
   }
