@@ -2,6 +2,10 @@ import React from 'react';
 
 class NoteDetail extends React.Component {
 
+  componentWillMount() {
+    this.props.fetchSingleNote(this.props.noteId);
+  }
+
   constructor(props) {
     super(props);
   }

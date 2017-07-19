@@ -16,7 +16,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+	vertical-align: middle;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -52,7 +52,7 @@ img {
   display: block;
   width: 100%;
   height: auto;
-}	
+}
 
 input[type="password"],
 input[type="email"],

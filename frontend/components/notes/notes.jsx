@@ -19,7 +19,7 @@ class Notes extends React.Component {
           <NotesHeader noteCount={ notes.allIds.length } />
           <NotesIndexContainer />
         </section>
-        <NoteDetailContainer />
+        <NoteDetailContainer noteId={ this.props.match.params.noteId } />
       </div>
     );
   }
