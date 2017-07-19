@@ -44,8 +44,10 @@ class Sidebar extends React.Component {
         </figure>
         <figure className="tags">
         </figure>
-        { userInfo }
         <button onClick={ this.handleLogout }>Logout</button>
+        <section className="user-box">
+          { userInfo }
+        </section>
       </div>
     );
   }

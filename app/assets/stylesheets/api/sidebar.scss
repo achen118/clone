@@ -10,9 +10,16 @@
   position: relative;
 }
 
-.user-pic {
+.user-box {
+  border-top: 1px solid #E1E1E1;
+  padding-top: 17px;
+  width: 100%;
   position: absolute;
   bottom: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6F6F6;
 }
 
 .logo-img {
