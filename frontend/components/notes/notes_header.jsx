@@ -2,8 +2,8 @@ import React from 'react';
 
 const NotesHeader = props => {
   return (
-    <section>
-      <h1>NOTES</h1>
+    <section className="notes-header-container">
+      <h1 className="notes-header">NOTES</h1>
       <ul>
         <li>{ props.noteCount } notes</li>
         <li>Options</li>
