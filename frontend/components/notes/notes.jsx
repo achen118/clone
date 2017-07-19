@@ -1,6 +1,7 @@
 import React from 'react';
 import NotesHeader from './notes_header';
 import SidebarContainer from '../sidebar/sidebar_container';
+import NotesIndexContainer from '../notes/notes_index_container';
 
 class Notes extends React.Component {
 
@@ -13,7 +14,10 @@ class Notes extends React.Component {
     return (
       <div className="notes-container">
         <SidebarContainer />
-        <NotesHeader noteCount={ notes.allIds.length } />
+        <section>
+          <NotesHeader noteCount={ notes.allIds.length } />
+          <NotesIndexContainer />
+        </section>
       </div>
     );
   }

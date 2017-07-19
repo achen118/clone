@@ -4,9 +4,9 @@ const NotesHeader = props => {
   return (
     <section className="notes-header-container">
       <h1 className="notes-header">NOTES</h1>
-      <ul>
-        <li>{ props.noteCount } notes</li>
-        <li>Options</li>
+      <ul className="notes-header-info">
+        <li className="note-count">{ props.noteCount } notes</li>
+        <li className="note-options">Options</li>
       </ul>
     </section>
   );

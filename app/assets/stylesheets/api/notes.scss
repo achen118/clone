@@ -9,10 +9,50 @@
 }
 
 .notes-header-container {
-  padding: 25px;
+  width: 350px;
+  border-left: 1px solid #ECECEC;
+  border-right: 1px solid #ECECEC;
+}
+
+.notes-header-info {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ECECEC;
 }
 
 .notes-header {
-  font-size: 24px;
-  font-weight: lighter;
+  font-size: 22px;
+  font-family: 'Gotham Book';
+  letter-spacing: 1px;
+  margin: 27px 23px;
+}
+
+.note-count {
+  color: #ABABAB;
+  margin-left: 25px;
+}
+
+.note-options {
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.note-options::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  margin-top: 4px;
+  margin-left: 2px;
+  vertical-align: top;
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500438313/caret_gray_10x6_iz0o7w.png') center;
+  -webkit-background-size: 10px 6px;
+  -moz-background-size: 10px 6px;
+  -o-background-size: 10px 6px;
+  background-size: 10px 6px;
 }
