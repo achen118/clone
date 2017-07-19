@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NotesIndex extends React.Component {
+class NotesIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
@@ -8,7 +8,7 @@ class NotesIndex extends React.Component {
 
   render() {
     return (
-      <section className="notes-index-container">
+      <section className="notes-index-item-container">
         <h1>asdf</h1>
       </section>
     );
@@ -16,4 +16,4 @@ class NotesIndex extends React.Component {
 
 }
 
-export default NotesIndex;
+export default NotesIndexItem;

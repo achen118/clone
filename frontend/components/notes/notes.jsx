@@ -14,7 +14,7 @@ class Notes extends React.Component {
     return (
       <div className="notes-container">
         <SidebarContainer />
-        <section>
+        <section className="notes-header-and-index">
           <NotesHeader noteCount={ notes.allIds.length } />
           <NotesIndexContainer />
         </section>

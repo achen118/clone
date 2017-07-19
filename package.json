@@ -1,5 +1,5 @@
 {
-  "name": "CleverNote2",
+  "name": "CleverNote",
   "private": true,
   "dependencies": {
     "babel-core": "^6.25.0",
