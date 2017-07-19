@@ -19,21 +19,15 @@ class Sidebar extends React.Component {
   // }
 
   render() {
-    const { currentUser } = this.props;
-    let userInfo =
+    const currentUser = this.props.currentUser;
+    const userInfo =
       <figure className="user-pic">
-        <img src="https://res.cloudinary.com/malice/image/upload/c_scale,w_100/v1500414084/default-profile-pic_bhulg4.svg" alt="Default Profile Picture" />
+        <img src={ currentUser.image_url } alt="User Profile Picture" />
       </figure>;
-    if (currentUser) {
-      userInfo =
-        <figure className="user-pic">
-          <img src={ currentUser.image_url } />
-        </figure>;
-      }
     return (
       <div className="sidebar-container">
         <figure className="logo">
-          <img src="https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png" alt="CleverNote Logo" />
+          <img className="logo-img" src="https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png" alt="CleverNote Logo" />
         </figure>
         <figure className="new-note">
         </figure>

@@ -23,14 +23,9 @@ class SessionForm extends React.Component {
 
   render() {
     const { formType, loggedIn, errors } = this.props;
-    let redirect;
-    if (loggedIn) {
-      redirect = <Redirect to='/' />;
-    }
     const isEmail = new RegExp('\@');
     return (
       <div className="session-page">
-        { redirect }
         <header className="session-page-header">
           <figure>
             <img src='https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png' alt='CleverNote Logo' />

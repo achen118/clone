@@ -65,7 +65,7 @@ header img {
   width: 100%;
 }
 
-.session-form form input, .session-form button {
+.session-form form input {
   padding: 15px;
   margin: 10px;
   width: 90%;
@@ -75,7 +75,10 @@ header img {
 }
 
 .session-form button {
-  font-family: 'Gotham Medium'
+  font-family: 'Gotham Medium';
+  width: 100%;
+  font-size: 16px;
+  border-radius: 7px;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
