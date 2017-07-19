@@ -4,6 +4,7 @@ class Sidebar extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleLogout = this.handleLogout.bind(this);
     // this.select = this.select.bind(this);
   }
   //
@@ -17,6 +18,10 @@ class Sidebar extends React.Component {
   //       .remove(selector);
   //   };
   // }
+
+  handleLogout(event) {
+    this.props.logout();
+  }
 
   render() {
     const currentUser = this.props.currentUser;
@@ -40,6 +45,7 @@ class Sidebar extends React.Component {
         <figure className="tags">
         </figure>
         { userInfo }
+        <button onClick={ this.handleLogout }>Logout</button>
       </div>
     );
   }

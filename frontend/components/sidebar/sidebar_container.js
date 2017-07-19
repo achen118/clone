@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Sidebar from './sidebar';
+import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
   return {
@@ -8,7 +9,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    logout: () => dispatch(logout())
+  };
 };
 
 export default connect(

@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(key) {
@@ -19,6 +20,14 @@ class SessionForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.processForm(this.state);
+  }
+
+  handleDemo(event) {
+    event.preventDefault();
+    this.props.signin({
+      userCredential: "demo@appacademy.com",
+      password: "password"
+    });
   }
 
   render() {
@@ -38,7 +47,7 @@ class SessionForm extends React.Component {
               { formType === 'signup' ? 'Create Account' : 'Sign in' }
             </h1>
             <br />
-            <ul>
+            <ul className="errors">
               { errors.map((error, idx) => <li key={ idx }>{ error }</li>) }
             </ul>
             <input
@@ -63,6 +72,9 @@ class SessionForm extends React.Component {
             <br />
             <button>
               { formType === 'signup' ? 'Create Account' : 'Sign in' }
+            </button>
+            <button onClick={ this.handleDemo }>
+              Demo
             </button>
           </form>
         </section>
