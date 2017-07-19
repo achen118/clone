@@ -24,7 +24,7 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    const currentUser = this.props.currentUser;
+    const { currentUser } = this.props;
     const userInfo =
       <figure className="user-pic">
         <img src={ currentUser.image_url } alt="User Profile Picture" />

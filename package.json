@@ -1,5 +1,5 @@
 {
-  "name": "CleverNote2",
+  "name": "CleverNote",
   "private": true,
   "dependencies": {
     "babel-core": "^6.25.0",
@@ -28,9 +28,7 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack -w"
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",

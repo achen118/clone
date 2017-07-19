@@ -1,15 +1,21 @@
 import React from 'react';
+import NotesIndexItemContainer from './notes_index_item_container';
 
 class NotesIndex extends React.Component {
+
+  componentWillMount() {
+
+  }
 
   constructor(props) {
     super(props);
   }
 
   render() {
+    const { notes } = this.props;
     return (
       <section className="notes-index-container">
-        <h1>asdf</h1>
+        { notes.allIds.map(note => <NotesIndexItemContainer note={ note }/>) }
       </section>
     );
   }

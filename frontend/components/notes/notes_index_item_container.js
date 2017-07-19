@@ -3,7 +3,7 @@ import NotesIndexItem from './notes_index_item';
 
 const mapStateToProps = state => {
   return {
-
+    notes: state.notes
   };
 };
 

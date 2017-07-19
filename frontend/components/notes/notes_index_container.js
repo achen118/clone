@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { fetchAllNotes } from '../../actions/note_actions';
 import NotesIndex from './notes_index';
 
 const mapStateToProps = state => {
@@ -8,7 +9,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    fetchAllNotes: () => dispatch(fetchAllNotes())
+  };
 };
 
 export default connect(

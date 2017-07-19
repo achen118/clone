@@ -49,3 +49,19 @@ export const deleteNote = note => dispatch => {
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
+
+export const fetchAllNotes = () => dispatch => {
+  return notesAPIUtil.fetchAllNotes()
+    .then(notes => {
+      dispatch(receiveNotes(notes));
+      dispatch(clearErrors());
+    }, errors => dispatch(receiveErrors(errors.responseJSON)));
+};
+
+export const fetchSingleNote = noteId => dispatch => {
+  return notesAPIUtil.fetchSingleNote(noteId)
+    .then(note => {
+      dispatch(receiveNote(note));
+      dispatch(clearErrors());
+    }, errors => dispatch(receiveErrors(errors.responseJSON)));
+};
