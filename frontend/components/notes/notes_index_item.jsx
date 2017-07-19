@@ -9,7 +9,9 @@ class NotesIndexItem extends React.Component {
   render() {
     return (
       <section className="notes-index-item-container">
-        <h1>asdf</h1>
+        <article className="notes-index-item">
+          <h1>asfd</h1>
+        </article>
       </section>
     );
   }

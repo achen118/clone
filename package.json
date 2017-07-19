@@ -16,14 +16,13 @@
     "webpack": "^3.3.0"
   },
   "engines": {
-    "node": "6.10.1",
-    "npm": "5.3.0"
+  "node": "6.10.1",
+  "npm": "5.3.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "directories": {
-    "doc": "docs",
     "lib": "lib",
     "test": "test"
   },
@@ -32,15 +31,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack -w"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/achen118/full-stack-project.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/achen118/full-stack-project/issues"
-  },
-  "homepage": "https://github.com/achen118/full-stack-project#readme"
+  "license": "ISC"
 }
