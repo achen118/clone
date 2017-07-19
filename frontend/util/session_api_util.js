@@ -4,7 +4,7 @@ export const signup = user => {
     url: '/api/users',
     data: {
       user: {
-        user_credential: user.userCredential,
+        email: user.userCredential,
         password: user.password
       }
     }
