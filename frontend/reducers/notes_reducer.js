@@ -12,7 +12,6 @@ const NotesReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_NOTES:
       nextState.byId = action.notes;
-      
       nextState.allIds = Object.keys(action.notes);
       return nextState;
     case RECEIVE_NOTE:
