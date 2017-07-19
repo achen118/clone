@@ -3,7 +3,7 @@ import { RECEIVE_NOTES, RECEIVE_NOTE, REMOVE_NOTE } from '../actions/note_action
 
 const defaultState = {
   allIds: [],
-  byIds: {}
+  byId: {}
 };
 
 const NotesReducer = (state = defaultState, action) => {
