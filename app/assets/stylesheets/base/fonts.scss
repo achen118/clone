@@ -1,47 +1,55 @@
 @font-face {
   font-family: 'Gotham Light';
-  src:asset-url('GothamLight.ttf') format("truetype");
-  src:asset-url('GothamLight.WOFF') format("woff");
+  src:
+    asset-url('GothamLight.ttf') format("truetype"),
+    asset-url('GothamLight.WOFF') format("woff");
 }
 
 @font-face {
   font-family: 'Gotham Medium';
-  src:asset-url('GothamMedium.ttf') format("truetype");
-  src:asset-url('GothamMedium.WOFF') format("woff");
+  src:
+    asset-url('GothamMedium.ttf') format("truetype"),
+    asset-url('GothamMedium.WOFF') format("woff");
 }
 
 @font-face {
   font-family: 'Gotham Book';
-  src:asset-url('GothamBook.ttf') format("truetype");
-  src:asset-url('GothamBook.WOFF') format("woff");
+  src:
+    asset-url('GothamBook.ttf') format("truetype"),
+    asset-url('GothamBook.WOFF') format("woff");
 }
 
 @font-face {
   font-family: 'Caecilia Small Caps';
-  src:asset-url('Caecilia-RomanSC.ttf') format("truetype");
-  src:asset-url('Caecilia-RomanSC.WOFF') format("woff");
+  src:
+    asset-url('Caecilia-RomanSC.ttf') format("truetype"),
+    asset-url('Caecilia-RomanSC.WOFF') format("woff");
 }
 
 @font-face {
   font-family: 'Caecilia Bold';
-  src:asset-url('Caecilia-LT-Std-75-Bold_8986.ttf') format("truetype");
-  src:asset-url('Caecilia-LT-Std-75-Bold_8986.WOFF') format("woff");
+  src:
+    asset-url('Caecilia-LT-Std-75-Bold_8986.ttf') format("truetype"),
+    asset-url('Caecilia-LT-Std-75-Bold_8986.WOFF') format("woff");
 }
 
 @font-face {
   font-family: 'Caecilia Italic';
-  src:asset-url('Caecilia-LT-Std-56-Italic_8985.ttf') format("truetype");
-  src:asset-url('Caecilia-LT-Std-56-Italic_8985.WOFF') format("woff");
+  src:
+    asset-url('Caecilia-LT-Std-56-Italic_8985.ttf') format("truetype"),
+    asset-url('Caecilia-LT-Std-56-Italic_8985.WOFF') format("woff");
 }
 
 @font-face {
   font-family: 'Caecilia';
-  src:asset-url('Caecilia-LT-Std-55-Roman_8984.ttf') format("truetype");
-  src:asset-url('Caecilia-LT-Std-55-Roman_8984.WOFF') format("woff");
+  src:
+    asset-url('Caecilia-LT-Std-55-Roman_8984.ttf') format("truetype"),
+    asset-url('Caecilia-LT-Std-55-Roman_8984.WOFF') format("woff");
 }
 
 @font-face {
   font-family: 'Caecilia Light';
-  src:asset-url('Caecilia-LT-Std-45-Light_8982.ttf') format("truetype");
-  src:asset-url('Caecilia-LT-Std-45-Light_8982.WOFF') format("woff");
+  src:
+    asset-url('Caecilia-LT-Std-45-Light_8982.ttf') format("truetype"),
+    asset-url('Caecilia-LT-Std-45-Light_8982.WOFF') format("woff");
 }
