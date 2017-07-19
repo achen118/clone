@@ -3,7 +3,7 @@ import Notes from './notes';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.currentUser
+    notes: state.notes
   };
 };
 

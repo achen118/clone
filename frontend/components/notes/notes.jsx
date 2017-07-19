@@ -8,7 +8,10 @@ class Notes extends React.Component {
   }
 
   render() {
-
+    const notes = this.props.notes;
+    return (
+      <NotesHeader noteCount={ notes.allIds.length } />
+    );
   }
 
 }

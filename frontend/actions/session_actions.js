@@ -15,8 +15,7 @@ export const signin = user => dispatch => {
     .then(currentUser => {
       dispatch(receiveCurrentUser(currentUser));
       dispatch(clearErrors());
-    },
-    errors => dispatch(receiveErrors(errors.responseJSON)));
+    }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
 export const logout = () => dispatch => {
@@ -24,8 +23,7 @@ export const logout = () => dispatch => {
     .then(() => {
       dispatch(receiveCurrentUser(null));
       dispatch(clearErrors());
-    },
-    errors => dispatch(receiveErrors(errors.responseJSON)));
+    }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
 export const signup = user => dispatch => {
@@ -33,6 +31,5 @@ export const signup = user => dispatch => {
     .then(currentUser => {
       dispatch(receiveCurrentUser(currentUser));
       dispatch(clearErrors());
-    },
-    errors => dispatch(receiveErrors(errors.responseJSON)));
+    }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
