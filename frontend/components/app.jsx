@@ -8,7 +8,6 @@ import SidebarContainer from './sidebar/sidebar_container';
 const App = () => (
   <div>
     <Switch>
-      <ProtectedRoute path="/notes" component={ NotesContainer } />
       <ProtectedRoute path="/notes/:noteId" component={ NotesContainer } />
       <AuthRoute exact path="/" component={ SessionFormContainer } />
       <AuthRoute exact path="/signin" component={ SessionFormContainer } />

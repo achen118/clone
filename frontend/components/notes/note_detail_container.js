@@ -1,16 +1,15 @@
 import { connect } from 'react-redux';
 import NoteDetail from './note_detail';
-import { fetchSingleNote } from '../../actions/note_actions';
 
 const mapStateToProps = state => {
   return {
-
+    notes: state.notes
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchSingleNote: noteId => dispatch(fetchSingleNote(noteId))
+
   };
 };
 

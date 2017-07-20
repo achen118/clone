@@ -8,7 +8,7 @@ class NotesIndexItem extends React.Component {
 
   render() {
     const { note } = this.props;
-    console.log(note);
+    console.log(this.props);
     return (
       <section className="notes-index-item-container">
         <article className="notes-index-item">

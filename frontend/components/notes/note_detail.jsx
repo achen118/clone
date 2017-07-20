@@ -2,18 +2,21 @@ import React from 'react';
 
 class NoteDetail extends React.Component {
 
-  componentWillMount() {
-    this.props.fetchSingleNote(this.props.noteId);
-  }
-
   constructor(props) {
     super(props);
   }
 
   render() {
+    const { notes, noteId } = this.props;
+    let note;
+    if (noteId) {
+      note = notes.byId[noteId];
+    }
     return (
       <section className="note-detail-container">
-        <h1>asdf</h1>
+        <header className="note-detail-header">
+          <figure className=""></figure>
+        </header>
       </section>
     );
   }
