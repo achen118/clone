@@ -1,4 +1,5 @@
 import React from 'react';
+import Note from './note';
 
 class NoteDetail extends React.Component {
 
@@ -26,6 +27,7 @@ class NoteDetail extends React.Component {
           <figure className="expand">
           </figure>
         </header>
+        <Note />
       </section>
     );
   }
