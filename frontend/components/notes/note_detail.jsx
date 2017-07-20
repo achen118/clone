@@ -8,10 +8,10 @@ class NoteDetail extends React.Component {
   }
 
   render() {
-    const { notes, noteId } = this.props;
-    let note;
-    if (noteId) {
-      note = notes.byId[noteId];
+    const { note } = this.props;
+    let showNote;
+    if (note) {
+      showNote = <Note note={ note }/>;
     }
     return (
       <section className="note-detail-container">
@@ -27,7 +27,7 @@ class NoteDetail extends React.Component {
           <figure className="expand">
           </figure>
         </header>
-        <Note />
+        { showNote }
       </section>
     );
   }

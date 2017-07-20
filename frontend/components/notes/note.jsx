@@ -3,16 +3,24 @@ import ReactQuill from 'react-quill';
 
 class Note extends React.Component {
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      title: nextProps.note.title,
+      body: nextProps.note.body
+    });
+  }
+
   constructor(props) {
     super(props);
     this.state = {
-      text: "hello"
+      title: this.props.note.title,
+      body: this.props.note.body
     };
     this.update = this.update.bind(this);
   }
 
   update(value) {
-    this.setState({ text: value });
+    this.setState({ body: value });
   }
 
   render() {
@@ -20,7 +28,7 @@ class Note extends React.Component {
       <section className="note-container">
         <div id="editor">
           <ReactQuill
-            value={ this.state.text }
+            value={ this.state.body }
             onChange={ this.update }
           />
         </div>

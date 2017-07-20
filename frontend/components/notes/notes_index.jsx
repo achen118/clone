@@ -18,7 +18,9 @@ class NotesIndex extends React.Component {
       notesIndexItems = notes.allIds.map((note, idx) =>
         <NotesIndexItemContainer
           note={ notes.byId[note] }
-          key={ idx } />);
+          key={ idx }
+        />
+      );
     }
     return (
       <section className="notes-index-container">

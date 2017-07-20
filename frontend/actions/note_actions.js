@@ -3,7 +3,7 @@ import { receiveErrors, clearErrors } from './error_actions';
 
 export const RECEIVE_NOTES = "RECEIVE_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
-export const REMOVE_NOTE = "REMOVE_NOTE";
+export const RECEIVE_NOTE_DETAIL = "RECEIVE_NOTE_DETAIL";
 
 export const receiveNotes = notes => {
   return {
@@ -19,9 +19,9 @@ export const receiveNote = note => {
   };
 };
 
-export const removeNote = note => {
+export const receiveNoteDetail = note => {
   return {
-    type: REMOVE_NOTE,
+    type: RECEIVE_NOTE_DETAIL,
     note
   };
 };
@@ -45,7 +45,7 @@ export const updateNote = note => dispatch => {
 export const deleteNote = note => dispatch => {
   return notesAPIUtil.deleteNote(note)
     .then(deletedNote => {
-      dispatch(deleteNote(deletedNote));
+      dispatch(receiveNote(null));
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
@@ -61,7 +61,7 @@ export const fetchAllNotes = () => dispatch => {
 export const fetchSingleNote = noteId => dispatch => {
   return notesAPIUtil.fetchSingleNote(noteId)
     .then(note => {
-      dispatch(receiveNote(note));
+      dispatch(receiveNoteDetail(note));
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };

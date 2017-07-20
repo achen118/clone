@@ -25,6 +25,14 @@
       },
     }
   },
+  note: {
+    id: 1,
+    title: "Sample Note1",
+    body: "sample note body",
+    author_id: 1,
+    notebook_id: 1,
+    tags: ["tag1", "tag2"]
+  }
   notebooks: {
     allIds: [1, 2],
     byId: {

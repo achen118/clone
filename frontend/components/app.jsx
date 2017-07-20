@@ -9,6 +9,7 @@ const App = () => (
   <div>
     <Switch>
       <ProtectedRoute path="/notes/:noteId" component={ NotesContainer } />
+      <ProtectedRoute path="/notes" component={ NotesContainer } />
       <AuthRoute exact path="/" component={ SessionFormContainer } />
       <AuthRoute exact path="/signin" component={ SessionFormContainer } />
       <AuthRoute exact path="/signup" component={ SessionFormContainer } />
