@@ -15,7 +15,16 @@ class NoteDetail extends React.Component {
     return (
       <section className="note-detail-container">
         <header className="note-detail-header">
-          <figure className=""></figure>
+          <figure className="note-detail-reminder">
+          </figure>
+          <figure className="note-detail-info">
+          </figure>
+          <figure className="note-detail-delete">
+          </figure>
+          <figure className="note-detail-more">
+          </figure>
+          <figure className="expand">
+          </figure>
         </header>
       </section>
     );
