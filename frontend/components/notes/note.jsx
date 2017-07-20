@@ -16,7 +16,6 @@ class Note extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return(
       <section className="note-container">
         <div id="editor">

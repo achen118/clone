@@ -4,6 +4,9 @@ class Sidebar extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      modalIsOpen: false
+    };
     this.handleLogout = this.handleLogout.bind(this);
     // this.select = this.select.bind(this);
   }
