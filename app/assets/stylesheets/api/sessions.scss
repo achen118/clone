@@ -107,7 +107,7 @@ header img {
    color: #9B9B9B;
 }
 
-input:focus {
+.session-form input:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -117,7 +117,7 @@ input:focus {
   border-radius: 7px;
 }
 
-button:focus {
+.session-form button:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

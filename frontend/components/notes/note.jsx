@@ -3,25 +3,56 @@ import ReactQuill from 'react-quill';
 
 class Note extends React.Component {
 
+  componentDidMount() {
+    this.attachQuillRefs();
+  }
+
+  componentDidUpdate() {
+    this.attachQuillRefs();
+  }
+
   constructor(props) {
     super(props);
     this.state = {
       title: this.props.note.title,
       body: this.props.note.body
     };
-    this.update = this.update.bind(this);
+    this.quillRef = null;      // Quill instance
+    this.reactQuillRef = null; // ReactQuill component
+    this.updateQuill = this.updateQuill.bind(this);
+    this.updateTitle = this.updateTitle.bind(this);
   }
 
-  update(value) {
+  updateQuill(value) {
     this.setState({
       body: value
     });
   }
 
+  updateTitle(event) {
+    this.setState({
+      title: event.currentTarget.value
+    });
+  }
+
+  attachQuillRefs() {
+    if (typeof this.reactQuillRef.getEditor !== 'function') return;
+    this.quillRef = this.reactQuillRef.getEditor();
+  }
+
   render() {
     return(
-      <ReactQuill value={this.state.body}
-                  onChange={this.update} />
+      <div className="note-container">
+        <input
+          type="text"
+          value={ this.state.title }
+          onChange={ this.updateTitle } />
+        <ReactQuill
+          ref={(el) => { this.reactQuillRef = el }}
+          value={this.state.body}
+          onChange={this.updateQuill}
+          theme={'snow'}/>
+      </div>
     );
   }
 }
