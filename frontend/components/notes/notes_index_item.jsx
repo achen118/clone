@@ -4,18 +4,34 @@ import timeSince from '../../util/date_util';
 
 class NotesIndexItem extends React.Component {
 
+  componentDidMount() {
+    this.intervalId = setInterval(this.updateDate, 1000);
+  }
+
+  componentWillUnmount() {
+    this.intervalId.clearInterval();
+  }
+
   constructor(props) {
     super(props);
+    this.state = {
+      date: new Date()
+    };
     this.handleClick = this.handleClick.bind(this);
+    this.updateDate = this.updateDate.bind(this);
+  }
+
+  updateDate() {
+    this.setState({ date: new Date() });
   }
 
   handleClick(noteId) {
-    return (event) => this.props.history.push(`/notes/${noteId}`);
+    return (event) => this.props. history.push(`/notes/${noteId}`);
   }
 
   render() {
     const { note } = this.props;
-    const lastUpdate = timeSince(new Date(note.updated_at));
+    const lastUpdate = timeSince(this.state.date, new Date(note.updated_at));
     return (
       <div>
         <article className="notes-index-item" onClick={ this.handleClick(note.id) }>

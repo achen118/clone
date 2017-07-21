@@ -1,5 +1,5 @@
-const timeSince = date => {
-  const seconds = Math.floor((new Date() - date) / 3600);
+const timeSince = (currDate, prevDate) => {
+  const seconds = Math.floor((currDate - prevDate) / 1000);
 
   if (seconds < 60) {
     return `MOMENTS AGO`;
@@ -7,7 +7,11 @@ const timeSince = date => {
 
   if (seconds < 3600) {
     const minutes = Math.floor(seconds / 60);
-    return `${minutes} MINUTES AGO`;
+    if (minutes === 1) {
+      return `${minutes} MINUTE AGO`;
+    } else {
+      return `${minutes} MINUTES AGO`;
+    }
   }
 
   if (seconds < 86400) {
