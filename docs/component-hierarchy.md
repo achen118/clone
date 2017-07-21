@@ -24,7 +24,7 @@
 * NoteDetail
 * Note
 
-### NotebookContainer ###
+### NotebooksContainer ###
 * NotebookHeader
 * NotesIndexContainer
 * NoteDetailContainer
@@ -83,5 +83,5 @@ Path  | Component
 '/tag-search'  | TagSearchContainer -->
 '/search-results'  | SearchResultsContainer
 '/notes/:noteId'  | NotesContainer
-'/notebooks/:notebookId/notes/:noteId'  | NotebookContainer
+'/notebooks/:notebookId/notes/:noteId'  | NotebooksContainer
 '/tags/:tagName/notes/:noteId'  | TagContainer

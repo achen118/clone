@@ -11,6 +11,13 @@ class Note extends React.Component {
     this.attachQuillRefs();
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      title: nextProps.note.title,
+      body: nextProps.note.body
+    });
+  }
+
   constructor(props) {
     super(props);
     this.state = {

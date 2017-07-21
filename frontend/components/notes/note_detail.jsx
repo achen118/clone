@@ -1,35 +1,27 @@
 import React from 'react';
 import Note from './note';
 
-class NoteDetail extends React.Component {
-
-  constructor(props) {
-    super(props);
+const NoteDetail = props => {
+  const { note } = props;
+  let showNote;
+  if (note) {
+    showNote = <Note note={ note }/>;
   }
-
-  render() {
-    const { note } = this.props;
-    let showNote;
-    if (note) {
-      showNote = <Note note={ note }/>;
-    }
-    return (
-      <section className="note-detail-container">
-        <header className="note-detail-header">
-          <figure className="note-detail-reminder">
-          </figure>
-          <figure className="note-detail-info">
-          </figure>
-          <figure className="note-detail-delete">
-          </figure>
-          <figure className="note-detail-more">
-          </figure>
-        </header>
-        { showNote }
-      </section>
-    );
-  }
-
-}
+  return (
+    <section className="note-detail-container">
+      <header className="note-detail-header">
+        <figure className="note-detail-reminder">
+        </figure>
+        <figure className="note-detail-info">
+        </figure>
+        <figure className="note-detail-delete">
+        </figure>
+        <figure className="note-detail-more">
+        </figure>
+      </header>
+      { showNote }
+    </section>
+  );
+};
 
 export default NoteDetail;
