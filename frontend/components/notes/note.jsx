@@ -1,26 +1,7 @@
 import React from 'react';
-import ReactQuill, { Quill, Mixin, Toolbar } from 'react-quill';
+import ReactQuill from 'react-quill';
 
 class Note extends React.Component {
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      title: nextProps.note.title,
-      body: nextProps.note.body
-    });
-    this.modules = {
-      toolbar: [
-        [{ 'font': [] }],
-        [{ 'size': [] }],
-        [{ 'color': []}, 'bold', 'italic', 'underline','strike', 'code-block'],
-        [{'list': 'bullet'}, {'list': 'ordered'}],
-        ['link', 'image'],
-        ['align', {'indent': '+1'}, {'indent': '-1'}],
-        ['script'],
-        ['clean']
-      ]
-    };
-  }
 
   constructor(props) {
     super(props);
@@ -32,20 +13,15 @@ class Note extends React.Component {
   }
 
   update(value) {
-    this.setState({ body: value });
+    this.setState({
+      body: value
+    });
   }
 
   render() {
     return(
-      <section className="note-container">
-        <div id="editor">
-          <ReactQuill
-            modules={ this.modules }
-            value={ this.state.body }
-            onChange={ this.update }
-          />
-        </div>
-      </section>
+      <ReactQuill value={this.state.body}
+                  onChange={this.update} />
     );
   }
 }
