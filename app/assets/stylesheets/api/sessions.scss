@@ -89,10 +89,6 @@ header img {
           box-sizing: border-box;
 }
 
-.session-form button {
-  font-family: 'Gotham Medium';
-}
-
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: #9B9B9B;
 }
@@ -132,6 +128,11 @@ button:focus {
   background-color: #2DBE60;
   color: white;
   padding: 20px 0;
+  font-family: 'Gotham Medium';
+}
+
+.session-form button:hover {
+  background-color: #28A956;
 }
 
 .session-links {
@@ -151,6 +152,10 @@ button:focus {
 
 .session-link {
   font-size: 16px;
+}
+
+.session-link:hover {
+  color: #28A956;
 }
 
 .errors {

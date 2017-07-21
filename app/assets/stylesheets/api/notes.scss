@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .notes-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: white;
   height: 100vh;
+  width: 100%;
 }
 
 .notes-sidebar-header-index {
@@ -36,6 +36,10 @@
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100%;
+}
+
+.note-detail-container {
+  width: 100%;
 }
 
 .note-detail-header {
@@ -96,6 +100,7 @@
   width: 285px;
   padding: 17px 24px;
   height: auto;
+  position: relative;
 }
 
 .bottom-border {
@@ -105,7 +110,7 @@
 }
 
 .notes-index-item:hover, .notes-index-item:hover h3 {
-  background-color: #2DBE60;
+  background-color: #40bc6c;
   cursor: pointer;
   color: white;
 }
@@ -129,6 +134,37 @@
   line-height: 17px;
   overflow: hidden;
   height: 50px;
+}
+
+.index-item-reminder, .index-item-delete {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.index-item-reminder {
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500610662/reminder-white_m6g4ff.png') no-repeat center center;
+  right: 45px;
+  top: 9.5px;
+}
+
+.index-item-delete {
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500610662/delete-white_fgwrtv.png') no-repeat center center;
+  right: 10px;
+  top: 9px;
+}
+
+.index-item-reminder:hover {
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500610662/reminder-white-hover_unu0wv.png') no-repeat center center;
+  right: 45px;
+  top: 9.5px;
+}
+
+.index-item-delete:hover {
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500610662/delete-white-hover_qcz34v.png') no-repeat center center;
+  right: 10px;
+  top: 9px;
 }
 
 .note-detail-reminder {

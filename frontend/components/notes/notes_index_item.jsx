@@ -34,7 +34,13 @@ class NotesIndexItem extends React.Component {
     const lastUpdate = timeSince(this.state.date, new Date(note.updated_at));
     return (
       <div>
-        <article className="notes-index-item" onClick={ this.handleClick(note.id) }>
+        <article
+          className="notes-index-item"
+          onClick={ this.handleClick(note.id) }>
+          <figure className="index-item-reminder">
+          </figure>
+          <figure className="index-item-delete">
+          </figure>
           <h3 className="notes-index-title">{ note.title }</h3>
           <h4 className="notes-index-updated">{ lastUpdate }</h4>
           <p className="notes-index-body">{ note.body }</p>
