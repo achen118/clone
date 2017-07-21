@@ -9,7 +9,6 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      iconClicked: true,
       prevIconClicked: "new-note"
     };
     this.handleLogout = this.handleLogout.bind(this);
@@ -25,7 +24,7 @@ class Sidebar extends React.Component {
       this.setState({
         prevIconClicked: key
       });
-      const { prevIconClicked, iconClicked } = this.state;
+      const { prevIconClicked } = this.state;
       if (prevIconClicked) {
         const icon = document.querySelector(`.${prevIconClicked}-selected`);
         icon.classList.remove(`${prevIconClicked}-selected`);
