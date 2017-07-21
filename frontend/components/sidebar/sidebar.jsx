@@ -2,10 +2,6 @@ import React from 'react';
 
 class Sidebar extends React.Component {
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-  }
-
   constructor(props) {
     super(props);
     this.state = {

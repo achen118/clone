@@ -7,11 +7,11 @@
 .ql-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   height: 100%;
   margin: 0px;
   position: relative;
+  color: #383838;
 }
 .ql-container.ql-disabled .ql-tooltip {
   visibility: hidden;
@@ -82,7 +82,7 @@
 }
 .ql-editor ul[data-checked=true] > li::before,
 .ql-editor ul[data-checked=false] > li::before {
-  color: #777;
+  color: #383838;
   cursor: pointer;
   pointer-events: all;
 }

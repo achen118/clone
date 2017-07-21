@@ -6,6 +6,10 @@ import NoteDetailContainer from '../notes/note_detail_container';
 
 class Notes extends React.Component {
 
+  componentWillMount() {
+    this.props.fetchSingleNote(this.props.match.params.noteId);
+  }
+
   componentWillReceiveProps(nextProps) {
     const nextId = nextProps.match.params.noteId;
     if (this.props.match.params.noteId !== nextId) {
@@ -28,7 +32,7 @@ class Notes extends React.Component {
   }
 
   render() {
-    const { notes, note } = this.props;
+    const { notes, note, location } = this.props;
     let noteDetail;
     if (note) {
       noteDetail = <NoteDetailContainer note={ note } />;
