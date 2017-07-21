@@ -12,24 +12,23 @@ export const receiveCurrentUser = currentUser => {
 
 export const signin = user => dispatch => {
   return sessionAPIUtil.signin(user)
-    .then(currentUser => {
-      dispatch(receiveCurrentUser(currentUser));
-      dispatch(clearErrors());
-    }, errors => dispatch(receiveErrors(errors.responseJSON)));
+    .then(
+      currentUser => dispatch(receiveCurrentUser(currentUser)),
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    );
 };
 
 export const logout = () => dispatch => {
   return sessionAPIUtil.logout()
-    .then(() => {
-      dispatch(receiveCurrentUser(null));
-      dispatch(clearErrors());
-    }, errors => dispatch(receiveErrors(errors.responseJSON)));
+    .then(
+      () => dispatch(receiveCurrentUser(null)),
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    );
 };
 
 export const signup = user => dispatch => {
   return sessionAPIUtil.signup(user)
-    .then(currentUser => {
-      dispatch(receiveCurrentUser(currentUser));
-      dispatch(clearErrors());
-    }, errors => dispatch(receiveErrors(errors.responseJSON)));
+    .then(currentUser => dispatch(receiveCurrentUser(currentUser)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
+  );
 };

@@ -26,11 +26,14 @@ class NotesIndexItem extends React.Component {
   }
 
   handleClick(noteId) {
-    return (event) => this.props. history.push(`/notes/${noteId}`);
+    return (event) => {
+      event.currentTarget.classList.add("selected-index-item");
+      this.props.history.push(`/notes/${noteId}`);
+    };
   }
 
   render() {
-    const { note } = this.props;
+    const { note, match } = this.props;
     const lastUpdate = timeSince(this.state.date, new Date(note.updated_at));
     return (
       <div>
