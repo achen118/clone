@@ -21,7 +21,11 @@ const timeSince = (currDate, prevDate) => {
 
   if (seconds < 604800) {
     const days = Math.floor(seconds / 86400);
-    return `${days} DAYS AGO`;
+    if (days === 1) {
+      return `YESTERDAY`;
+    } else {
+      return `${days} DAYS AGO`;
+    }
   }
 
   const days = Math.floor(seconds / 86400);
