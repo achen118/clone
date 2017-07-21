@@ -9,7 +9,7 @@ class NotesIndexItem extends React.Component {
   }
 
   componentWillUnmount() {
-    this.intervalId.clearInterval();
+    clearInterval(this.intervalId);
   }
 
   constructor(props) {

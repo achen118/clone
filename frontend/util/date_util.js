@@ -16,7 +16,11 @@ const timeSince = (currDate, prevDate) => {
 
   if (seconds < 86400) {
     const hours = Math.floor(seconds / 3600);
-    return `${hours} HOURS AGO`;
+    if (hours === 1) {
+      return `${hours} HOUR AGO`;
+    } else {
+      return `${hours} HOURS AGO`;
+    }
   }
 
   if (seconds < 604800) {
@@ -48,7 +52,7 @@ const timeSince = (currDate, prevDate) => {
     }
   }
 
-  return `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`;
+  return `${prevDate.getMonth()}/${prevDate.getDate()}/${prevDate.getFullYear()}`;
 
 };
 

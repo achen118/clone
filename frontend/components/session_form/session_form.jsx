@@ -2,6 +2,13 @@ import React from 'react';
 import { withRouter, Link, Redirect } from 'react-router-dom';
 
 class SessionForm extends React.Component {
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.props.clearErrors();
+    }
+  }
+
   constructor(props) {
     super(props);
     this.state = {
