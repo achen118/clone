@@ -2,22 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.notes-index-body {
-  margin: 0;
-  height: 70px;
-  overflow: hidden;
-  text-overflow: clip;
-}
-
-.notes-index-item {
-  width: 285px;
-  padding: 15px 25px;
-  border-bottom: 1px solid #ECECEC;
-}
-
-.notes-index-item:hover {
-  background-color: #2DBE60;
-}
 
 .notes-container {
   display: -webkit-box;
@@ -52,11 +36,6 @@
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100%;
-}
-
-
-.note-detail-container {
-  width: 100%;
 }
 
 .note-detail-header {
@@ -111,6 +90,45 @@
   vertical-align: top;
   background: url('http://res.cloudinary.com/malice/image/upload/v1500438313/caret_gray_10x6_iz0o7w.png') center;
   background-size: 10px 6px;
+}
+
+.notes-index-item {
+  width: 285px;
+  padding: 17px 24px;
+  height: auto;
+}
+
+.bottom-border {
+  border-bottom: 1px solid #ECECEC;
+  width: 86%;
+  margin: 0 auto;
+}
+
+.notes-index-item:hover, .notes-index-item:hover h3 {
+  background-color: #2DBE60;
+  cursor: pointer;
+  color: white;
+}
+
+.notes-index-title {
+  font-family: 'Caecilia';
+  font-size: 1.3em;
+  color: #4A4A4A;
+}
+
+.notes-index-updated {
+  text-transform: uppercase;
+  font-family: gotham, helvetica, arial, sans-serif;
+  margin: 6px 0;
+  letter-spacing: 1px;
+}
+
+.notes-index-body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 17px;
+  overflow: hidden;
+  height: 50px;
 }
 
 .note-detail-reminder {
