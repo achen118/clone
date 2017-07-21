@@ -43,11 +43,13 @@
   margin-bottom: 40px;
 }
 
-.new-note, .search, .notes, .notebooks, .tags {
+.new-note, .search, .notes, .notebooks, .tags,
+.new-note-selected, .search-selected, .notes-selected, .notebooks-selected, .tags-selected {
   margin-bottom: 13px;
 }
 
-.new-note, .search, .notes, .notebooks, .tags, .user-pic {
+.new-note, .search, .notes, .notebooks, .tags, .user-pic,
+.new-note-selected, .search-selected, .notes-selected, .notebooks-selected, .tags-selected, .user-pic {
   width: 36px;
   height: 36px;
   cursor: pointer;
@@ -57,18 +59,24 @@
   background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/plus_ljiox4.png') no-repeat center center;
 }
 
+.new-note-selected {
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500602680/plus-selected_uji8gu.png') no-repeat center center;
+}
 
-.new-note:hover {
+.new-note-hover:hover {
   background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/plus-hover_dtjetq.png') no-repeat center center;
   background-size: 36px;
 }
-
 
 .search {
   background: url('https://res.cloudinary.com/malice/image/upload/v1500410338/search_zqxngc.png') no-repeat center center;
 }
 
-.search:hover {
+.search-selected {
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500410338/search-selected_ad9m1i.png') no-repeat center center;
+}
+
+.search-hover:hover {
   background: url('https://res.cloudinary.com/malice/image/upload/v1500410338/search-hover_a6zptx.png') no-repeat center center;
   background-size: 36px;
 }
@@ -78,7 +86,12 @@
   margin-top: 90px;
 }
 
-.notes:hover {
+.notes-selected {
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500410337/note-selected_onycvm.png') no-repeat center center;
+  margin-top: 90px;
+}
+
+.notes-hover:hover {
   background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/note-hover_h3ozkl.png') no-repeat center center;
   margin-top: 90px;
   background-size: 36px;
@@ -88,7 +101,11 @@
   background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/notebook_dqo08r.png') no-repeat center center;
 }
 
-.notebooks:hover {
+.notebooks-selected {
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500410337/notebook-selected_wbhttq.png') no-repeat center center;
+}
+
+.notebooks-hover:hover {
   background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/notebook-hover_q7teqo.png') no-repeat center center;
   background-size: 36px;
 }
@@ -97,7 +114,11 @@
   background: url('https://res.cloudinary.com/malice/image/upload/v1500410338/tag_bheb2i.png') no-repeat center center;
 }
 
-.tags:hover {
+.tags-selected {
+  background: url('http://res.cloudinary.com/malice/image/upload/v1500410338/tag-selected_misndw.png') no-repeat center center;
+}
+
+.tags-hover:hover {
   background: url('https://res.cloudinary.com/malice/image/upload/v1500410338/tag-hover_afcspp.png') no-repeat center center;
   background-size: 36px;
 }

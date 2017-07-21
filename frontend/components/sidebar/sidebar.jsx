@@ -2,25 +2,39 @@ import React from 'react';
 
 class Sidebar extends React.Component {
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
+
   constructor(props) {
     super(props);
+    this.state = {
+      iconClicked: true,
+      prevIconClicked: "new-note"
+    };
     this.handleLogout = this.handleLogout.bind(this);
-    // this.select = this.select.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-  //
-  // select(selector) {
-  //   return (event) => {
-  //     document.querySelector(selector)
-  //       .classList
-  //       .add(`${selector}-selected`);
-  //     document.querySelector(selector)
-  //       .classList
-  //       .remove(selector);
-  //   };
-  // }
 
   handleLogout(event) {
     this.props.logout();
+  }
+
+  handleClick(key) {
+    return event => {
+      this.setState({
+        prevIconClicked: key
+      });
+      const { prevIconClicked, iconClicked } = this.state;
+      if (prevIconClicked) {
+        const icon = document.querySelector(`.${prevIconClicked}-selected`);
+        icon.classList.remove(`${prevIconClicked}-selected`);
+        icon.classList.add(prevIconClicked);
+      }
+      const icon = document.querySelector(`.${key}`);
+      icon.classList.remove(key);
+      icon.classList.add(`${key}-selected`);
+    };
   }
 
   render() {
@@ -32,17 +46,36 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar-container">
         <figure className="logo">
-          <img className="logo-img" src="https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png" alt="CleverNote Logo" />
+          <img
+            className="logo-img"
+            src="https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png"
+            alt="CleverNote Logo"
+          />
         </figure>
-        <figure className="new-note">
+        <figure
+          onClick={ this.handleClick('new-note') }
+          className="new-note-selected new-note-hover"
+        >
         </figure>
-        <figure className="search">
+        <figure
+          onClick={ this.handleClick('search') }
+          className="search search-hover"
+        >
         </figure>
-        <figure className="notes">
+        <figure
+          onClick={ this.handleClick('notes') }
+          className="notes notes-hover"
+        >
         </figure>
-        <figure className="notebooks">
+        <figure
+          onClick={ this.handleClick('notebooks') }
+          className="notebooks notebooks-hover"
+        >
         </figure>
-        <figure className="tags">
+        <figure
+          onClick={ this.handleClick('tags') }
+          className="tags tags-hover"
+        >
         </figure>
         <button onClick={ this.handleLogout }>Logout</button>
         <section className="user-box">
