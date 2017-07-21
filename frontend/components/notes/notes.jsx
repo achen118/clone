@@ -3,8 +3,6 @@ import NotesHeader from './notes_header';
 import SidebarContainer from '../sidebar/sidebar_container';
 import NotesIndexContainer from '../notes/notes_index_container';
 import NoteDetailContainer from '../notes/note_detail_container';
-// import { Motion, spring, presets } from 'react-motion';
-// import { Div, Button } from 'glamorous';
 
 class Notes extends React.Component {
 
@@ -20,6 +18,13 @@ class Notes extends React.Component {
     this.state = {
       panelOpen: true
     };
+    this.togglePanel = this.togglePanel.bind(this);
+  }
+
+  togglePanel() {
+    this.setState({
+      panelOpen: !this.state.panelOpen
+    });
   }
 
   render() {
@@ -31,14 +36,22 @@ class Notes extends React.Component {
       noteDetail = <NoteDetailContainer note={ notes.byId[notes.allIds[0]] } />;
     }
     const { panelOpen } = this.state;
+    const panelClassName = panelOpen ? 'panel open' : 'panel';
+    const contentClassName = panelOpen ? 'content open' : 'content';
     return (
       <div className="notes-container">
-        <SidebarContainer />
-        <section className="notes-header-and-index">
-          <NotesHeader noteCount={ notes.allIds.length } />
-          <NotesIndexContainer />
+        <section className={ panelClassName }>
+          <SidebarContainer />
+          <section className="notes-header-and-index">
+            <NotesHeader noteCount={ notes.allIds.length } />
+            <NotesIndexContainer />
+          </section>
         </section>
-        { noteDetail }
+        <section className={ contentClassName }>
+          { noteDetail }
+        </section>
+        <figure className="expand" onClick={ this.togglePanel }>
+        </figure>
       </div>
     );
   }

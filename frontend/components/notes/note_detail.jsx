@@ -24,8 +24,6 @@ class NoteDetail extends React.Component {
           </figure>
           <figure className="note-detail-more">
           </figure>
-          <figure className="expand">
-          </figure>
         </header>
         { showNote }
       </section>

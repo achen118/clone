@@ -9,6 +9,7 @@
   background-color: white;
   height: 100vh;
   width: 100%;
+  position: relative;
 }
 
 .notes-sidebar-header-index {
@@ -38,7 +39,31 @@
 }
 
 .notes-index-container::-webkit-scrollbar {
-  
+
+}
+
+.panel {
+  display: flex;
+  height: 100vh;
+  left: -422px;
+  position: absolute;
+  transition: left .3s ease-in-out;
+}
+
+.panel.open {
+  left: 0;
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  transition: left .3s ease-in-out;
+}
+
+.content.open {
+    left: 422px;
 }
 
 .note-detail-container {
@@ -50,7 +75,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
 }
 
 .notes-header-info {
