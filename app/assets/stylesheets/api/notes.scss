@@ -1,7 +1,6 @@
 // Place all the styles related to the Notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .notes-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,6 +35,8 @@
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
   height: 100%;
+  width: 333px;
+  padding: 0 2px;
 }
 
 .notes-index-container::-webkit-scrollbar {
@@ -126,14 +127,18 @@
 
 .notes-index-item {
   margin: 0;
-  width: 285px;
   padding: 17px 24px;
   height: auto;
   position: relative;
 }
 
+.notes-index-container div:first-of-type article {
+  margin-top: 2px;
+}
+
 .selected-index-item {
-  outline: 4px solid #D9D9D9;
+  outline: 2px solid #D9D9D9;
+  box-sizing: border-box;
 }
 
 .bottom-border {
@@ -146,6 +151,7 @@
   background-color: #40bc6c;
   cursor: pointer;
   color: white;
+  outline: 2px solid #40bc6c;
 }
 
 .notes-index-title {

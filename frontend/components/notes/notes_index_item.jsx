@@ -27,6 +27,11 @@ class NotesIndexItem extends React.Component {
 
   handleClick(noteId) {
     return (event) => {
+      const lastSelected = document.querySelector(".selected-index-item");
+      console.log(lastSelected);
+      if (lastSelected) {
+        lastSelected.classList.remove("selected-index-item");
+      }
       event.currentTarget.classList.add("selected-index-item");
       this.props.history.push(`/notes/${noteId}`);
     };
