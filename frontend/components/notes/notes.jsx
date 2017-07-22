@@ -3,7 +3,7 @@ import NotesHeader from './notes_header';
 import SidebarContainer from '../sidebar/sidebar_container';
 import NotesIndexContainer from './notes_index_container';
 import NoteDetailContainer from './note_detail_container';
-import NotebooksContainer from '../notebooks/notebooks_container';
+import NotebooksIndexContainer from '../notebooks/notebooks_index_container';
 
 class Notes extends React.Component {
 
@@ -12,12 +12,23 @@ class Notes extends React.Component {
     if (this.props.match.params.noteId !== nextId) {
       this.props.fetchSingleNote(nextId);
     }
+    if (nextProps.location.pathname === '/notebooks') {
+      this.setState({
+        notebooksOpen: true
+      });
+    }
+    if (nextProps.location.pathname === '/notes') {
+      this.setState({
+        notebooksOpen: false
+      });
+    }
   }
 
   constructor(props) {
     super(props);
     this.state = {
-      panelOpen: true
+      panelOpen: true,
+      notesbooksOpen: false
     };
     this.togglePanel = this.togglePanel.bind(this);
   }
@@ -25,6 +36,12 @@ class Notes extends React.Component {
   togglePanel() {
     this.setState({
       panelOpen: !this.state.panelOpen
+    });
+  }
+
+  toggleNotebooks() {
+    this.setState({
+      notebooksOpen: !this.state.notebooksOpen
     });
   }
 
@@ -36,17 +53,18 @@ class Notes extends React.Component {
     } else {
       noteDetail = <NoteDetailContainer note={ notes.byId[notes.allIds[0]] } />;
     }
-    if (location.pathname === '/notebooks') {
-      notebookIndex = <NotebooksContainer />;
-    }
-    const { panelOpen } = this.state;
+    const { panelOpen, notebooksOpen } = this.state;
     const panelClassName = panelOpen ? 'panel open' : 'panel';
     const contentClassName = panelOpen ? 'content open' : 'content';
+    const notebookClassName = notebooksOpen ? 'notebooksPanel open' : 'notebooksPanel';
+    if (notebookClassName) {
+      notebookIndex = <NotebooksIndexContainer classes={ notebookClassName } />;
+    }
     return (
       <div className="notes-container">
+        { notebookIndex }
         <section className={ panelClassName }>
           <SidebarContainer />
-          { notebookIndex }
           <section className="notes-header-and-index">
             <NotesHeader noteCount={ notes.allIds.length } />
             <NotesIndexContainer />
