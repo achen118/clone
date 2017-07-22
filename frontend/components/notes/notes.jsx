@@ -4,6 +4,7 @@ import SidebarContainer from '../sidebar/sidebar_container';
 import NotesIndexContainer from './notes_index_container';
 import NoteDetailContainer from './note_detail_container';
 import NotebooksIndexContainer from '../notebooks/notebooks_index_container';
+import TagsIndexContainer from '../tags/tags_index_container';
 
 class Notes extends React.Component {
 
@@ -14,12 +15,20 @@ class Notes extends React.Component {
     }
     if (nextProps.location.pathname === '/notebooks') {
       this.setState({
-        notebooksOpen: true
+        notebooksOpen: true,
+        tagsOpen: false
+      });
+    }
+    if (nextProps.location.pathname === '/tags') {
+      this.setState({
+        tagsOpen: true,
+        notebooksOpen: false
       });
     }
     if (nextProps.location.pathname === '/notes') {
       this.setState({
-        notebooksOpen: false
+        notebooksOpen: false,
+        tagsOpen: false
       });
     }
   }
@@ -28,7 +37,8 @@ class Notes extends React.Component {
     super(props);
     this.state = {
       panelOpen: true,
-      notesbooksOpen: false
+      notesbooksOpen: false,
+      tagsOpen: false
     };
     this.togglePanel = this.togglePanel.bind(this);
   }
@@ -39,30 +49,29 @@ class Notes extends React.Component {
     });
   }
 
-  toggleNotebooks() {
-    this.setState({
-      notebooksOpen: !this.state.notebooksOpen
-    });
-  }
-
   render() {
     const { notes, note, location } = this.props;
-    let noteDetail, notebookIndex;
+    let noteDetail, notebookIndex, tagIndex;
     if (note) {
       noteDetail = <NoteDetailContainer note={ note } />;
     } else {
       noteDetail = <NoteDetailContainer note={ notes.byId[notes.allIds[0]] } />;
     }
-    const { panelOpen, notebooksOpen } = this.state;
+    const { panelOpen, notebooksOpen, tagsOpen } = this.state;
     const panelClassName = panelOpen ? 'panel open' : 'panel';
     const contentClassName = panelOpen ? 'content open' : 'content';
     const notebookClassName = notebooksOpen ? 'notebooksPanel open' : 'notebooksPanel';
+    const tagClassName = tagsOpen ? 'tagsPanel open' : 'tagsPanel';
     if (notebookClassName) {
       notebookIndex = <NotebooksIndexContainer classes={ notebookClassName } />;
+    }
+    if (tagClassName) {
+      tagIndex = <TagsIndexContainer classes={ tagClassName } />;
     }
     return (
       <div className="notes-container">
         { notebookIndex }
+        { tagIndex }
         <section className={ panelClassName }>
           <SidebarContainer />
           <section className="notes-header-and-index">

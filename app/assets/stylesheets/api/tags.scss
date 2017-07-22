@@ -1,2 +1,22 @@
+.tagsPanel {
+  position: absolute;
+  left: -500px;
+  right: 0;
+  width: 456px;
+  height: 100%;
+  background-color: white;
+  transition: left .3s ease-in-out;
+  z-index: 2;
+  padding-left: 74px;
+  border-right: 2px solid #F1F1F1;
+}
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ0YWdzLnNjc3MifQ== */
+.tagsPanel.open {
+  left: 0;
+}
+
+.tags-header {
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin: 22px;
+}

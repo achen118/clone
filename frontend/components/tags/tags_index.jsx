@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NotebookIndex extends React.Component {
+class TagsIndex extends React.Component {
 
   constructor(props) {
     super(props);
@@ -10,7 +10,7 @@ class NotebookIndex extends React.Component {
     const { classes } = this.props;
     return (
       <section className={ classes }>
-        <h1 className="notebooks-header">NOTEBOOKS</h1>
+        <h1 className="tags-header">TAGS</h1>
 
       </section>
     );
@@ -18,4 +18,4 @@ class NotebookIndex extends React.Component {
 
 }
 
-export default NotebookIndex;
+export default TagsIndex;

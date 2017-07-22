@@ -9,6 +9,7 @@ import NewNoteContainer from './notes/new_note_container';
 const App = () => (
   <div>
     <Switch>
+      <ProtectedRoute exact path="/tags" component={ NotesContainer } />
       <ProtectedRoute exact path="/notebooks" component={ NotesContainer } />
       <ProtectedRoute path="/notes/:noteId" component={ NotesContainer } />
       <ProtectedRoute path="/notes" component={ NotesContainer } />
