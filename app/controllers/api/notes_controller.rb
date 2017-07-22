@@ -27,7 +27,6 @@ class Api::NotesController < ApplicationController
 
   def index
     if params[:notebook_id]
-
     else
       @notes = current_user.notes.sort_by { |note| note.updated_at }
       @notes = @notes.reverse
@@ -35,7 +34,7 @@ class Api::NotesController < ApplicationController
   end
 
   def show
-    @note = Note.find_by(id: params[:id])
+    @note = current_user.notes.find(params[:id])
   end
 
   private

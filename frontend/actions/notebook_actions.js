@@ -36,24 +36,16 @@ export const updateNotebook = notebook => dispatch => {
 
 export const deleteNote = notebook => dispatch => {
   return notebooksAPIUtil.deleteNotebook(notebook)
-    .then(deletedNote => {
-      dispatch(receiveNote(null));
+    .then(deletedNotebook => {
+      dispatch(receiveNotebook(null));
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const fetchAllNotes = () => dispatch => {
-  return notebooksAPIUtil.fetchAllNotes()
-    .then(notes => {
-      dispatch(receiveNotes(notes));
-      dispatch(clearErrors());
-    }, errors => dispatch(receiveErrors(errors.responseJSON)));
-};
-
-export const fetchSingleNote = noteId => dispatch => {
-  return notebooksAPIUtil.fetchSingleNote(noteId)
-    .then(notebook => {
-      dispatch(receiveNoteDetail(note));
+export const fetchAllNotebooks = () => dispatch => {
+  return notebooksAPIUtil.fetchAllNotebooks()
+    .then(notebooks => {
+      dispatch(receiveNotebooks(notebooks));
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };

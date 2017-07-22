@@ -40,13 +40,15 @@
         id: 1
         title: "Sample Notebook1",
         author_id: 1,
-        description: "sample notebook description"
+        description: "sample notebook description",
+        notes: [1]
       },
       2: {
         id: 2
         title: "Sample Notebook2",
         author_id: 1,
-        description: "sample notebook description"
+        description: "sample notebook description",
+        notes: [2]
       }
     }
   }
