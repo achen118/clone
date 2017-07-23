@@ -1,6 +1,7 @@
 import React from 'react';
 import NotesHeader from './notes_header';
 import SidebarContainer from '../sidebar/sidebar_container';
+import NotesHeaderContainer from './notes_header_container';
 import NotesIndexContainer from './notes_index_container';
 import NoteDetailContainer from './note_detail_container';
 import NotebooksIndexContainer from '../notebooks/notebooks_index_container';
@@ -9,33 +10,20 @@ import TagsIndexContainer from '../tags/tags_index_container';
 class Notes extends React.Component {
 
   componentWillReceiveProps(nextProps) {
-    const nextNoteId = nextProps.match.params.noteId;
-    console.log(nextNoteId);
-    const nextNotebookId = nextProps.match.params.notebookId;
-    const nextTagId = nextProps.match.params.tagId;
-    if (nextNoteId && this.props.match.params.noteId !== nextNoteId) {
-      this.props.fetchSingleNote(nextNoteId);
-    }
-    if (nextNotebookId && this.props.match.params.notebookId !== nextNotebookId) {
-      this.props.fetchNotesFromNotebook(nextNotebookId);
-      this.setState({
-        notebooksOpen: false,
-        tagsOpen: false
-      });
-    }
+    this.nextNoteId = nextProps.match.params.noteId;
+    this.nextNotebookId = nextProps.match.params.notebookId;
+    this.nextTagId = nextProps.match.params.tagId;
     if (nextProps.location.pathname === '/notebooks') {
       this.setState({
         notebooksOpen: true,
         tagsOpen: false
       });
-    }
-    if (nextProps.location.pathname === '/tags') {
+    } else if (nextProps.location.pathname === '/tags') {
       this.setState({
         tagsOpen: true,
         notebooksOpen: false
       });
-    }
-    if (nextProps.location.pathname === '/notes') {
+    } else {
       this.setState({
         notebooksOpen: false,
         tagsOpen: false
@@ -86,8 +74,8 @@ class Notes extends React.Component {
         <section className={ panelClassName }>
           <SidebarContainer />
           <section className="notes-header-and-index">
-            <NotesHeader noteCount={ notes.allIds.length } />
-            <NotesIndexContainer />
+            <NotesHeaderContainer />
+            <NotesIndexContainer location={ this.props.location } notebookId={ this.nextNotebookId } />
           </section>
         </section>
         <section className={ contentClassName }>

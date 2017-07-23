@@ -4,11 +4,20 @@ import NotesIndexItemContainer from './notes_index_item_container';
 class NotesIndex extends React.Component {
 
   componentWillMount() {
-    this.props.fetchAllNotes();
+    if (this.props.notebookId) {
+      this.props.fetchNotesFromNotebook(this.props.notebookId);
+    } else {
+      this.props.fetchAllNotes();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
-    // console.log(nextProps);
+    if (this.props.location.pathname !== '/notes' && nextProps.location.pathname === '/notes') {
+      this.props.fetchAllNotes();
+    }
+    if (nextProps.location.pathname.indexOf('/notebooks') === 0) {
+      this.props.fetchNotesFromNotebook(nextProps.notebookId);
+    }
   }
 
   constructor(props) {
@@ -16,7 +25,6 @@ class NotesIndex extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
     const { notes } = this.props;
     let notesIndexItems;
     if (notes.allIds.length > 0) {
