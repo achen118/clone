@@ -30,8 +30,7 @@
     "test": "test"
   },
   "scripts": {
-    "webpack:deploy": "webpack",
-    "heroku-postbuild": "npm run webpack:deploy"
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
