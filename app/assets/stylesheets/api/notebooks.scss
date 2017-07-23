@@ -7,7 +7,7 @@
   background-color: white;
   transition: left .3s ease-in-out;
   z-index: 2;
-  padding-left: 74px;
+  padding-left: 73px;
   border-right: 2px solid #F1F1F1;
 }
 
@@ -18,5 +18,50 @@
 .notebooks-header {
   font-size: 22px;
   letter-spacing: 1px;
-  margin: 22px;
+  padding: 22px 26px 80px 26px;
+  border-bottom: 1px solid #ECECEC;
+  position: relative;
+}
+
+.add-notebook-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 24px;
+  top: 21px;
+  cursor: pointer;
+}
+
+.notebook-index-item-container:hover {
+  background-color: #40bc6c;
+  cursor: pointer;
+}
+
+.notebook-index-item-container {
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.notebook-index-item:hover, .notebook-index-item:hover h3, .notebook-index-item:hover h4 {
+  border: none;
+  color: white;
+}
+
+.notebook-index-item {
+  margin: 0 26px;
+  padding: 10px 0;
+  height: 100%;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.notebook-index-item h3 {
+  font-size: 16px;
+  font-family: 'Caecilia';
+  color: #4A4A4A;
+}
+
+.notebook-index-item h4 {
+  margin-top: 9px;
+  font-family: 'Gotham Medium';
+  color: #878787;
 }

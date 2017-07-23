@@ -12,9 +12,9 @@ const NotebooksReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_NOTEBOOKS:
       action.notebooks.forEach(notebook => {
+        nextState.allIds.push(notebook.id);
         nextState.byId[notebook.id] = notebook;
       });
-      nextState.allIds = Object.keys(nextState.byId);
       return nextState;
     case RECEIVE_NOTEBOOK:
       nextState.byId[action.notebook.id] = action.notebook;

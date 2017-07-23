@@ -49,3 +49,11 @@ export const fetchAllNotebooks = () => dispatch => {
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
+
+export const fetchSingleNotebook = () => dispatch => {
+  return notebooksAPIUtil.fetchSingleNotebook()
+    .then(notebook => {
+      dispatch(receiveNotebook(notebook));
+      dispatch(clearErrors());
+    }, errors => dispatch(receiveErrors(errors.responseJSON)));
+};

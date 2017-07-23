@@ -1,21 +1,18 @@
 import { connect } from 'react-redux';
-import NotebooksIndex from './notebooks_index';
-import { fetchAllNotebooks } from '../../actions/notebook_actions';
+import NotebooksIndexItem from './notebooks_index_item';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
   return {
-    notebooks: state.notebooks
+
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    fetchAllNotebooks: () => dispatch(fetchAllNotebooks())
-  };
+  return {};
 };
 
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(NotebooksIndex));
+)(NotebooksIndexItem));

@@ -9,9 +9,19 @@ import TagsIndexContainer from '../tags/tags_index_container';
 class Notes extends React.Component {
 
   componentWillReceiveProps(nextProps) {
-    const nextId = nextProps.match.params.noteId;
-    if (this.props.match.params.noteId !== nextId) {
-      this.props.fetchSingleNote(nextId);
+    const nextNoteId = nextProps.match.params.noteId;
+    const nextNotebookId = nextProps.match.params.notebookId;
+    console.log(nextNotebookId);
+    const nextTagId = nextProps.match.params.tagId;
+    if (this.props.match.params.noteId !== nextNoteId) {
+      this.props.fetchSingleNote(nextNoteId);
+    }
+    if (this.props.match.params.notebookId !== nextNotebookId) {
+      this.props.fetchSingleNotebook(nextNoteId);
+      this.setState({
+        notebooksOpen: false,
+        tagsOpen: false
+      });
     }
     if (nextProps.location.pathname === '/notebooks') {
       this.setState({
@@ -50,6 +60,7 @@ class Notes extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const { notes, note, location } = this.props;
     let noteDetail, notebookIndex, tagIndex;
     if (note) {

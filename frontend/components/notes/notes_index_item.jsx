@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import timeSince from '../../util/date_util';
 
 class NotesIndexItem extends React.Component {

@@ -29,7 +29,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def show
-    @notebook = current_user.notebooks.find_by(params[:id])
+    @notebook = current_user.notebooks.find(params[:id])
   end
 
   private
