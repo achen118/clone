@@ -11,6 +11,10 @@ class Note extends React.Component {
     this.attachQuillRefs();
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.autosaveTimer);
+  }
+
   componentWillReceiveProps(nextProps) {
     if (this.props !== nextProps) {
       clearTimeout(this.autosaveTimer);
@@ -40,7 +44,7 @@ class Note extends React.Component {
     this.autosave = this.autosave.bind(this);
     this.startAutosaveTimer = this.startAutosaveTimer.bind(this);
     this.stopAutosaveTimer = this.stopAutosaveTimer.bind(this);
-    this.autosaveTimer;
+    this.autosaveTimer = null;
     this.autosaveInterval = 500;
   }
 
