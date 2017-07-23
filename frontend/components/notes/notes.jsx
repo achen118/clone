@@ -10,9 +10,10 @@ class Notes extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const nextNoteId = nextProps.match.params.noteId;
+    console.log(nextNoteId);
     const nextNotebookId = nextProps.match.params.notebookId;
     const nextTagId = nextProps.match.params.tagId;
-    if (nextNoteId) {
+    if (nextNoteId && this.props.match.params.noteId !== nextNoteId) {
       this.props.fetchSingleNote(nextNoteId);
     }
     if (nextNotebookId) {
