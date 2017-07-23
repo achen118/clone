@@ -29,3 +29,39 @@ note1 = Note.create!(title: "React", body: "React is the entry point to the Reac
 note2 = Note.create!(title: "React Component", body: "Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React.Component is provided by React. Each component has several 'lifecycle methods' that you can override to run code at particular times in the process. Methods prefixed with will are called right before something happens, and methods prefixed with did are called right after something happens.", author_id: user1.id, notebook_id: notebook1.id)
 
 note3 = Note.create!(title: "React DOM", body: "The react-dom package provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside of the React model if you need to. Most of your components should not need to use this module. Render a React element into the DOM in the supplied container and return a reference to the component (or returns null for stateless components). If the React element was previously rendered into container, this will perform an update on it and only mutate the DOM as necessary to reflect the latest React element. If the optional callback is provided, it will be executed after the component is rendered or updated.", author_id: user1.id, notebook_id: notebook1.id)
+
+note1 = Note.create!(title: "Shopping List #1", body: "Canned vegetables
+Canned fruit (canned in juice, if available)
+Canned beans
+Fat-free refried beans
+Canned tuna or salmon
+Instant oatmeal or quick oats
+Whole grain cereal (unsweetened)
+Brown rice or other whole grains (such as quinoa, bulgur, or whole grain barley)
+Pasta (try whole wheat)
+100% whole wheat bread or pita bread
+Dried fruit
+Unsalted nuts
+Natural peanut butter or another nut butter
+Seeds (sunflower, flax)
+Popcorn (light, microwave)
+Potatoes (white or sweet)
+Spaghetti sauce", author_id: user1.id, notebook_id: notebook2.id)
+
+note2 = Note.create!(title: "Shopping List #2", body: "Balsamic vinegar or other vinegars that you cook with (for example, white wine, rice, or cider vinegar)
+Pepper
+Salt-free spices – your favorites
+Salt-free dried herbs or spice blends
+Cooking spray
+Vegetable oil
+Olive oil", author_id: user1.id, notebook_id: notebook2.id)
+
+note3 = Note.create!(title: "Shopping List #3", body: "Fresh fruit (a few of your favorites)
+Fresh vegetables (a few of your favorites - focus mostly on non-starchy vegetables)
+Skim milk, 1% low-fat milk, or unsweetened soy milk (whatever you prefer)
+Nonfat or low-fat yogurt
+Eggs or egg substitute
+Cottage cheese
+Reduced-fat cheese
+Fresh meat, poultry, or fish that you'll use in the next few days
+Trans-free margarine or margarine with plant sterols or stanols", author_id: user1.id, notebook_id: notebook2.id)

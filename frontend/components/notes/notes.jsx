@@ -16,8 +16,8 @@ class Notes extends React.Component {
     if (nextNoteId && this.props.match.params.noteId !== nextNoteId) {
       this.props.fetchSingleNote(nextNoteId);
     }
-    if (nextNotebookId) {
-      this.props.fetchSingleNotebook(nextNotebookId);
+    if (nextNotebookId && this.props.match.params.notebookId !== nextNotebookId) {
+      this.props.fetchNotesFromNotebook(nextNotebookId);
       this.setState({
         notebooksOpen: false,
         tagsOpen: false
@@ -60,6 +60,7 @@ class Notes extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const { notes, note, location } = this.props;
     let noteDetail, notebookIndex, tagIndex;
     if (note) {

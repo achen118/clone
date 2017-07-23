@@ -8,7 +8,7 @@ class NotebooksIndexItem extends React.Component {
   }
 
   handleClick(event) {
-    this.props.history.push(`/notebooks/${this.props.notebook.id}`);
+    this.props.history.push(`/notebooks/${this.props.notebook.id}/notes`);
   }
 
   render() {

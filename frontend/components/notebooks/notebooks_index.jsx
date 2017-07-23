@@ -1,7 +1,7 @@
 import React from 'react';
 import NotebooksIndexItemContainer from './notebooks_index_item_container';
 
-class NotebookIndex extends React.Component {
+class NotebooksIndex extends React.Component {
 
   componentWillMount() {
     this.props.fetchAllNotebooks();
@@ -36,4 +36,4 @@ class NotebookIndex extends React.Component {
 
 }
 
-export default NotebookIndex;
+export default NotebooksIndex;

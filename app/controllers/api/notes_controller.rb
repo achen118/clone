@@ -27,6 +27,9 @@ class Api::NotesController < ApplicationController
 
   def index
     if params[:notebook_id]
+      @notes = current_user.notes.select do |note|
+        note.notebook_id == params[:notebook_id].to_i
+      end
     else
       @notes = current_user.notes.sort_by { |note| note.updated_at }
       @notes = @notes.reverse

@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_NOTES, RECEIVE_NOTE, RECEIVE_NOTE_DETAIL } from '../actions/note_actions';
+import { RECEIVE_NOTES, RECEIVE_NOTE } from '../actions/note_actions';
 
 const defaultState = {
   allIds: [],
@@ -8,13 +8,15 @@ const defaultState = {
 
 const NotesReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  const nextState = merge({}, state);
+  let nextState = merge({}, state);
   switch(action.type) {
     case RECEIVE_NOTES:
+      nextState = merge({}, defaultState);
       action.notes.forEach(note => {
-        nextState.allIds.push(note.id);
         nextState.byId[note.id] = note;
+        nextState.allIds.push(note.id);
       });
+      console.log(nextState);
       return nextState;
     case RECEIVE_NOTE:
       nextState.byId[action.note.id] = action.note;

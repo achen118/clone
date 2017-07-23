@@ -1,5 +1,6 @@
 import * as notebooksAPIUtil from '../util/notebooks_api_util';
 import { receiveErrors, clearErrors } from './error_actions';
+import { receiveNotes, receiveNoteDetail } from './note_actions';
 
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
@@ -58,10 +59,11 @@ export const fetchAllNotebooks = () => dispatch => {
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const fetchSingleNotebook = notebookId => dispatch => {
-  return notebooksAPIUtil.fetchSingleNotebook(notebookId)
-    .then(notebook => {
-      dispatch(receiveNotebook(notebook));
+export const fetchNotesFromNotebook = notebookId => dispatch => {
+  return notebooksAPIUtil.fetchNotesFromNotebook(notebookId)
+    .then(notes => {
+      dispatch(receiveNotes(notes));
+      dispatch(receiveNoteDetail(null));
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };

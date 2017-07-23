@@ -8,7 +8,7 @@ class NotesIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
+    // console.log(nextProps);
   }
 
   constructor(props) {
@@ -16,6 +16,7 @@ class NotesIndex extends React.Component {
   }
 
   render() {
+    // console.log(this.props);
     const { notes } = this.props;
     let notesIndexItems;
     if (notes.allIds.length > 0) {

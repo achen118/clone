@@ -5,13 +5,6 @@ export const fetchAllNotebooks = () => {
   });
 };
 
-export const fetchSingleNotebook = notebookId => {
-  return $.ajax({
-    method: 'GET',
-    url: `/api/notebooks/${notebookId}`
-  });
-};
-
 export const fetchNotesFromNotebook = notebookId => {
   return $.ajax({
     method: 'GET',
