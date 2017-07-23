@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Notes from './notes';
-import { fetchSingleNote } from '../../actions/note_actions';
+import { fetchSingleNote, fetchAllNotes } from '../../actions/note_actions';
+import { fetchNotesFromNotebook } from '../../actions/notebook_actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,7 +12,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchSingleNote: noteId => dispatch(fetchSingleNote(noteId))
+    fetchSingleNote: noteId => dispatch(fetchSingleNote(noteId)),
+    fetchAllNotes: noteId => dispatch(fetchAllNotes()),
+    fetchNotesFromNotebook: notebookId => dispatch(fetchNotesFromNotebook(notebookId))
   };
 };
 

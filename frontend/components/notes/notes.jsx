@@ -3,16 +3,30 @@ import NotesHeader from './notes_header';
 import SidebarContainer from '../sidebar/sidebar_container';
 import NotesHeaderContainer from './notes_header_container';
 import NotesIndexContainer from './notes_index_container';
-import NoteDetailContainer from './note_detail_container';
+import NoteDetail from './note_detail';
 import NotebooksIndexContainer from '../notebooks/notebooks_index_container';
 import TagsIndexContainer from '../tags/tags_index_container';
 
 class Notes extends React.Component {
 
+  componentWillMount() {
+    if (this.props.match.params.notebookId) {
+      this.props.fetchNotesFromNotebook(this.props.match.params.notebookId);
+    } else {
+      this.props.fetchAllNotes();
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
-    this.nextNoteId = nextProps.match.params.noteId;
-    this.nextNotebookId = nextProps.match.params.notebookId;
-    this.nextTagId = nextProps.match.params.tagId;
+    if (this.props.location.pathname !== '/notes' && nextProps.location.pathname === '/notes') {
+      this.props.fetchAllNotes();
+    }
+    if (nextProps.match.params.noteId && this.props.match.params.noteId !== nextProps.match.params.noteId) {
+      this.props.fetchSingleNote(nextProps.match.params.noteId);
+    }
+    if (nextProps.match.params.notebookId && this.props.match.params.notebookId !== nextProps.match.params.notebookId) {
+      this.props.fetchNotesFromNotebook(nextProps.match.params.notebookId);
+    }
     if (nextProps.location.pathname === '/notebooks') {
       this.setState({
         notebooksOpen: true,
@@ -52,9 +66,9 @@ class Notes extends React.Component {
     const { notes, note, location } = this.props;
     let noteDetail, notebookIndex, tagIndex;
     if (note) {
-      noteDetail = <NoteDetailContainer note={ note } />;
+      noteDetail = <NoteDetail note={ note } />;
     } else {
-      noteDetail = <NoteDetailContainer note={ notes.byId[notes.allIds[0]] } />;
+      noteDetail = <NoteDetail note={ notes.byId[notes.allIds[0]] } />;
     }
     const { panelOpen, notebooksOpen, tagsOpen } = this.state;
     const panelClassName = panelOpen ? 'panel open' : 'panel';
@@ -75,7 +89,7 @@ class Notes extends React.Component {
           <SidebarContainer />
           <section className="notes-header-and-index">
             <NotesHeaderContainer />
-            <NotesIndexContainer location={ this.props.location } notebookId={ this.nextNotebookId } />
+            <NotesIndexContainer />
           </section>
         </section>
         <section className={ contentClassName }>
