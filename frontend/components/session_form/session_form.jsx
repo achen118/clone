@@ -39,7 +39,6 @@ class SessionForm extends React.Component {
 
   render() {
     const { formType, loggedIn, errors } = this.props;
-    const isEmail = new RegExp('\@');
     return (
       <div className="session-page">
         <header className="session-page-header">
@@ -57,15 +56,7 @@ class SessionForm extends React.Component {
             <ul className="errors">
               { errors.map((error, idx) => <li key={ idx }>{ error }</li>) }
             </ul>
-            <input
-              type="text"
-              onChange={ this.update('userCredential') }
-              value={ this.state.userCredential }
-              placeholder={ formType === 'signup' ?
-                "Your email address" :
-                "Email address or username"
-              }
-            />
+             <input type="text" placeholder="Email or username" />
             <br />
             <input
               type="password"
