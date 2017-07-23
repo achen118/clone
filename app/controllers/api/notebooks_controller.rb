@@ -2,6 +2,7 @@ class Api::NotebooksController < ApplicationController
 
   def create
     @notebook = Notebook.new(notebook_params)
+    @notebook.author = current_user;
     if @notebook.save
       render json: @notebook
     else

@@ -4,6 +4,7 @@ import { receiveErrors, clearErrors } from './error_actions';
 export const RECEIVE_NOTES = "RECEIVE_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
 export const RECEIVE_NOTE_DETAIL = "RECEIVE_NOTE_DETAIL";
+export const RECEIVE_UPDATED_NOTE = "RECEIVE_UPDATED_NOTE";
 
 export const receiveNotes = notes => {
   return {
@@ -15,6 +16,13 @@ export const receiveNotes = notes => {
 export const receiveNote = note => {
   return {
     type: RECEIVE_NOTE,
+    note
+  };
+};
+
+export const receiveUpdatedNote = note => {
+  return {
+    type: RECEIVE_UPDATED_NOTE,
     note
   };
 };
@@ -37,7 +45,7 @@ export const addNote = note => dispatch => {
 export const updateNote = note => dispatch => {
   return notesAPIUtil.updateNote(note)
     .then(updatedNote => {
-      dispatch(receiveNote(updatedNote));
+      dispatch(receiveUpdatedNote(updatedNote));
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };

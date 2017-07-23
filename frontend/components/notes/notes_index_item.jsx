@@ -54,7 +54,7 @@ class NotesIndexItem extends React.Component {
           </figure>
           <h3 className="notes-index-title">{ note.title }</h3>
           <h4 className="notes-index-updated">{ lastUpdate }</h4>
-          <p className="notes-index-body">{ note.body }</p>
+          <p className="notes-index-body">{ note.plain_text_body }</p>
         </article>
         <div className="bottom-border"></div>
       </div>

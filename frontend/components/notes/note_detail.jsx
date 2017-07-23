@@ -1,5 +1,5 @@
 import React from 'react';
-import Note from './note';
+import NoteContainer from './note_container';
 
 const NoteDetail = props => {
   const { note } = props;
@@ -17,7 +17,7 @@ const NoteDetail = props => {
           <figure className="note-detail-more">
           </figure>
         </header>
-        <Note note={ note }/>
+        <NoteContainer note={ note } />
       </section>;
   }
   return (

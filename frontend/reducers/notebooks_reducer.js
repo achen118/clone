@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 import { RECEIVE_NOTEBOOKS, RECEIVE_NOTEBOOK, RECEIVE_NOTEBOOK_DETAIL } from '../actions/notebook_actions';
+import { CLEAR_STORE } from '../actions/session_actions';
 
 const defaultState = {
   allIds: [],
@@ -22,6 +23,8 @@ const NotebooksReducer = (state = defaultState, action) => {
       return nextState;
     case RECEIVE_NOTEBOOK_DETAIL:
       return action.notebook;
+    case CLEAR_STORE:
+      return defaultState;
     default:
       return state;
   }
