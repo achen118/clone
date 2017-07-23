@@ -3,6 +3,7 @@ import { receiveErrors, clearErrors } from './error_actions';
 
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
+export const RECEIVE_NOTEBOOK_DETAIL = "RECEIVE_NOTEBOOK_DETAIL";
 
 export const receiveNotebooks = notebooks => {
   return {
@@ -14,6 +15,13 @@ export const receiveNotebooks = notebooks => {
 export const receiveNotebook = notebook => {
   return {
     type: RECEIVE_NOTEBOOK,
+    notebook
+  };
+};
+
+export const receiveNotebookDetail = notebook => {
+  return {
+    type: RECEIVE_NOTEBOOK_DETAIL,
     notebook
   };
 };
@@ -50,8 +58,8 @@ export const fetchAllNotebooks = () => dispatch => {
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const fetchSingleNotebook = () => dispatch => {
-  return notebooksAPIUtil.fetchSingleNotebook()
+export const fetchSingleNotebook = notebookId => dispatch => {
+  return notebooksAPIUtil.fetchSingleNotebook(notebookId)
     .then(notebook => {
       dispatch(receiveNotebook(notebook));
       dispatch(clearErrors());

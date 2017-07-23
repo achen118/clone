@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_NOTES, RECEIVE_NOTE, RECEIVE_UNCHANGED_NOTE } from '../actions/note_actions';
+import { RECEIVE_NOTES, RECEIVE_NOTE, RECEIVE_NOTE_DETAIL } from '../actions/note_actions';
 
 const defaultState = {
   allIds: [],

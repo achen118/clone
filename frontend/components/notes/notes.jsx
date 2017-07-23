@@ -11,13 +11,12 @@ class Notes extends React.Component {
   componentWillReceiveProps(nextProps) {
     const nextNoteId = nextProps.match.params.noteId;
     const nextNotebookId = nextProps.match.params.notebookId;
-    console.log(nextNotebookId);
     const nextTagId = nextProps.match.params.tagId;
-    if (this.props.match.params.noteId !== nextNoteId) {
+    if (nextNoteId) {
       this.props.fetchSingleNote(nextNoteId);
     }
-    if (this.props.match.params.notebookId !== nextNotebookId) {
-      this.props.fetchSingleNotebook(nextNoteId);
+    if (nextNotebookId) {
+      this.props.fetchSingleNotebook(nextNotebookId);
       this.setState({
         notebooksOpen: false,
         tagsOpen: false
@@ -60,7 +59,6 @@ class Notes extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { notes, note, location } = this.props;
     let noteDetail, notebookIndex, tagIndex;
     if (note) {
