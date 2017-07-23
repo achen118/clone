@@ -10,6 +10,7 @@ const App = () => (
   <div>
     <Switch>
       <ProtectedRoute exact path="/tags" component={ NotesContainer } />
+      <ProtectedRoute path="/notebooks/:notebookId/notes/:noteId" component={ NotesContainer } />
       <ProtectedRoute path="/notebooks/:notebookId" component={ NotesContainer } />
       <ProtectedRoute exact path="/notebooks" component={ NotesContainer } />
       <ProtectedRoute path="/notes/:noteId" component={ NotesContainer } />

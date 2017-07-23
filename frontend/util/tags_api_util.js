@@ -5,6 +5,13 @@ export const fetchAllTags = () => {
   });
 };
 
+export const fetchNotesFromTag = tagName => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/tags/${tagName}/notes`
+  });
+};
+
 export const addTagToNote = (noteId, tag) => {
   return $.ajax({
     method: 'POST',

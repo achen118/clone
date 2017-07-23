@@ -15,6 +15,10 @@ class Notes extends React.Component {
     } else {
       this.props.fetchAllNotes();
     }
+    if (this.props.match.params.noteId) {
+      console.log("hi");
+      this.props.fetchSingleNote(this.props.match.params.noteId);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
