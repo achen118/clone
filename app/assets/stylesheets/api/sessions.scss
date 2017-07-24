@@ -81,7 +81,7 @@ header img {
   padding: 15px;
   margin: 10px 0;
   width: 100%;
-  font-family: 'Gotham Book';
+  // font-family: 'Gotham Book';
   font-size: 16px;
   border-radius: 7px;
   vertical-align: middle;
@@ -91,20 +91,25 @@ header img {
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: #9B9B9B;
+    font-family: 'Gotham Book';
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
    color: #9B9B9B;
    opacity:  1;
+   font-family: 'Gotham Book';
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
    color: #9B9B9B;
    opacity:  1;
+   font-family: 'Gotham Book';
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
    color: #9B9B9B;
+   font-family: 'Gotham Book';
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
    color: #9B9B9B;
+   font-family: 'Gotham Book';
 }
 
 .session-form input:focus {
