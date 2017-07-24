@@ -1,26 +1,13 @@
 @font-face {
-    font-family: 'Gotham Book';
-    src: url('gothambook-webfont.woff2') format('woff2'),
-         url('gothambook-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'Gotham Medium';
-    src: url('gothammedium-webfont.woff2') format('woff2'),
-         url('gothammedium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: 'Gotham Medium';
+  src:
+    font-url('Gotham-Medium.ttf') format("truetype");
 }
 
 @font-face {
   font-family: 'Gotham Book';
   src:
-    font-url('GothamBook.ttf') format("truetype"),
-    font-url('GothamBook.WOFF') format("woff");
+    font-url('Gotham-Book.ttf') format("truetype");
 }
 
 @font-face {
