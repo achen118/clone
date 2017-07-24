@@ -1,13 +1,15 @@
 @font-face {
   font-family: 'Gotham Medium';
   src:
-    font-url('Gotham-Medium.ttf') format("truetype");
+    font-url('Gotham-Medium.ttf') format("truetype"),
+    font-url('Gotham-Medium.woff') format("woff");
 }
 
 @font-face {
   font-family: 'Gotham Book';
   src:
-    font-url('Gotham-Book.ttf') format("truetype");
+    font-url('Gotham-Book.ttf') format("truetype"),
+    font-url('Gotham-Book.woff') format("woff");
 }
 
 @font-face {
