@@ -56,7 +56,15 @@ class SessionForm extends React.Component {
             <ul className="errors">
               { errors.map((error, idx) => <li key={ idx }>{ error }</li>) }
             </ul>
-             <input type="text" placeholder="Email or username" />
+              <input
+                type="text"
+                onChange={ this.update('userCredential') }
+                value={ this.state.userCredential }
+                placeholder={ formType === 'signup' ?
+                  "Your email address" :
+                  "Email address or username"
+                }
+              />
             <br />
             <input
               type="password"
