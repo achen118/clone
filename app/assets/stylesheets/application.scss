@@ -13,12 +13,12 @@
  *= require_self
  */
 
+@import "base/quill.snow.css";
 @import "base/reset.scss";
 
 @import "base/colors.scss";
 @import "base/fonts.scss";
 @import "base/static_pages.scss";
-@import "quill.snow.css";
 
 @import "api/*";
 
