@@ -1,0 +1,25 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+@import "base/reset.scss";
+
+@import "base/colors.scss";
+@import "base/fonts.scss";
+@import "base/static_pages.scss";
+@import "base/quill.snow.css";
+
+@import "api/*";
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcGxpY2F0aW9uLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7OztHQWFHO0FBQ0gsMEJBQUc7O0FBRUgsMkJBQTJCO0FBQzNCLDBCQUEwQjtBQUMxQixpQ0FBaUM7QUFDakMsMEJBQTBCOztBQUUxQixnQkFBZ0IiLCJmaWxlIjoiYXBwbGljYXRpb24uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFRoaXMgaXMgYSBtYW5pZmVzdCBmaWxlIHRoYXQnbGwgYmUgY29tcGlsZWQgaW50byBhcHBsaWNhdGlvbi5jc3MsIHdoaWNoIHdpbGwgaW5jbHVkZSBhbGwgdGhlIGZpbGVzXG4gKiBsaXN0ZWQgYmVsb3cuXG4gKlxuICogQW55IENTUyBhbmQgU0NTUyBmaWxlIHdpdGhpbiB0aGlzIGRpcmVjdG9yeSwgbGliL2Fzc2V0cy9zdHlsZXNoZWV0cywgb3IgYW55IHBsdWdpbidzXG4gKiB2ZW5kb3IvYXNzZXRzL3N0eWxlc2hlZXRzIGRpcmVjdG9yeSBjYW4gYmUgcmVmZXJlbmNlZCBoZXJlIHVzaW5nIGEgcmVsYXRpdmUgcGF0aC5cbiAqXG4gKiBZb3UncmUgZnJlZSB0byBhZGQgYXBwbGljYXRpb24td2lkZSBzdHlsZXMgdG8gdGhpcyBmaWxlIGFuZCB0aGV5J2xsIGFwcGVhciBhdCB0aGUgYm90dG9tIG9mIHRoZVxuICogY29tcGlsZWQgZmlsZSBzbyB0aGUgc3R5bGVzIHlvdSBhZGQgaGVyZSB0YWtlIHByZWNlZGVuY2Ugb3ZlciBzdHlsZXMgZGVmaW5lZCBpbiBhbnkgb3RoZXIgQ1NTL1NDU1NcbiAqIGZpbGVzIGluIHRoaXMgZGlyZWN0b3J5LiBTdHlsZXMgaW4gdGhpcyBmaWxlIHNob3VsZCBiZSBhZGRlZCBhZnRlciB0aGUgbGFzdCByZXF1aXJlXyogc3RhdGVtZW50LlxuICogSXQgaXMgZ2VuZXJhbGx5IGJldHRlciB0byBjcmVhdGUgYSBuZXcgZmlsZSBwZXIgc3R5bGUgc2NvcGUuXG4gKlxuICo9IHJlcXVpcmVfdHJlZVxuICo9IHJlcXVpcmVfc2VsZlxuICovXG5cbmJvZHkge1xuICAgZm9udC1mYW1pbHk6ICdHb3RoYW0gQm9vayc7XG4gICBjb2xvcjogIzc0NzQ3NDtcbiAgIGZvbnQtc2l6ZTogMTJweDtcbiAgIGN1cnNvcjogZGVmYXVsdDtcbn1cblxuYSB7XG4gICBjb2xvcjogIzJEQkU2MDtcbiAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgIGZvbnQtZmFtaWx5OiAnR290aGFtIE1lZGl1bSc7XG59XG4iXX0= */

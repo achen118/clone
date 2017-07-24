@@ -1,8 +1,8 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/clever_note.jsx",
+  entry: './frontend/clever_note.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js"

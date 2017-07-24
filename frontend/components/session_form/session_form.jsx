@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
             <div>
               <p>Don't have an account?</p>
               <br />
-              <Link to='signup' className="session-link">Create account</Link>
+              <Link to='/signup' className="session-link">Create account</Link>
             </div>
           }
         </section>
