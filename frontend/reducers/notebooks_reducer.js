@@ -9,12 +9,13 @@ const defaultState = {
 
 const NotebooksReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  const nextState = merge({}, state);
+  let nextState = merge({}, state);
   switch(action.type) {
     case RECEIVE_NOTEBOOKS:
+      nextState = merge({}, defaultState);
       action.notebooks.forEach(notebook => {
-        nextState.allIds.push(notebook.id);
         nextState.byId[notebook.id] = notebook;
+        nextState.allIds.push(notebook.id);
       });
       return nextState;
     case RECEIVE_NOTEBOOK:
