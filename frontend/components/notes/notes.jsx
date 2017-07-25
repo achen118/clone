@@ -41,13 +41,13 @@ class Notes extends React.Component {
     }
     if (nextProps.location.pathname === '/notebooks') {
       this.setState({
-        notebooksOpen: true,
+        notebooksOpen: !this.state.notebooksOpen,
         tagsOpen: false,
         panelOpen: true
       });
     } else if (nextProps.location.pathname === '/tags') {
       this.setState({
-        tagsOpen: true,
+        tagsOpen: !this.state.tagsOpen,
         notebooksOpen: false,
         panelOpen: true
       });
