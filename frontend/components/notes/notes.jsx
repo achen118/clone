@@ -6,12 +6,14 @@ import NotesIndexContainer from './notes_index_container';
 import NoteDetail from './note_detail';
 import NotebooksIndexContainer from '../notebooks/notebooks_index_container';
 import TagsIndexContainer from '../tags/tags_index_container';
+import NotebookHeaderContainer from '../notebooks/notebook_header_container';
 
 class Notes extends React.Component {
 
   componentWillMount() {
     if (this.props.match.params.notebookId) {
       this.props.fetchNotesFromNotebook(this.props.match.params.notebookId);
+      this.header = <NotebookHeaderContainer notebookId={ this.props.match.params.notebookId } />;
     } else {
       this.props.fetchAllNotes();
     }
@@ -29,6 +31,7 @@ class Notes extends React.Component {
     }
     if (nextProps.match.params.notebookId && this.props.match.params.notebookId !== nextProps.match.params.notebookId) {
       this.props.fetchNotesFromNotebook(nextProps.match.params.notebookId);
+      this.header = <NotebookHeaderContainer notebookId={ nextProps.match.params.notebookId } />;
     }
     if (nextProps.location.pathname === '/notebooks') {
       this.setState({
@@ -55,6 +58,7 @@ class Notes extends React.Component {
       notesbooksOpen: false,
       tagsOpen: false
     };
+    this.header = <NotesHeaderContainer />;
     this.togglePanel = this.togglePanel.bind(this);
   }
 
@@ -65,6 +69,7 @@ class Notes extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const { notes, note, location } = this.props;
     let noteDetail, notebookIndex, tagIndex;
     if (note) {
@@ -90,7 +95,7 @@ class Notes extends React.Component {
         <section className={ panelClassName }>
           <SidebarContainer />
           <section className="notes-header-and-index">
-            <NotesHeaderContainer />
+            { this.header }
             <NotesIndexContainer />
           </section>
         </section>

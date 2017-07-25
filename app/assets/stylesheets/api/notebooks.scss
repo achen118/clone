@@ -16,6 +16,34 @@
   left: 0;
 }
 
+.notes-header-info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13.5px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.notebook-header {
+  font-size: 19px;
+  font-family: 'Caecilia Light';
+  color: white;
+  background-color: #393D41;
+  padding: 35px 0 100px 0;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
 .notebooks-header {
   font-size: 22px;
   letter-spacing: 1px;
