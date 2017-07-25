@@ -16,10 +16,20 @@ class TagsIndex extends React.Component {
     const { classes, tags } = this.props;
     let tagsIndex;
     if (tags) {
-      tagsIndex = tags.allNames.map((tagName, idx) =>
-        <TagsIndexItemContainer
-          tag={ tags.byName[tagName] }
-          key={ idx }/>);
+      let firstLetters = tags.allNames.map(tagName => tagName[0]);
+      firstLetters = [...new Set(firstLetters)];
+      tagsIndex = firstLetters.map((letter, idx) => {
+        return <section key={ idx }>
+          { letter.toUpperCase() }
+          { tags.allNames
+            .filter(tagName => tagName[0] === letter)
+              .map((name, i) =>
+                <TagsIndexItemContainer
+                  tag={ tags.byName[name] }
+                  key={ i } />)
+          }
+        </section>;
+      });
     }
     return (
       <section className={ classes }>
