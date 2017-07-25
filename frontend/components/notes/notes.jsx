@@ -60,7 +60,6 @@ class Notes extends React.Component {
     }
     if (nextProps.location.pathname === '/new-note') {
       document.querySelector('.expand').classList.add('hidden');
-      document.querySelector('.cancel').classList.remove('hidden');
       this.setState({
         panelOpen: false
       });
@@ -76,7 +75,6 @@ class Notes extends React.Component {
     };
     this.header = <NotesHeaderContainer />;
     this.togglePanel = this.togglePanel.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
   }
 
   togglePanel() {
@@ -85,18 +83,17 @@ class Notes extends React.Component {
     });
   }
 
-  handleCancel() {
-    this.props.history.push('/notes');
-  }
-
   render() {
-    console.log(this.props);
     const { notes, note, location } = this.props;
     let noteDetail, notebookIndex, tagIndex;
     if (note) {
-      noteDetail = <NoteDetail note={ note } />;
+      noteDetail = <NoteDetail
+                    note={ note }
+                    location={ location } />;
     } else {
-      noteDetail = <NoteDetail note={ notes.byId[notes.allIds[0]] } />;
+      noteDetail = <NoteDetail
+                    note={ notes.byId[notes.allIds[0]] }
+                    location={ location } />;
     }
     const { panelOpen, notebooksOpen, tagsOpen } = this.state;
     const panelClassName = panelOpen ? 'panel open' : 'panel';
@@ -125,7 +122,6 @@ class Notes extends React.Component {
         </section>
         <figure className="expand" onClick={ this.togglePanel }>
         </figure>
-        <button className="cancel hidden" onClick ={ this.handleCancel }>Cancel</button>
       </div>
     );
   }

@@ -4,7 +4,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form/session_form_container';
 import NotesContainer from './notes/notes_container';
 import SidebarContainer from './sidebar/sidebar_container';
-import NewNoteContainer from './notes/new_note_container';
 import NewNotebookContainer from './notebooks/new_notebook_container';
 import NewTagContainer from './tags/new_tag_container';
 

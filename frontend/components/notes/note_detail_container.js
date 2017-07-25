@@ -3,7 +3,6 @@ import NoteDetail from './note_detail';
 
 const mapStateToProps = state => {
   return {
-
   };
 };
 
