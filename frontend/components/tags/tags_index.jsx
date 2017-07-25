@@ -9,6 +9,11 @@ class TagsIndex extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.history.push('/new-tag');
   }
 
   render() {
@@ -34,7 +39,7 @@ class TagsIndex extends React.Component {
     return (
       <section className={ classes }>
         <h1 className="tags-header">TAGS</h1>
-        <figure>
+        <figure onClick={ this.handleClick }>
           <img
             src="http://res.cloudinary.com/malice/image/upload/v1500946017/new_tag_grey_vfnzdc.png"
             alt="Add Tag"

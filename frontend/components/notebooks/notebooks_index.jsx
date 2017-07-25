@@ -9,6 +9,11 @@ class NotebooksIndex extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.history.push('/new-notebook');
   }
 
   render() {
@@ -23,7 +28,7 @@ class NotebooksIndex extends React.Component {
     return (
       <section className={ classes }>
         <h1 className="notebooks-header">NOTEBOOKS</h1>
-        <figure>
+        <figure onClick={ this.handleClick }>
           <img
             src="http://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
             alt="Add Notebook"
