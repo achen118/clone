@@ -96,13 +96,6 @@ class NewNote extends React.Component {
   // }
 
   render() {
-    if (this.state.title || this.state.body) {
-      document.querySelector('.add-note').disabled = false;
-    } else {
-      if (document.querySelector('.add-note')) {
-        document.querySelector('.add-note').disabled = true;
-      }
-    }
     return(
       <div className="new-note-container">
         <input
@@ -117,7 +110,7 @@ class NewNote extends React.Component {
           onChange={this.updateQuill}
           theme={'snow'}/>
         <button className="cancel hidden" onClick ={ this.handleCancel }>Cancel</button>
-        <button disabled className="add-note hidden" onClick ={ this.handleAddNote }>Save Note</button>
+        <button className="add-note hidden" onClick ={ this.handleAddNote }>Save Note</button>
       </div>
     );
   }
