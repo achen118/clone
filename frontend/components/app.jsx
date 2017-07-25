@@ -11,6 +11,8 @@ import NewTagContainer from './tags/new_tag_container';
 const App = () => (
   <div>
     <Switch>
+      <ProtectedRoute path="/tags/:tagName/notes/:noteId" component={ NotesContainer } />
+      <ProtectedRoute path="/tags/:tagName" component={ NotesContainer } />
       <ProtectedRoute exact path="/tags" component={ NotesContainer } />
       <ProtectedRoute path="/notebooks/:notebookId/notes/:noteId" component={ NotesContainer } />
       <ProtectedRoute path="/notebooks/:notebookId" component={ NotesContainer } />

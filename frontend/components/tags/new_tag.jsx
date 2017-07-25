@@ -43,7 +43,7 @@ class NewTag extends React.Component {
           onChange={ this.update } />
         <section>
           <button onClick={ this.handleClick('cancel') }>Cancel</button>
-          <button onClick={ this.handleClick('create') }>Create Tag</button>
+          <button onClick={ this.handleClick('create') }>Create tag</button>
         </section>
       </section>
     );
