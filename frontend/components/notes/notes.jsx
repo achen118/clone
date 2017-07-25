@@ -14,6 +14,8 @@ class Notes extends React.Component {
     if (this.props.match.params.notebookId) {
       this.props.fetchNotesFromNotebook(this.props.match.params.notebookId);
       this.header = <NotebookHeaderContainer notebookId={ this.props.match.params.notebookId } />;
+    } else if (this.props.match.params.tagName) {
+      this.props.fetchNotesFromTag(this.props.match.params.tagName);
     } else {
       this.props.fetchAllNotes();
     }
@@ -38,6 +40,9 @@ class Notes extends React.Component {
     if (nextProps.match.params.notebookId && this.props.match.params.notebookId !== nextProps.match.params.notebookId) {
       this.props.fetchNotesFromNotebook(nextProps.match.params.notebookId);
       this.header = <NotebookHeaderContainer notebookId={ nextProps.match.params.notebookId } />;
+    }
+    if (nextProps.match.params.tagName && this.props.match.params.tagName !== nextProps.match.params.tagName) {
+      this.props.fetchNotesFromTag(nextProps.match.params.tagName);
     }
     if (nextProps.location.pathname === '/notebooks') {
       this.setState({

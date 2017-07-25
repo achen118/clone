@@ -30,6 +30,9 @@ class Api::NotesController < ApplicationController
       @notes = current_user.notes.select do |note|
         note.notebook_id == params[:notebook_id].to_i
       end
+    elsif params[:tag_name]
+      tag = current_user.tags.find_by(name: params[:tag_name])
+      @notes = tag.notes
     else
       @notes = current_user.notes.sort_by { |note| note.updated_at }
       @notes = @notes.reverse
