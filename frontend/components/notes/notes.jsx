@@ -7,6 +7,7 @@ import NoteDetail from './note_detail';
 import NotebooksIndexContainer from '../notebooks/notebooks_index_container';
 import TagsIndexContainer from '../tags/tags_index_container';
 import NotebookHeaderContainer from '../notebooks/notebook_header_container';
+import TagHeaderContainer from '../tags/tags_header_container';
 
 class Notes extends React.Component {
 
@@ -16,6 +17,7 @@ class Notes extends React.Component {
       this.header = <NotebookHeaderContainer notebookId={ this.props.match.params.notebookId } />;
     } else if (this.props.match.params.tagName) {
       this.props.fetchNotesFromTag(this.props.match.params.tagName);
+      this.header = <TagHeaderContainer tagName={ this.props.match.params.tagName } />;
     } else {
       this.props.fetchAllNotes();
     }
@@ -43,6 +45,7 @@ class Notes extends React.Component {
     }
     if (nextProps.match.params.tagName && this.props.match.params.tagName !== nextProps.match.params.tagName) {
       this.props.fetchNotesFromTag(nextProps.match.params.tagName);
+      this.header = <TagHeaderContainer tagName={ nextProps.match.params.tagName } />;
     }
     if (nextProps.location.pathname === '/notebooks') {
       this.setState({
