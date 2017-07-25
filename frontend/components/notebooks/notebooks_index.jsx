@@ -26,16 +26,19 @@ class NotebooksIndex extends React.Component {
           key={ idx }/>);
     }
     return (
-      <section className={ classes }>
-        <h1 className="notebooks-header">NOTEBOOKS</h1>
-        <figure onClick={ this.handleClick }>
-          <img
-            src="http://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
-            alt="Add Notebook"
-            className="add-notebook-icon" />
-        </figure>
-        { notebooksIndex }
-      </section>
+      <div>
+        <section className={ classes }>
+          <h1 className="notebooks-header">NOTEBOOKS</h1>
+          <figure onClick={ this.handleClick }>
+            <img
+              src="http://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
+              alt="Add Notebook"
+              className="add-notebook-icon" />
+          </figure>
+          { notebooksIndex }
+        </section>
+        
+      </div>
     );
   }
 

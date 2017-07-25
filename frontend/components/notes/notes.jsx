@@ -51,19 +51,22 @@ class Notes extends React.Component {
       this.setState({
         notebooksOpen: !this.state.notebooksOpen,
         tagsOpen: false,
-        panelOpen: true
+        panelOpen: true,
+        overlay: true
       });
     } else if (nextProps.location.pathname === '/tags') {
       this.setState({
         tagsOpen: !this.state.tagsOpen,
         notebooksOpen: false,
-        panelOpen: true
+        panelOpen: true,
+        overlay: true
       });
     } else {
       this.setState({
         notebooksOpen: false,
         tagsOpen: false,
-        panelOpen: true
+        panelOpen: true,
+        overlay: false
       });
     }
     if (nextProps.location.pathname === '/new-note') {
@@ -79,7 +82,8 @@ class Notes extends React.Component {
     this.state = {
       panelOpen: true,
       notesbooksOpen: false,
-      tagsOpen: false
+      tagsOpen: false,
+      overlay: false
     };
     this.header = <NotesHeaderContainer />;
     this.togglePanel = this.togglePanel.bind(this);
@@ -114,6 +118,13 @@ class Notes extends React.Component {
     if (tagClassName) {
       tagIndex = <TagsIndexContainer classes={ tagClassName } />;
     }
+    if (this.state.overlay) {
+      document.querySelector('.overlay').classList.remove('hidden');
+    } else {
+      if (document.querySelector('.overlay')) {
+        document.querySelector('.overlay').classList.add('hidden');
+      }
+    }
     return (
       <div className="notes-container">
         { notebookIndex }
@@ -123,6 +134,7 @@ class Notes extends React.Component {
           <section className="notes-header-and-index">
             { this.header }
             <NotesIndexContainer />
+            <section className="overlay hidden"></section>
           </section>
         </section>
         <section className={ contentClassName }>

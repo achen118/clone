@@ -6,6 +6,15 @@
   visibility: hidden;
 }
 
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  position: absolute;
+  background-color: white;
+  opacity:.9;
+}
+
 .notes-container {
   display: -webkit-box;
   display: -ms-flexbox;

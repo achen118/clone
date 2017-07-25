@@ -32,7 +32,11 @@ class Sidebar extends React.Component {
       const icon = document.querySelector(`.${key}`);
       icon.classList.remove(key);
       icon.classList.add(`${key}-selected`);
-      this.props.history.push(`/${key}`);
+      if (this.props.history.location.pathname === `/${key}`) {
+        this.props.history.push('/notes');
+      } else {
+        this.props.history.push(`/${key}`);
+      }
     };
   }
 
