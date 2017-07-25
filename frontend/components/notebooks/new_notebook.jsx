@@ -16,7 +16,7 @@ class NewNotebook extends React.Component {
       if (action === 'cancel') {
         this.props.history.goBack();
       } else {
-        this.props.addTag(this.state);
+        this.props.addNotebook(this.state);
         this.props.history.push('/notebooks');
       }
     };

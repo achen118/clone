@@ -97,7 +97,13 @@ class NewNote extends React.Component {
   // }
 
   render() {
-    console.log(this.state);
+    if (this.state.title || this.state.body) {
+      document.querySelector('.add-note').disabled = false;
+    } else {
+      if (document.querySelector('.add-note')) {
+        document.querySelector('.add-note').disabled = true;
+      }
+    }
     return(
       <div className="new-note-container">
         <input
@@ -106,7 +112,7 @@ class NewNote extends React.Component {
           value={ this.state.title }
           onChange={ this.updateTitle } />
         <ReactQuill
-          ref={(el) => { this.reactQuillRef = el }}
+          ref={(el) => { this.reactQuillRef = el; }}
           placeholder="Just start typing..."
           value={this.state.body}
           onChange={this.updateQuill}

@@ -28,6 +28,7 @@ export const receiveNotebookDetail = notebook => {
 };
 
 export const addNotebook = notebook => dispatch => {
+  debugger;
   return notebooksAPIUtil.addNotebook(notebook)
     .then(newNotebook => {
       dispatch(receiveNotebook(newNotebook));

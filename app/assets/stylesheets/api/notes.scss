@@ -308,6 +308,11 @@
   right: 40px;
 }
 
+.add-note:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
 .cancel:hover {
   background-color: #28A956;
 }

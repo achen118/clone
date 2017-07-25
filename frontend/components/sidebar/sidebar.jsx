@@ -101,10 +101,10 @@ class Sidebar extends React.Component {
 
 export default Sidebar;
 
-document.addEventListener('click', event => {
-  const dropdown = document.querySelector('.user-dropdown');
-  const isClickInside = dropdown.contains(event.currentTarget);
-  if (!isClickInside) {
-    document.querySelector('.user-dropdown').classList.add('hidden');
-  }
-});
+// document.addEventListener('click', event => {
+//   const dropdown = document.querySelector('.user-dropdown');
+//   const isClickInside = dropdown.contains(event.currentTarget);
+//   if (!isClickInside) {
+//     document.querySelector('.user-dropdown').classList.add('hidden');
+//   }
+// });

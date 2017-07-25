@@ -74,6 +74,8 @@ class Notes extends React.Component {
       this.setState({
         panelOpen: false
       });
+    } else {
+      document.querySelector('.expand').classList.remove('hidden');
     }
   }
 
