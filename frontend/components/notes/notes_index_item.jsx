@@ -42,7 +42,7 @@ class NotesIndexItem extends React.Component {
   }
 
   deleteNote() {
-    this.props.deleteNote(this.props.note);
+    this.props.deleteNote(this.props.note).then(() => this.props.history.push('/notes'));
   }
 
   render() {

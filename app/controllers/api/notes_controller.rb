@@ -22,7 +22,6 @@ class Api::NotesController < ApplicationController
   def destroy
     @note = current_user.notes.find(params[:id])
     @note.destroy
-    render :show
   end
 
   def index

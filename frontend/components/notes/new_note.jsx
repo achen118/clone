@@ -68,9 +68,8 @@ class NewNote extends React.Component {
   }
 
   handleAddNote() {
-    this.props.addNote(this.state);
+    this.props.addNote(this.state).then(() => this.props.history.push('/notes'));
     document.querySelector('.add-note').classList.add('hidden');
-    this.props.history.push('/notes');
   }
 
   // startAutosaveTimer(event) {
@@ -118,7 +117,7 @@ class NewNote extends React.Component {
           onChange={this.updateQuill}
           theme={'snow'}/>
         <button className="cancel hidden" onClick ={ this.handleCancel }>Cancel</button>
-        <button className="add-note hidden" onClick ={ this.handleAddNote }>Save Note</button>
+        <button disabled className="add-note hidden" onClick ={ this.handleAddNote }>Save Note</button>
       </div>
     );
   }
