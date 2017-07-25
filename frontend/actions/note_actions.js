@@ -53,7 +53,7 @@ export const updateNote = note => dispatch => {
 export const deleteNote = note => dispatch => {
   return notesAPIUtil.deleteNote(note)
     .then(deletedNote => {
-      dispatch(receiveNote(null));
+      dispatch(receiveNoteDetail(null));
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };

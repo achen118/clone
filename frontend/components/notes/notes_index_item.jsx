@@ -18,6 +18,7 @@ class NotesIndexItem extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.updateDate = this.updateDate.bind(this);
+    this.deleteNote = this.deleteNote.bind(this);
   }
 
   updateDate() {
@@ -40,6 +41,10 @@ class NotesIndexItem extends React.Component {
     };
   }
 
+  deleteNote() {
+    this.props.deleteNote(this.props.note);
+  }
+
   render() {
     const { note, match } = this.props;
     const lastUpdate = timeSince(this.state.date, new Date(note.updated_at));
@@ -50,7 +55,9 @@ class NotesIndexItem extends React.Component {
           onClick={ this.handleClick(note.id) }>
           <figure className="index-item-reminder">
           </figure>
-          <figure className="index-item-delete">
+          <figure
+            className="index-item-delete"
+            onClick={ this.deleteNote }>
           </figure>
           <h3 className="notes-index-title">{ note.title }</h3>
           <h4 className="notes-index-updated">{ lastUpdate }</h4>
