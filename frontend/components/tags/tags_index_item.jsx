@@ -19,7 +19,8 @@ class TagsIndexItem extends React.Component {
         <section
           className="tag-index-item"
           onClick={ this.handleClick }>
-          <h3>{ tag.name } {tag.notes.length}</h3>
+          <h3>{ tag.name }</h3>
+          <h4>{tag.notes.length}</h4>
         </section>;
     }
     return (

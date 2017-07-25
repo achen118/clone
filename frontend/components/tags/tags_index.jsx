@@ -23,7 +23,9 @@ class TagsIndex extends React.Component {
       let firstLetters = tags.allNames.map(tagName => tagName[0]);
       firstLetters = [...new Set(firstLetters)];
       tagsIndex = firstLetters.map((letter, idx) => {
-        return <section key={ idx }>
+        return <section
+                className="tag-index-item-container"
+                key={ idx }>
           { letter.toUpperCase() }
           { tags.allNames
             .filter(tagName => tagName[0] === letter)
