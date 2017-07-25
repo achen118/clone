@@ -16,6 +16,14 @@ class Api::TagsController < ApplicationController
   def destroy
   end
 
+  def index
+    @tags = current_user.tags.sort_by { |tag| tag.name }
+  end
+
+  def show
+    @tag = current_user.tags.find(params[:name])
+  end
+
   private
 
   def tag_params

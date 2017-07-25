@@ -1,6 +1,10 @@
 class Tag < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :author, presence: true
 
+  belongs_to :author,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :User
   has_many :taggings, dependent: :destroy
   has_many :notes, through: :taggings
 end

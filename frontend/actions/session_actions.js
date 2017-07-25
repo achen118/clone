@@ -41,7 +41,12 @@ export const signup = user => dispatch => {
   return sessionAPIUtil.signup(user)
     .then(currentUser => {
       dispatch(receiveCurrentUser(currentUser));
-      dispatch(addNotebook(`${currentUser.username}'s notebook`));
+      dispatch(addNotebook({
+        notebook: {
+          title: "Notes",
+          author_id: currentUser.id
+        }
+      }));
     }, errors => dispatch(receiveErrors(errors.responseJSON))
   );
 };

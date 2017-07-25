@@ -20,6 +20,14 @@ export const addTagToNote = (noteId, tag) => {
   });
 };
 
+export const addTag = tag => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/tags`,
+    data: { tag }
+  });
+};
+
 export const deleteNotebook = (noteId, tag) => {
   return $.ajax({
     method: 'DELETE',

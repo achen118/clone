@@ -14,6 +14,11 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Notebook,
     dependent: :destroy
+  has_many :tags,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Tag,
+    dependent: :destroy
 
   attr_reader :password
 

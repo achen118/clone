@@ -16,7 +16,6 @@ class Notes extends React.Component {
       this.props.fetchAllNotes();
     }
     if (this.props.match.params.noteId) {
-      console.log("hi");
       this.props.fetchSingleNote(this.props.match.params.noteId);
     }
   }
@@ -66,7 +65,6 @@ class Notes extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { notes, note, location } = this.props;
     let noteDetail, notebookIndex, tagIndex;
     if (note) {

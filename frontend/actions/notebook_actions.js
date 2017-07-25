@@ -43,7 +43,7 @@ export const updateNotebook = notebook => dispatch => {
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const deleteNote = notebook => dispatch => {
+export const deleteNotebook = notebook => dispatch => {
   return notebooksAPIUtil.deleteNotebook(notebook)
     .then(deletedNotebook => {
       dispatch(receiveNotebook(null));

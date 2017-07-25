@@ -36,6 +36,7 @@ column name  |  data type  |  details
 ------------ | ----------- | ---------
 id | integer | null = false, primary key
 name | string | null = false
+author_id | integer | null = false | indexed, foreign key
 
 ## taggings ##
 
