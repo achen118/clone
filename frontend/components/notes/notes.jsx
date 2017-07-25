@@ -20,11 +20,17 @@ class Notes extends React.Component {
     if (this.props.match.params.noteId) {
       this.props.fetchSingleNote(this.props.match.params.noteId);
     }
+    if (this.props.location.pathname === '/new-note') {
+      this.setState({
+        panelOpen: false
+      });
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== '/notes' && nextProps.location.pathname === '/notes') {
       this.props.fetchAllNotes();
+      this.header = <NotesHeaderContainer />;
     }
     if (nextProps.match.params.noteId && this.props.match.params.noteId !== nextProps.match.params.noteId) {
       this.props.fetchSingleNote(nextProps.match.params.noteId);
@@ -36,17 +42,27 @@ class Notes extends React.Component {
     if (nextProps.location.pathname === '/notebooks') {
       this.setState({
         notebooksOpen: true,
-        tagsOpen: false
+        tagsOpen: false,
+        panelOpen: true
       });
     } else if (nextProps.location.pathname === '/tags') {
       this.setState({
         tagsOpen: true,
-        notebooksOpen: false
+        notebooksOpen: false,
+        panelOpen: true
       });
     } else {
       this.setState({
         notebooksOpen: false,
-        tagsOpen: false
+        tagsOpen: false,
+        panelOpen: true
+      });
+    }
+    if (nextProps.location.pathname === '/new-note') {
+      document.querySelector('.expand').classList.add('hidden');
+      document.querySelector('.cancel').classList.remove('hidden');
+      this.setState({
+        panelOpen: false
       });
     }
   }
@@ -60,12 +76,17 @@ class Notes extends React.Component {
     };
     this.header = <NotesHeaderContainer />;
     this.togglePanel = this.togglePanel.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   togglePanel() {
     this.setState({
       panelOpen: !this.state.panelOpen
     });
+  }
+
+  handleCancel() {
+    this.props.history.push('/notes');
   }
 
   render() {
@@ -104,6 +125,7 @@ class Notes extends React.Component {
         </section>
         <figure className="expand" onClick={ this.togglePanel }>
         </figure>
+        <button className="cancel hidden" onClick ={ this.handleCancel }>Cancel</button>
       </div>
     );
   }

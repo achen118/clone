@@ -85,13 +85,6 @@
    color: #C4C4C4;
 }
 
-.new-tag-container input:focus {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-}
-
 .tag-index-item-container {
   margin: 35px;
 }
@@ -101,7 +94,7 @@
   border: 1px solid #D1D1D1;
   color: #4A4A4A;
   background-color: #F8F8F8;
-  padding: 6px 15px 4px 15px;
+  padding: 6px 15px;
   font-size: 13px;
   font-family: 'Gotham Medium';
   margin: 6px 0;

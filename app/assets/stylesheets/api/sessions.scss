@@ -111,20 +111,9 @@ header img {
 }
 
 .session-form input:focus {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
   -webkit-box-shadow: 0 0 0 1px #2DBE60;
           box-shadow: 0 0 0 1px #2DBE60;
   border-radius: 7px;
-}
-
-.session-form button:focus {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
 }
 
 .session-form button {

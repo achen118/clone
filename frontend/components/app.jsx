@@ -21,7 +21,7 @@ const App = () => (
       <ProtectedRoute path="/notes" component={ NotesContainer } />
       <ProtectedRoute path="/new-tag" component={ NewTagContainer } />
       <ProtectedRoute path="/new-notebook" component={ NewNotebookContainer } />
-      <ProtectedRoute path="/new-note" component={ NewNoteContainer } />
+      <ProtectedRoute path="/new-note" component={ NotesContainer } />
       <AuthRoute exact path="/" component={ SessionFormContainer } />
       <AuthRoute exact path="/signin" component={ SessionFormContainer } />
       <AuthRoute exact path="/signup" component={ SessionFormContainer } />
