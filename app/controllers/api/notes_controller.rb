@@ -4,7 +4,7 @@ class Api::NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.author = current_user
     if @note.save
-      render json: @note
+      render :show
     else
       render json: @note.errors.full_messages
     end
@@ -13,7 +13,7 @@ class Api::NotesController < ApplicationController
   def update
     @note = current_user.notes.find(params[:id])
     if @note && @note.update_attributes(note_params)
-      render json: @note
+      render :show
     else
       render json: @note.errors.full_messages
     end
@@ -22,7 +22,7 @@ class Api::NotesController < ApplicationController
   def destroy
     @note = current_user.notes.find(params[:id])
     @note.destroy
-    render json: @note
+    render :show
   end
 
   def index

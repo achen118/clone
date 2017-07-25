@@ -4,7 +4,7 @@ class Api::NotebooksController < ApplicationController
     @notebook = Notebook.new(notebook_params)
     @notebook.author = current_user;
     if @notebook.save
-      render json: @notebook
+      render :show
     else
       render json: @notebook.errors.full_messages
     end
@@ -13,7 +13,7 @@ class Api::NotebooksController < ApplicationController
   def update
     @notebook = current_user.notebooks.find(params[:id])
     if @notebook && @notebook.update_attributes(notebook_params)
-      render json: @notebook
+      render :show
     else
       render json: @notebook.errors.full_messages
     end
@@ -22,7 +22,7 @@ class Api::NotebooksController < ApplicationController
   def destroy
     @notebook = current_user.notebooks.find(params[:id])
     @notebook.destroy
-    render json: @notebook
+    render :show
   end
 
   def index

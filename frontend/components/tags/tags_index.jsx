@@ -17,7 +17,6 @@ class TagsIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { classes, tags } = this.props;
     let tagsIndex;
     if (tags) {

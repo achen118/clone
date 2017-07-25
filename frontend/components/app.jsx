@@ -5,6 +5,8 @@ import SessionFormContainer from './session_form/session_form_container';
 import NotesContainer from './notes/notes_container';
 import SidebarContainer from './sidebar/sidebar_container';
 import NewNoteContainer from './notes/new_note_container';
+import NewNotebookContainer from './notebooks/new_notebook_container';
+import NewTagContainer from './tags/new_tag_container';
 
 const App = () => (
   <div>
@@ -15,6 +17,8 @@ const App = () => (
       <ProtectedRoute exact path="/notebooks" component={ NotesContainer } />
       <ProtectedRoute path="/notes/:noteId" component={ NotesContainer } />
       <ProtectedRoute path="/notes" component={ NotesContainer } />
+      <ProtectedRoute path="/new-tag" component={ NewTagContainer } />
+      <ProtectedRoute path="/new-notebook" component={ NewNotebookContainer } />
       <ProtectedRoute path="/new-note" component={ NewNoteContainer } />
       <AuthRoute exact path="/" component={ SessionFormContainer } />
       <AuthRoute exact path="/signin" component={ SessionFormContainer } />

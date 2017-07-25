@@ -13,13 +13,18 @@ class TagsIndexItem extends React.Component {
 
   render() {
     const { tag } = this.props;
-    return (
-      <section
-        className="tag-index-item-container"
-        onClick={ this.handleClick }>
-        <section className="tag-index-item">
+    let tagItem;
+    if (tag) {
+      tagItem =
+        <section
+          className="tag-index-item"
+          onClick={ this.handleClick }>
           <h3>{ tag.name } {tag.notes.length}</h3>
-        </section>
+        </section>;
+    }
+    return (
+      <section>
+        { tagItem }
       </section>
     );
   }
