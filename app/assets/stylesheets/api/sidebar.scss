@@ -1,21 +1,7 @@
 .sidebar-container {
-  width: 40px;
+  width: 74px;
   height: 100vh;
-  padding: 0px 17px;
   background-color: #F6F6F6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: relative;
   z-index: 3;
   border-right: 1px solid #ECECEC;
@@ -27,40 +13,31 @@
   width: 100%;
   position: absolute;
   bottom: 17px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   background-color: #F6F6F6;
 }
 
 .user-pic {
-  position: relative;
   z-index: 2;
+  margin: 0 auto;
 }
 
 .logo-img {
   width: 36px;
   margin-top: 17px;
   margin-bottom: 40px;
+  margin: 17px auto 40px auto;
 }
 
 .new-note, .search, .notes, .notebooks, .tags,
 .new-note-selected, .search-selected, .notes-selected, .notebooks-selected, .tags-selected {
-  margin-bottom: 13px;
+  margin: 0 auto 13px auto;
 }
 
 .new-note, .search, .notes, .notebooks, .tags, .user-pic,
 .new-note-selected, .search-selected, .notes-selected, .notebooks-selected, .tags-selected, .user-pic {
   width: 36px;
-  height: 100%;
+  height: 36px;
   cursor: pointer;
-  border-radius: 50%;
 }
 
 .new-note {
