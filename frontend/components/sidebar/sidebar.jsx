@@ -6,8 +6,7 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      prevClicked: "new-note",
-      toggleUserDropDown: false
+      prevClicked: "new-note"
     };
     this.handleLogout = this.handleLogout.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -41,15 +40,7 @@ class Sidebar extends React.Component {
   }
 
   showUserDropdown(event) {
-    const dropdown = document.querySelector('.user-dropdown');
-    if (event.target === dropdown) {
-      event.preventDefault();
-    } else {
-      dropdown.classList.toggle('hidden', this.state.toggleUserDropDown);
-      this.setState({
-        toggleUserDropDown: !this.state.toggleUserDropDown
-      });
-    }
+    document.querySelector('.user-dropdown').classList.toggle('hidden');
   }
 
   render() {
@@ -105,11 +96,3 @@ class Sidebar extends React.Component {
 }
 
 export default Sidebar;
-
-document.addEventListener('click', event => {
-  const dropdown = document.querySelector('.user-dropdown');
-  const isClickInside = dropdown.contains(event.target);
-  if (dropdown && !isClickInside) {
-    document.querySelector('.user-dropdown').classList.add('hidden');
-  }
-});
