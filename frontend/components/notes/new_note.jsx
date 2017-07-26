@@ -5,6 +5,7 @@ class NewNote extends React.Component {
 
   componentDidMount() {
     this.attachQuillRefs();
+    this.quillRef.focus();
     document.querySelector('.cancel').classList.remove('hidden');
     document.querySelector('.add-note').classList.remove('hidden');
   }
