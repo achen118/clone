@@ -41,14 +41,19 @@ class Sidebar extends React.Component {
   }
 
   showUserDropdown(event) {
-    document.querySelector('.user-dropdown').classList.toggle('hidden', this.state.toggleUserDropDown);
-    this.setState({
-      toggleUserDropDown: !this.state.toggleUserDropDown
-    });
-    // need to prevent toggle if clicking inside dropdown, preent default?
+    const dropdown = document.querySelector('.user-dropdown');
+    if (event.target === dropdown) {
+      event.preventDefault();
+    } else {
+      dropdown.classList.toggle('hidden', this.state.toggleUserDropDown);
+      this.setState({
+        toggleUserDropDown: !this.state.toggleUserDropDown
+      });
+    }
   }
 
   render() {
+    console.log(this.state);
     const { currentUser } = this.props;
     const userInfo =
       <figure onClick={ this.showUserDropdown } className="user-pic">
@@ -101,10 +106,10 @@ class Sidebar extends React.Component {
 
 export default Sidebar;
 
-// document.addEventListener('click', event => {
-//   const dropdown = document.querySelector('.user-dropdown');
-//   const isClickInside = dropdown.contains(event.currentTarget);
-//   if (!isClickInside) {
-//     document.querySelector('.user-dropdown').classList.add('hidden');
-//   }
-// });
+document.addEventListener('click', event => {
+  const dropdown = document.querySelector('.user-dropdown');
+  const isClickInside = dropdown.contains(event.target);
+  if (dropdown && !isClickInside) {
+    document.querySelector('.user-dropdown').classList.add('hidden');
+  }
+});

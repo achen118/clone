@@ -131,12 +131,12 @@ class Notes extends React.Component {
       <div className="notes-container">
         { notebookIndex }
         { tagIndex }
+        <section className="overlay hidden"></section>
         <section className={ panelClassName }>
           <SidebarContainer />
           <section className="notes-header-and-index">
             { this.header }
             <NotesIndexContainer />
-            <section className="overlay hidden"></section>
           </section>
         </section>
         <section className={ contentClassName }>
