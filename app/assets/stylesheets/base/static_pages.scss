@@ -31,6 +31,14 @@ i, em {
   font-family: 'Gotham Italic';
 }
 
+u {
+  text-decoration: underline;
+}
+
+s {
+  text-decoration: line-through;
+}
+
 sub {
   vertical-align: sub;
   font-size: smaller;

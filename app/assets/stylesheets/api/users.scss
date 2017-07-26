@@ -1,10 +1,11 @@
 .user-dropdown {
   position: absolute;
-  left: 45px;
+  left: 62px;
   bottom: 0px;
-  width: 350px;
-  height: 350px;
-  border: 1px solid #ECECEC;
+  width: 352px;
+  height: 340px;
   background-color: white;
   cursor: default;
+  box-shadow: 0 0 7px 3px #ECECEC;
+  border-radius: 5px;
 }
