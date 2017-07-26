@@ -6,6 +6,14 @@
 }
 
 @font-face {
+  font-family: 'Gotham Italic';
+  src:
+    font-url('Gotham-BookItalic.ttf') format("truetype"),
+    font-url('Gotham-BookItalic.woff') format("woff");
+  font-style: italic;
+}
+
+@font-face {
   font-family: 'Gotham Book';
   src:
     font-url('Gotham-Book.ttf') format("truetype"),
