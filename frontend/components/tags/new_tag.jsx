@@ -32,7 +32,7 @@ class NewTag extends React.Component {
     return (
       <section className="new-tag-container">
         <figure className="tag-icon">
-          <img src="http://res.cloudinary.com/malice/image/upload/v1500949290/tag.png" alt="Tag Icon" />
+          <img src="https://res.cloudinary.com/malice/image/upload/v1500949290/tag.png" alt="Tag Icon" />
         </figure>
         <h3 className="new-tag-header">Create Tag</h3>
         <input

@@ -32,7 +32,7 @@ class NewNotebook extends React.Component {
     return (
       <section className="new-notebook-container">
         <figure className="notebook-icon">
-          <img src="http://res.cloudinary.com/malice/image/upload/v1500957249/notebook.png" alt="Notebook Icon" />
+          <img src="https://res.cloudinary.com/malice/image/upload/v1500957249/notebook.png" alt="Notebook Icon" />
         </figure>
         <h3 className="new-notebook-header">Create Notebook</h3>
         <input

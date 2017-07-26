@@ -42,7 +42,7 @@ class TagsIndex extends React.Component {
         <h1 className="tags-header">TAGS</h1>
         <figure onClick={ this.handleClick }>
           <img
-            src="http://res.cloudinary.com/malice/image/upload/v1500946017/new_tag_grey_vfnzdc.png"
+            src="https://res.cloudinary.com/malice/image/upload/v1500946017/new_tag_grey_vfnzdc.png"
             alt="Add Tag"
             className="add-tag-icon" />
         </figure>
