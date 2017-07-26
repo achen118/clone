@@ -12,6 +12,7 @@ class NewNote extends React.Component {
 
   componentDidUpdate() {
     this.attachQuillRefs();
+    this.quillRef.focus();
   }
 
   // componentWillUnmount() {
@@ -23,6 +24,11 @@ class NewNote extends React.Component {
   //     clearTimeout(this.autosaveTimer);
   //   }
   // }
+
+  componentWillReceiveProps(nextProps) {
+    this.attachQuillRefs();
+    this.quillRef.focus();
+  }
 
   constructor(props) {
     super(props);
@@ -43,13 +49,26 @@ class NewNote extends React.Component {
     // this.stopAutosaveTimer = this.stopAutosaveTimer.bind(this);
     // this.autosaveTimer = null;
     // this.autosaveInterval = 500;
+    this.modules = {
+      toolbar: [
+        [{ 'font': [] }],
+        [{ 'size': ['small', false, 'large', 'huge'] }],
+        [{ 'color': [] }, 'bold', 'italic', 'underline','strike', 'code-block'],
+        [{ 'align': [] }, {'list': 'bullet'}, {'list': 'ordered'}],
+        ['link', 'image'],
+        [{'indent': '+1'}, {'indent': '-1'}],
+        [{ 'script': 'sub'}, { 'script': 'super' }, 'clean']
+      ]
+    };
   }
 
   updateQuill(value) {
-    this.setState({
-      body: value,
-      plain_text_body: this.reactQuillRef.getEditor().getText()
-    });
+    if (this.quillRef) {
+      this.setState({
+        body: value,
+        plain_text_body: this.quillRef.getText()
+      });
+    }
   }
 
   updateTitle(event) {
@@ -97,7 +116,6 @@ class NewNote extends React.Component {
   // }
 
   render() {
-    console.log(this.state);
     return(
       <section className="new-note-container">
         <button
@@ -116,7 +134,8 @@ class NewNote extends React.Component {
           placeholder="Just start typing..."
           value={this.state.body}
           onChange={this.updateQuill}
-          theme={'snow'}/>
+          theme={'snow'}
+          modules={ this.modules } />
       </section>
     );
   }

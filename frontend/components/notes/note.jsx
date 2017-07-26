@@ -97,6 +97,7 @@ class Note extends React.Component {
       <div className="note-container">
         <input
           type="text"
+          placeholder="Title your note"
           value={ this.state.title }
           onChange={ this.updateTitle }
           onKeyUp={ this.startAutosaveTimer } />
@@ -105,7 +106,6 @@ class Note extends React.Component {
           value={ this.state.body }
           onChange={ this.updateQuill }
           placeholder="Just start typing..."
-          selection={{start:0, end:0}}
           theme={'snow'}
           modules={ this.modules } />
       </div>
