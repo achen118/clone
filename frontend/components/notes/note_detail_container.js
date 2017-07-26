@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import NoteDetail from './note_detail';
+import { withRouter } from 'react-router-dom';
+import { deleteNote } from '../../actions/note_actions';
 
 const mapStateToProps = state => {
   return {
@@ -8,10 +10,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    deleteNote: note => dispatch(deleteNote(note))
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(NoteDetail);
+)(NoteDetail));

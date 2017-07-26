@@ -3,7 +3,7 @@ import NotesHeader from './notes_header';
 import SidebarContainer from '../sidebar/sidebar_container';
 import NotesHeaderContainer from './notes_header_container';
 import NotesIndexContainer from './notes_index_container';
-import NoteDetail from './note_detail';
+import NoteDetailContainer from './note_detail_container';
 import NotebooksIndexContainer from '../notebooks/notebooks_index_container';
 import TagsIndexContainer from '../tags/tags_index_container';
 import NotebookHeaderContainer from '../notebooks/notebook_header_container';
@@ -101,11 +101,11 @@ class Notes extends React.Component {
     const { notes, note, location } = this.props;
     let noteDetail, notebookIndex, tagIndex;
     if (note) {
-      noteDetail = <NoteDetail
+      noteDetail = <NoteDetailContainer
                     note={ note }
                     location={ location } />;
     } else {
-      noteDetail = <NoteDetail
+      noteDetail = <NoteDetailContainer
                     note={ notes.byId[notes.allIds[0]] }
                     location={ location } />;
     }
