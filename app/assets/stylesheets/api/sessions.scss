@@ -51,9 +51,9 @@ header img {
           justify-content: center;
   background-color: white;
   border-radius: 3px;
-  width: 15%;
+  width: 20%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 30px;
 }
 
 .session-form, .session-form form input {
@@ -78,7 +78,6 @@ header img {
 }
 
 .session-form form input, .session-form button {
-  padding: 15px;
   margin: 10px 0;
   width: 100%;
   font-size: 14px;
@@ -90,6 +89,7 @@ header img {
 
 .session-form form input {
   font-family: 'Gotham Book';
+  padding: 13px;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -119,7 +119,7 @@ header img {
 .session-form button {
   background-color: #2DBE60;
   color: white;
-  padding: 20px 0;
+  padding: 15px 0;
   font-family: 'Gotham Medium';
 }
 
