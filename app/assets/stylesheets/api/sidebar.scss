@@ -58,8 +58,9 @@
 .new-note, .search, .notes, .notebooks, .tags, .user-pic,
 .new-note-selected, .search-selected, .notes-selected, .notebooks-selected, .tags-selected, .user-pic {
   width: 36px;
-  height: 36px;
+  height: 100%;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .new-note {
