@@ -629,9 +629,11 @@
   letter-spacing: -2px;
 }
 .ql-snow .ql-editor pre.ql-syntax {
-  background-color: #23241f;
-  color: #f8f8f2;
+  background-color: #FBFAF8;
+  color: #333333;
   overflow: visible;
+  border: 1px solid #D6D5D3;
+  font-family: monospace;
 }
 .ql-snow .ql-editor img {
   max-width: 100%;

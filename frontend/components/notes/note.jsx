@@ -5,6 +5,7 @@ class Note extends React.Component {
 
   componentDidMount() {
     this.attachQuillRefs();
+    this.quillRef.focus();
   }
 
   componentDidUpdate() {
@@ -16,8 +17,6 @@ class Note extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-    this.attachQuillRefs();
     if (this.props !== nextProps) {
       clearTimeout(this.autosaveTimer);
     }
@@ -65,6 +64,7 @@ class Note extends React.Component {
       body: value,
       plain_text_body: this.quillRef.getText()
     });
+    this.startAutosaveTimer();
   }
 
   updateTitle(event) {
@@ -75,9 +75,7 @@ class Note extends React.Component {
 
   attachQuillRefs() {
     if (typeof this.reactQuillRef.getEditor !== 'function') return;
-    if (this.reactQuillRef) {
-      this.quillRef = this.reactQuillRef.getEditor();
-    }
+    this.quillRef = this.reactQuillRef.getEditor();
   }
 
   startAutosaveTimer(event) {
@@ -102,7 +100,8 @@ class Note extends React.Component {
           ref={(el) => { this.reactQuillRef = el; }}
           value={ this.state.body }
           onChange={ this.updateQuill }
-          onKeyUp={ this.startAutosaveTimer }
+          placeholder="Just start typing..."
+          selection={{start:0, end:0}}
           theme={'snow'}
           modules={ this.modules } />
       </div>

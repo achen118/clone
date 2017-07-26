@@ -44,7 +44,6 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const { currentUser } = this.props;
     const userInfo =
       <figure onClick={ this.showUserDropdown } className="user-pic">
