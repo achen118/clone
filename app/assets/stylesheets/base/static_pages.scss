@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-   font-family: 'Gotham Book';
+   font-family: 'Gotham';
    color: #747474;
    font-size: 12px;
    cursor: default;
@@ -13,7 +13,8 @@ body {
 a {
    color: #2DBE60;
    text-decoration: none;
-   font-family: 'Gotham Medium';
+   font-family: 'Gotham';
+   font-weight: bold;
 }
 
 input:focus, button:focus {
@@ -24,11 +25,11 @@ input:focus, button:focus {
 }
 
 strong {
-  font-family: 'Gotham Medium';
+  font-weight: bold;
 }
 
 i, em {
-  font-family: 'Gotham Italic';
+  font-style: italic;
 }
 
 u {
