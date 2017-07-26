@@ -47,6 +47,17 @@ class Note extends React.Component {
     this.startAutosaveTimer = this.startAutosaveTimer.bind(this);
     this.autosaveTimer = null;
     this.autosaveInterval = 500;
+    this.modules = {
+      toolbar: [
+        [{ 'font': [] }],
+        [{ 'size': ['small', false, 'large', 'huge'] }],
+        [{ 'color': [] }, 'bold', 'italic', 'underline','strike', 'code-block'],
+        [{ 'align': [] }, {'list': 'bullet'}, {'list': 'ordered'}],
+        ['link', 'image'],
+        [{'indent': '+1'}, {'indent': '-1'}],
+        [{ 'script': 'sub'}, { 'script': 'super' }, 'clean']
+      ]
+    };
   }
 
   updateQuill(value) {
@@ -92,7 +103,8 @@ class Note extends React.Component {
           value={ this.state.body }
           onChange={ this.updateQuill }
           onKeyUp={ this.startAutosaveTimer }
-          theme={'snow'}/>
+          theme={'snow'}
+          modules={ this.modules } />
       </div>
     );
   }

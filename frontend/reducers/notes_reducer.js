@@ -26,7 +26,7 @@ const NotesReducer = (state = defaultState, action) => {
       nextState.byId[action.note.id] = action.note;
       if (nextState.allIds.includes(action.note.id)) {
         const repeatedIndex = nextState.allIds.indexOf(action.note.id);
-        nextState.allIds = nextState.allIds.slice(0, repeatedIndex).concat(nextState.allIds.slice(repeatedIndex + 1));
+        nextState.allIds.splice(repeatedIndex, 1);
       }
       nextState.allIds.unshift(action.note.id);
       return nextState;
