@@ -10,6 +10,7 @@ class Note extends React.Component {
 
   componentDidUpdate() {
     this.attachQuillRefs();
+    this.quillRef.focus();
   }
 
   componentWillUnmount() {
@@ -17,6 +18,8 @@ class Note extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.attachQuillRefs();
+    this.quillRef.focus();
     if (this.props !== nextProps) {
       clearTimeout(this.autosaveTimer);
     }
@@ -60,11 +63,13 @@ class Note extends React.Component {
   }
 
   updateQuill(value) {
-    this.setState({
-      body: value,
-      plain_text_body: this.quillRef.getText()
-    });
-    this.startAutosaveTimer();
+    if (this.quillRef) {
+      this.setState({
+        body: value,
+        plain_text_body: this.quillRef.getText()
+      });
+      this.startAutosaveTimer();
+    }
   }
 
   updateTitle(event) {
@@ -88,7 +93,6 @@ class Note extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return(
       <div className="note-container">
         <input

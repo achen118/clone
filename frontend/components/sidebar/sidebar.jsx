@@ -1,5 +1,6 @@
 import React from 'react';
 import UserDropDownContainer from '../user/user_dropdown_container';
+import { Link } from 'react-router-dom';
 
 class Sidebar extends React.Component {
 
@@ -53,11 +54,12 @@ class Sidebar extends React.Component {
     return (
       <nav className="sidebar-container">
         <figure className="logo">
-          <img
-            className="logo-img"
-            src="https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png"
-            alt="CleverNote Logo"
-            />
+          <Link to="/notes">
+            <img
+              className="logo-img"
+              src="https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png"
+              alt="CleverNote Logo" />
+          </Link>
         </figure>
         <figure
           onClick={ this.handleClick('new-note') }
@@ -84,7 +86,6 @@ class Sidebar extends React.Component {
           className="tags tags-hover"
           >
         </figure>
-        <button onClick={ this.handleLogout }>Logout</button>
         <section className="user-box">
           { userInfo }
         </section>

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import UserDropDown from'./user_dropdown';
+import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
   return {
@@ -7,6 +8,13 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch(logout())
+  };
+};
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(UserDropDown);
