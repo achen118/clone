@@ -289,23 +289,28 @@
   background-size: 34px;
 }
 
+.new-note-buttons {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .cancel, .add-note {
   background-color: #2DBE60;
   color: white;
   font-family: 'Gotham Medium';
   font-size: 14px;
-  position: absolute;
   border-radius: 5px;
   padding: 6px 15px;
-  top: -35px;
-}
-
-.cancel {
-  right: -50px;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  right: -10px;
 }
 
 .add-note {
-  right: 40px;
+  margin-right: 90px;
 }
 
 .add-note:disabled {

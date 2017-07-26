@@ -43,7 +43,6 @@ class Note extends React.Component {
     this.updateTitle = this.updateTitle.bind(this);
     this.autosave = this.autosave.bind(this);
     this.startAutosaveTimer = this.startAutosaveTimer.bind(this);
-    this.stopAutosaveTimer = this.stopAutosaveTimer.bind(this);
     this.autosaveTimer = null;
     this.autosaveInterval = 500;
   }
@@ -67,16 +66,11 @@ class Note extends React.Component {
 
   startAutosaveTimer(event) {
     clearTimeout(this.autosaveTimer);
-    if (event.currentTarget.value) {
-      this.autosaveTimer = setTimeout(this.autosave, this.autosaveInterval);
-    }
-  }
-
-  stopAutosaveTimer(event) {
-    clearTimeout(this.autosaveTimer);
+    this.autosaveTimer = setTimeout(this.autosave, this.autosaveInterval);
   }
 
   autosave() {
+    console.log(this.reactQuillRef.getEditor().getText());
     this.setState({
       plain_text_body: this.reactQuillRef.getEditor().getText()
     }, () => this.props.updateNote(this.state));
@@ -89,14 +83,12 @@ class Note extends React.Component {
           type="text"
           value={ this.state.title }
           onChange={ this.updateTitle }
-          onKeyUp={ this.startAutosaveTimer }
-          onKeyDown={ this.stopAutosaveTimer } />
+          onKeyUp={ this.startAutosaveTimer } />
         <ReactQuill
-          ref={(el) => { this.reactQuillRef = el }}
-          value={this.state.body}
-          onChange={this.updateQuill}
+          ref={(el) => { this.reactQuillRef = el; }}
+          value={ this.state.body }
+          onChange={ this.updateQuill }
           onKeyUp={ this.startAutosaveTimer }
-          onKeyDown={ this.stopAutosaveTimer }
           theme={'snow'}/>
       </div>
     );

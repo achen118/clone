@@ -96,8 +96,15 @@ class NewNote extends React.Component {
   // }
 
   render() {
+    console.log(this.state);
     return(
-      <div className="new-note-container">
+      <section className="new-note-container">
+        <button
+          className="cancel hidden"
+          onClick ={ this.handleCancel }>Cancel</button>
+        <button
+          className="add-note hidden"
+          onClick ={ this.handleAddNote }>Save Note</button>
         <input
           type="text"
           placeholder="Title your note"
@@ -109,9 +116,7 @@ class NewNote extends React.Component {
           value={this.state.body}
           onChange={this.updateQuill}
           theme={'snow'}/>
-        <button className="cancel hidden" onClick ={ this.handleCancel }>Cancel</button>
-        <button className="add-note hidden" onClick ={ this.handleAddNote }>Save Note</button>
-      </div>
+      </section>
     );
   }
 }
