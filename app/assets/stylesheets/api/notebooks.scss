@@ -227,9 +227,14 @@
   cursor: pointer;
 }
 
+.notebook-select-item-container:hover .notebook-select-item {
+  border: none;
+}
+
 .notebook-select-item {
   border-bottom: 1px solid #ECECEC;
-  padding: 20px;
+  padding: 20px 10px;
+  margin: 0 10px;
   font-family: 'Caecilia';
 }
 
@@ -256,7 +261,8 @@
   justify-content: flex-start;
   align-items: center;
   font-weight: bold;
-  padding: 13px 20px;
+  padding: 13px 10px;
+  margin: 0 10px;
   font-family: 'Gotham';
   border-bottom: 1px solid #ECECEC;
 }

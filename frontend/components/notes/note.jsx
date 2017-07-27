@@ -40,16 +40,19 @@ class Note extends React.Component {
       title: this.props.note.title,
       body: this.props.note.body,
       plain_text_body: this.props.note.plain_text_body,
-      notebook_id: this.props.note.notebook_id,
+      notebook_id: this.notebookId,
       author_id: this.props.currentUser.id
     };
+    this.notebookId = this.props.note.notebook_id;
     this.quillRef = null;      // Quill instance
     this.reactQuillRef = null; // ReactQuill component
     this.updateQuill = this.updateQuill.bind(this);
     this.updateTitle = this.updateTitle.bind(this);
     this.autosave = this.autosave.bind(this);
     this.startAutosaveTimer = this.startAutosaveTimer.bind(this);
-    this.selectNotebook = this.selectNotebook.bind(this);
+    this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
+    this.handleAddNotebook = this.handleAddNotebook.bind(this);
+    this.handleSelectNotebook = this.handleSelectNotebook.bind(this);
     this.autosaveTimer = null;
     this.autosaveInterval = 500;
     this.modules = {
@@ -104,19 +107,37 @@ class Note extends React.Component {
       });
   }
 
-  selectNotebook() {
+  toggleNotebookDropDown() {
     document.querySelector('.notebook-dropdown').classList.toggle('hidden');
   }
 
+  handleAddNotebook() {
+    this.props.history.push('/new-notebook');
+  }
+
+  handleSelectNotebook(event) {
+    if (this.notebookId !== event.target.id) {
+      this.notebookId = event.target.id;
+      this.setState({
+        notebook_id: this.notebookId
+      });
+    }
+  }
+
   render() {
-    const { notebooks } = this.props;
-    let notebookSelectItems;
+    const { notebooks, note } = this.props;
+    let notebookSelectItems, currentNotebook;
     if (notebooks) {
+      currentNotebook = notebooks.byId[this.notebookId].title;
       notebookSelectItems = notebooks.allIds.map((notebookId, idx) =>
-        <section className="notebook-select-item-container">
+        <section
+          key={ idx }
+          className="notebook-select-item-container"
+          onClick={ this.handleSelectNotebook }>
           <li
             key={ idx }
-            className="notebook-select-item">
+            className="notebook-select-item"
+            id={ notebookId }>
             { notebooks.byId[notebookId].title }
           </li>
         </section>
@@ -129,9 +150,11 @@ class Note extends React.Component {
             src="https://res.cloudinary.com/malice/image/upload/v1500410337/notebook-small-gray_hutdbh.png"
             alt="Notebook Icon"
             className="small-notebook-icon"
-            onClick={ this.selectNotebook } />
+            onClick={ this.toggleNotebookDropDown } />
             <ul className="notebook-dropdown hidden">
-              <li className="select-add-notebook">
+              <li
+                className="select-add-notebook"
+                onClick={ this.handleAddNotebook }>
                 <img
                   src="https://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
                   alt="Add Notebook Icon"
@@ -142,8 +165,8 @@ class Note extends React.Component {
             </ul>
           <nav
             className="select-notebook"
-            onClick={ this.selectNotebook }>
-            Notebook
+            onClick={ this.toggleNotebookDropDown }>
+            { currentNotebook }
           </nav>
         </section>
         <input

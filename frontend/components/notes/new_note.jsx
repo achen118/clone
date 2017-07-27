@@ -136,7 +136,9 @@ class NewNote extends React.Component {
     let notebookSelectItems;
     if (notebooks) {
       notebookSelectItems = notebooks.allIds.map((notebookId, idx) =>
-        <section className="notebook-select-item-container">
+        <section
+          key={ idx }
+          className="notebook-select-item-container">
           <li
             key={ idx }
             className="notebook-select-item">

@@ -17,6 +17,16 @@ class App extends React.Component {
         dropdown.classList.add('hidden');
       }
     }
+    const notebookDropDown = document.querySelector('.notebook-dropdown');
+    const notebookIcon = document.querySelector('.small-notebook-icon');
+    const selectNotebook = document.querySelector('.select-notebook');
+    if (notebookDropDown) {
+      if (event.target !== notebookDropDown
+          && event.target !== notebookIcon
+          && event.target !== selectNotebook) {
+        notebookDropDown.classList.add('hidden');
+      }
+    }
   }
 
   render() {

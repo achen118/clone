@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Note from './note';
 import { updateNote } from '../../actions/note_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
   return {
@@ -15,7 +16,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Note);
+)(Note));
