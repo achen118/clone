@@ -132,8 +132,43 @@ class NewNote extends React.Component {
   // }
 
   render() {
+    const { notebooks } = this.props;
+    let notebookSelectItems;
+    if (notebooks) {
+      notebookSelectItems = notebooks.allIds.map((notebookId, idx) =>
+        <section className="notebook-select-item-container">
+          <li
+            key={ idx }
+            className="notebook-select-item">
+            { notebooks.byId[notebookId].title }
+          </li>
+        </section>
+      );
+    }
     return(
       <section className="new-note-container">
+        <section className="note-select-options">
+          <img
+            src="https://res.cloudinary.com/malice/image/upload/v1500410337/notebook-small-gray_hutdbh.png"
+            alt="Notebook Icon"
+            className="small-notebook-icon"
+            onClick={ this.selectNotebook } />
+            <ul className="notebook-dropdown hidden">
+              <li className="select-add-notebook">
+                <img
+                  src="https://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
+                  alt="Add Notebook Icon"
+                  className="select-add-notebook-icon" />
+                Create new notebook
+              </li>
+              { notebookSelectItems }
+            </ul>
+          <nav
+            className="select-notebook"
+            onClick={ this.selectNotebook }>
+            Notebook
+          </nav>
+        </section>
         <button
           className="cancel hidden"
           onClick ={ this.handleCancel }>Cancel</button>
