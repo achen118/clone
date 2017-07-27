@@ -6,7 +6,6 @@ const TagsHeader = props => {
       <h1 className="tag-header">TAG: { props.tagName.toUpperCase() }</h1>
       <ul className="notes-header-info">
         <li className="note-count">{ props.notes.allIds.length } notes</li>
-        <li className="note-options">Options</li>
       </ul>
     </section>
   );
