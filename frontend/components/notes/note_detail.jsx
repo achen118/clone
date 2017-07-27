@@ -21,15 +21,9 @@ class NoteDetail extends React.Component {
       showNote =
         <section className="note-detail-container">
           <header className="note-detail-header">
-            <figure className="note-detail-reminder">
-            </figure>
-            <figure className="note-detail-info">
-            </figure>
             <figure
               className="note-detail-delete"
               onClick={ this.handleDelete }>
-            </figure>
-            <figure className="note-detail-more">
             </figure>
           </header>
           <NewNoteContainer />
@@ -39,15 +33,9 @@ class NoteDetail extends React.Component {
         showNote =
         <section className="note-detail-container">
           <header className="note-detail-header">
-            <figure className="note-detail-reminder">
-            </figure>
-            <figure className="note-detail-info">
-            </figure>
             <figure
               className="note-detail-delete"
               onClick={ this.handleDelete }>
-            </figure>
-            <figure className="note-detail-more">
             </figure>
           </header>
           <NoteContainer note={ note } />

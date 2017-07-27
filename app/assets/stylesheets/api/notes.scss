@@ -126,23 +126,6 @@
   margin-left: 25px;
 }
 
-.note-options {
-  margin-right: 25px;
-  cursor: pointer;
-}
-
-.note-options::after {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 6px;
-  margin-top: 3px;
-  margin-left: 2px;
-  vertical-align: top;
-  background: url('https://res.cloudinary.com/malice/image/upload/v1500438313/caret_gray_10x6_iz0o7w.png') center;
-  background-size: 10px 6px;
-}
-
 .notes-index-item {
   margin: 0;
   padding: 13.5px 24px;
@@ -194,29 +177,16 @@
   height: 50px;
 }
 
-.index-item-reminder, .index-item-delete {
+.index-item-delete {
   width: 24px;
   height: 24px;
   cursor: pointer;
   position: absolute;
 }
 
-.index-item-reminder, .index-item-reminder:hover {
-  right: 45px;
-  top: 9.5px;
-}
-
 .index-item-delete, .index-item-delete:hover {
   right: 10px;
   top: 9px;
-}
-
-.index-item-reminder {
-  background: url('https://res.cloudinary.com/malice/image/upload/v1500610662/reminder-white_m6g4ff.png') no-repeat center center;
-}
-
-.index-item-reminder:hover {
-  background: url('https://res.cloudinary.com/malice/image/upload/v1500610662/reminder-white-hover_unu0wv.png') no-repeat center center;
 }
 
 .index-item-delete {
@@ -227,32 +197,12 @@
   background: url('https://res.cloudinary.com/malice/image/upload/v1500610662/delete-white-hover_qcz34v.png') no-repeat center center;
 }
 
-.note-detail-reminder {
+.note-detail-delete {
   margin-left: 18px;
-}
-
-.note-detail-reminder, .note-detail-info, .note-detail-delete, .note-detail-more, .note-detail-reminder:hover, .note-detail-info:hover, .note-detail-delete:hover, .note-detail-more:hover {
   width: 24px;
   height: 24px;
   cursor: pointer;
   margin-top: 14px;
-  margin-right: 15px;
-}
-
-.note-detail-reminder {
-  background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/reminder-gray_sbvggm.png') no-repeat center center;
-}
-
-.note-detail-reminder:hover {
-  background: url('https://res.cloudinary.com/malice/image/upload/v1500610662/reminder-green_gcjobx.png') no-repeat center center;
-}
-
-.note-detail-info {
-  background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/info-small_idnucv.png') no-repeat center center;
-}
-
-.note-detail-info:hover {
-  background: url('https://res.cloudinary.com/malice/image/upload/v1500610662/info-green_n5e1ng.png') no-repeat center center;
 }
 
 .note-detail-delete {
@@ -261,14 +211,6 @@
 
 .note-detail-delete:hover {
   background: url('https://res.cloudinary.com/malice/image/upload/v1500610662/delete-green_fqh4vy.png') no-repeat center center;
-}
-
-.note-detail-more {
-  background: url('https://res.cloudinary.com/malice/image/upload/v1500410337/optiondots-gray_bhhxhk.png') no-repeat center center;
-}
-
-.note-detail-more:hover {
-  background: url('https://res.cloudinary.com/malice/image/upload/v1500610662/options-green_iiucze.png') no-repeat center center;
 }
 
 .expand, .expand:hover {

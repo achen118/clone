@@ -54,8 +54,6 @@ class NotesIndexItem extends React.Component {
         <article
           className="notes-index-item"
           onClick={ this.handleClick(note.id) }>
-          <figure className="index-item-reminder">
-          </figure>
           <figure
             className="index-item-delete"
             onClick={ this.handleDelete }>
