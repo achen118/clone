@@ -32,6 +32,7 @@ class NewNote extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.attachQuillRefs();
     this.quillRef.focus();
+    this.notebookId = nextProps.note.notebook_id;
   }
 
   constructor(props) {
@@ -124,7 +125,7 @@ class NewNote extends React.Component {
       this.notebookId = event.target.id;
       this.setState({
         notebook_id: this.notebookId
-      });
+      }, () => this.startAutosaveTimer());
     }
   }
 

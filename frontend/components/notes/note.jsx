@@ -25,6 +25,7 @@ class Note extends React.Component {
     if (this.props !== nextProps) {
       clearTimeout(this.autosaveTimer);
     }
+    this.notebookId = nextProps.note.notebook_id;
     this.setState({
       id: nextProps.note.id,
       title: nextProps.note.title,
@@ -120,7 +121,7 @@ class Note extends React.Component {
       this.notebookId = event.target.id;
       this.setState({
         notebook_id: this.notebookId
-      });
+      }, () => this.startAutosaveTimer());
     }
   }
 
