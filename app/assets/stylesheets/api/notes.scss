@@ -233,6 +233,13 @@
   background-size: 34px;
 }
 
+.note-select-options {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
 .new-note-buttons {
   display: flex;
   position: relative;
@@ -279,13 +286,13 @@
 
 .note-container, .new-note-container {
   width: 94%;
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
   position: relative;
 }
 
 .note-container input, .new-note-container input {
   position: absolute;
-  top: 60px;
+  top: 65px;
   left: 15px;
   color: #2DBE60;
   font-family: 'Caecilia Light';

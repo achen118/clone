@@ -49,6 +49,7 @@ class Note extends React.Component {
     this.updateTitle = this.updateTitle.bind(this);
     this.autosave = this.autosave.bind(this);
     this.startAutosaveTimer = this.startAutosaveTimer.bind(this);
+    this.selectNotebook = this.selectNotebook.bind(this);
     this.autosaveTimer = null;
     this.autosaveInterval = 500;
     this.modules = {
@@ -103,9 +104,47 @@ class Note extends React.Component {
       });
   }
 
+  selectNotebook() {
+    document.querySelector('.notebook-dropdown').classList.toggle('hidden');
+  }
+
   render() {
+    const { notebooks } = this.props;
+    let notebookSelectItems;
+    if (notebooks) {
+      notebookSelectItems = notebooks.allIds.map((notebookId, idx) =>
+        <section className="notebook-select-item-container">
+          <li
+            key={ idx }
+            className="notebook-select-item">
+            { notebooks.byId[notebookId].title }
+          </li>
+        </section>
+      );
+    }
     return(
       <div className="note-container">
+        <section className="note-select-options">
+          <img
+            src="https://res.cloudinary.com/malice/image/upload/v1500410337/notebook-small-gray_hutdbh.png"
+            alt="Notebook Icon"
+            className="small-notebook-icon" />
+            <ul className="notebook-dropdown hidden">
+              <li className="select-add-notebook">
+                <img
+                  src="https://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
+                  alt="Add Notebook Icon"
+                  className="select-add-notebook-icon" />
+                Create new notebook
+              </li>
+              { notebookSelectItems }
+            </ul>
+          <nav
+            className="select-notebook"
+            onClick={ this.selectNotebook }>
+            Notebook
+          </nav>
+        </section>
         <input
           type="text"
           placeholder="Title your note"
