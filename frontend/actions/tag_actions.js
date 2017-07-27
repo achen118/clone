@@ -59,6 +59,13 @@ export const deleteTag = tag => dispatch => {
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
+export const deleteTagFromNote = (noteId, tag) => dispatch => {
+  return tagsAPIUtil.deleteTagFromNote(noteId, tag)
+    .then(deletedTag => {
+      dispatch(clearErrors());
+    }, errors => dispatch(receiveErrors(errors.responseJSON)));
+};
+
 export const fetchAllTags = () => dispatch => {
   return tagsAPIUtil.fetchAllTags()
     .then(tags => {

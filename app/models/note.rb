@@ -6,6 +6,10 @@ class Note < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
   belongs_to :notebook
-  has_many :taggings, dependent: :destroy
+  has_many :taggings,
+    primary_key: :id,
+    foreign_key: :note_id,
+    class_name: :Tagging,
+    dependent: :destroy
   has_many :tags, through: :taggings
 end

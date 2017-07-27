@@ -104,7 +104,6 @@ class Note extends React.Component {
   }
 
   render() {
-    console.log(this.firstShow);
     return(
       <div className="note-container">
         <input

@@ -2,11 +2,14 @@ class Api::NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
+    if params[:note][:title] == ""
+      @note.title = "Untitled Note"
+    end
     @note.author = current_user
     if @note.save
       render :show
     else
-      render json: @note.errors.full_messages
+      render json: @note.errors.full_messages, status: 422
     end
   end
 
@@ -15,7 +18,7 @@ class Api::NotesController < ApplicationController
     if @note && @note.update_attributes(note_params)
       render :show
     else
-      render json: @note.errors.full_messages
+      render json: @note.errors.full_messages, status: 422
     end
   end
 

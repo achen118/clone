@@ -15,8 +15,12 @@ export const fetchNotesFromTag = tagName => {
 export const addTagToNote = (noteId, tag) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/notes/${noteId}/tags`,
-    data: { tag }
+    url: `/api/notes/${noteId}/taggings`,
+    data: {
+      tagging: {
+        tag_name: tag.name
+      }
+    }
   });
 };
 
@@ -38,6 +42,6 @@ export const deleteTag = tag => {
 export const deleteTagFromNote = (noteId, tag) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/notes/${noteId}/tags/${tag.name}`
+    url: `/api/notes/${noteId}/taggings/${tag.name}`
   });
 };

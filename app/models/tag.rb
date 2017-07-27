@@ -5,6 +5,10 @@ class Tag < ApplicationRecord
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :User
-  has_many :taggings, dependent: :destroy
+  has_many :taggings,
+    primary_key: :name,
+    foreign_key: :tag_name,
+    class_name: :Tagging,
+    dependent: :destroy
   has_many :notes, through: :taggings
 end
