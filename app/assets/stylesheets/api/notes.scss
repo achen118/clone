@@ -78,6 +78,7 @@
   height: 100%;
   -webkit-transition: left .3s ease-in-out;
   transition: left .3s ease-in-out;
+  overflow: auto;
 }
 
 .content.open {
