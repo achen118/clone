@@ -41,14 +41,22 @@ class Sidebar extends React.Component {
   }
 
   showUserDropdown(event) {
-    document.querySelector('.user-dropdown').classList.toggle('hidden');
+     const dropdown = document.querySelector('.user-dropdown');
+     if (event.target === dropdown) {
+       event.preventDefault();
+     } else {
+       dropdown.classList.toggle('hidden');
+     }
   }
 
   render() {
     const { currentUser } = this.props;
     const userInfo =
       <figure onClick={ this.showUserDropdown } className="user-pic">
-        <img src={ currentUser.image_url } alt="User Profile Picture" />
+        <img
+          src={ currentUser.image_url }
+          alt="User Profile Picture"
+          className="user-img" />
         <UserDropDownContainer />
       </figure>;
     return (

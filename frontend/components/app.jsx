@@ -7,25 +7,39 @@ import SidebarContainer from './sidebar/sidebar_container';
 import NewNotebookContainer from './notebooks/new_notebook_container';
 import NewTagContainer from './tags/new_tag_container';
 
-const App = () => (
-  <div>
-    <Switch>
-      <ProtectedRoute path="/tags/:tagName/notes/:noteId" component={ NotesContainer } />
-      <ProtectedRoute path="/tags/:tagName" component={ NotesContainer } />
-      <ProtectedRoute exact path="/tags" component={ NotesContainer } />
-      <ProtectedRoute path="/notebooks/:notebookId/notes/:noteId" component={ NotesContainer } />
-      <ProtectedRoute path="/notebooks/:notebookId" component={ NotesContainer } />
-      <ProtectedRoute exact path="/notebooks" component={ NotesContainer } />
-      <ProtectedRoute path="/notes/:noteId" component={ NotesContainer } />
-      <ProtectedRoute path="/notes" component={ NotesContainer } />
-      <ProtectedRoute path="/new-tag" component={ NewTagContainer } />
-      <ProtectedRoute path="/new-notebook" component={ NewNotebookContainer } />
-      <ProtectedRoute path="/new-note" component={ NotesContainer } />
-      <AuthRoute exact path="/" component={ SessionFormContainer } />
-      <AuthRoute exact path="/signin" component={ SessionFormContainer } />
-      <AuthRoute exact path="/signup" component={ SessionFormContainer } />
-    </Switch>
-  </div>
-);
+class App extends React.Component {
+
+  hideUserDropDown(event) {
+    const dropdown = document.querySelector('.user-dropdown');
+    const userPic = document.querySelector('.user-img');
+    if (event.target !== dropdown && event.target !== userPic) {
+      dropdown.classList.add('hidden');
+    }
+  }
+
+  render() {
+    return (
+      <div onClick={ this.hideUserDropDown }>
+        <Switch>
+          <ProtectedRoute path="/tags/:tagName/notes/:noteId" component={ NotesContainer } />
+          <ProtectedRoute path="/tags/:tagName" component={ NotesContainer } />
+          <ProtectedRoute exact path="/tags" component={ NotesContainer } />
+          <ProtectedRoute path="/notebooks/:notebookId/notes/:noteId" component={ NotesContainer } />
+          <ProtectedRoute path="/notebooks/:notebookId" component={ NotesContainer } />
+          <ProtectedRoute exact path="/notebooks" component={ NotesContainer } />
+          <ProtectedRoute path="/notes/:noteId" component={ NotesContainer } />
+          <ProtectedRoute path="/notes" component={ NotesContainer } />
+          <ProtectedRoute path="/new-tag" component={ NewTagContainer } />
+          <ProtectedRoute path="/new-notebook" component={ NewNotebookContainer } />
+          <ProtectedRoute path="/new-note" component={ NotesContainer } />
+          <AuthRoute exact path="/" component={ SessionFormContainer } />
+          <AuthRoute exact path="/signin" component={ SessionFormContainer } />
+          <AuthRoute exact path="/signup" component={ SessionFormContainer } />
+        </Switch>
+      </div>
+    );
+  }
+
+}
 
 export default App;
