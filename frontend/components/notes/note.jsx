@@ -6,10 +6,12 @@ class Note extends React.Component {
   componentDidMount() {
     this.attachQuillRefs();
     this.quillRef.focus();
+    this.firstShow = true;
   }
 
   componentDidUpdate() {
     this.attachQuillRefs();
+    this.firstShow = false;
   }
 
   componentWillUnmount() {
@@ -17,6 +19,7 @@ class Note extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.firstShow = true;
     this.attachQuillRefs();
     this.quillRef.focus();
     if (this.props !== nextProps) {
@@ -67,7 +70,9 @@ class Note extends React.Component {
         body: value,
         plain_text_body: this.quillRef.getText()
       });
-      this.startAutosaveTimer();
+      if (!this.firstShow) {
+        this.startAutosaveTimer();
+      }
     }
   }
 
@@ -92,6 +97,7 @@ class Note extends React.Component {
   }
 
   render() {
+    console.log(this.firstShow);
     return(
       <div className="note-container">
         <input
