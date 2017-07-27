@@ -2,7 +2,7 @@
   position: absolute;
   left: -1000px;
   right: 0;
-  width: 456px;
+  width: 347px;
   height: 100%;
   background-color: white;
   -webkit-transition: left .3s ease-in-out;
@@ -224,17 +224,13 @@
 .notebook-select-item-container:hover {
   background-color: #40bc6c;
   color: white;
+  cursor: pointer;
 }
 
 .notebook-select-item {
   border-bottom: 1px solid #ECECEC;
   padding: 20px;
   font-family: 'Caecilia';
-}
-
-.notebook-select-item li:first-of-type {
-  padding: 0 10px 10px 10px;
-  font-family: 'Gotham';
 }
 
 .notebook-select-item li:last-of-type {
@@ -252,6 +248,7 @@
   width: 12px;
   height: 13px;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 .select-add-notebook {
@@ -259,6 +256,14 @@
   justify-content: flex-start;
   align-items: center;
   font-weight: bold;
+  padding: 13px 20px;
+  font-family: 'Gotham';
+  border-bottom: 1px solid #ECECEC;
+}
+
+.select-add-notebook:hover {
+  color: #2DBE60;
+  cursor: pointer;
 }
 
 .select-add-notebook-icon {

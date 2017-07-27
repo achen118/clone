@@ -128,7 +128,8 @@ class Note extends React.Component {
           <img
             src="https://res.cloudinary.com/malice/image/upload/v1500410337/notebook-small-gray_hutdbh.png"
             alt="Notebook Icon"
-            className="small-notebook-icon" />
+            className="small-notebook-icon"
+            onClick={ this.selectNotebook } />
             <ul className="notebook-dropdown hidden">
               <li className="select-add-notebook">
                 <img
