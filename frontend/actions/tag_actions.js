@@ -55,7 +55,6 @@ export const updateTag = tag => dispatch => {
 export const deleteTag = tag => dispatch => {
   return tagsAPIUtil.deleteTag(tag)
     .then(deletedTag => {
-      dispatch(receiveTag(null));
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };

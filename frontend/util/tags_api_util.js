@@ -28,7 +28,14 @@ export const addTag = tag => {
   });
 };
 
-export const deleteNotebook = (noteId, tag) => {
+export const deleteTag = tag => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/tags/${tag.name}`
+  });
+};
+
+export const deleteTagFromNote = (noteId, tag) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/notes/${noteId}/tags/${tag.name}`
