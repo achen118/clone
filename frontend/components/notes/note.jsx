@@ -93,7 +93,14 @@ class Note extends React.Component {
   }
 
   autosave() {
-    this.props.updateNote(this.state);
+    this.props.updateNote(this.state)
+      .then(() => {
+        const lastSelected = document.querySelector(".selected-index-item");
+        if (lastSelected) {
+          lastSelected.classList.remove("selected-index-item");
+        }
+        document.getElementById(`${this.props.note.id}`).classList.add("selected-index-item");
+      });
   }
 
   render() {

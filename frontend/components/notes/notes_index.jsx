@@ -2,7 +2,7 @@ import React from 'react';
 import NotesIndexItemContainer from './notes_index_item_container';
 
 class NotesIndex extends React.Component {
-
+  
   constructor(props) {
     super(props);
   }

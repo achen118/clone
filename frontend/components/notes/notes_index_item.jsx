@@ -31,7 +31,7 @@ class NotesIndexItem extends React.Component {
       if (lastSelected) {
         lastSelected.classList.remove("selected-index-item");
       }
-      event.currentTarget.classList.add("selected-index-item");
+      document.getElementById(`${this.props.note.id}`).classList.add("selected-index-item");
       const notebookId = this.props.match.params.notebookId;
       if (notebookId) {
         this.props.history.push(`/notebooks/${notebookId}/notes/${noteId}`);
@@ -52,6 +52,7 @@ class NotesIndexItem extends React.Component {
     return (
       <div>
         <article
+          id={`${note.id}`}
           className="notes-index-item"
           onClick={ this.handleClick(note.id) }>
           <figure
