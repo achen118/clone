@@ -46,7 +46,6 @@ export const updateNotebook = notebook => dispatch => {
 export const deleteNotebook = notebook => dispatch => {
   return notebooksAPIUtil.deleteNotebook(notebook)
     .then(deletedNotebook => {
-      dispatch(receiveNotebook(null));
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
