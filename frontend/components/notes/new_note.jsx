@@ -8,11 +8,15 @@ class NewNote extends React.Component {
     this.quillRef.focus();
     document.querySelector('.cancel').classList.remove('hidden');
     document.querySelector('.add-note').classList.remove('hidden');
+    if (this.state.title || this.state.body) {
+      document.querySelector('.add-note').disabled = false;
+    } else {
+      document.querySelector('.add-note').disabled = true;
+    }
   }
 
   componentDidUpdate() {
     this.attachQuillRefs();
-    this.quillRef.focus();
   }
 
   // componentWillUnmount() {
@@ -67,6 +71,12 @@ class NewNote extends React.Component {
       this.setState({
         body: value,
         plain_text_body: this.quillRef.getText()
+      }, () => {
+        if (this.state.title || this.state.body) {
+          document.querySelector('.add-note').disabled = false;
+        } else {
+          document.querySelector('.add-note').disabled = true;
+        }
       });
     }
   }
@@ -74,6 +84,12 @@ class NewNote extends React.Component {
   updateTitle(event) {
     this.setState({
       title: event.currentTarget.value
+    }, () => {
+      if (this.state.title || this.state.body) {
+        document.querySelector('.add-note').disabled = false;
+      } else {
+        document.querySelector('.add-note').disabled = true;
+      }
     });
   }
 

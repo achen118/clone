@@ -2,6 +2,14 @@ import React from 'react';
 
 class NewTag extends React.Component {
 
+  componentDidMount() {
+    if (this.state.name) {
+      document.querySelector('.new-tag-create').disabled = false;
+    } else {
+      document.querySelector('.new-tag-create').disabled = true;
+    }
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -25,6 +33,12 @@ class NewTag extends React.Component {
   update(event) {
     this.setState({
       name: event.currentTarget.value
+    }, () => {
+      if (this.state.name) {
+        document.querySelector('.new-tag-create').disabled = false;
+      } else {
+        document.querySelector('.new-tag-create').disabled = true;
+      }
     });
   }
 
@@ -42,8 +56,16 @@ class NewTag extends React.Component {
           value={ this.state.name }
           onChange={ this.update } />
         <section>
-          <button onClick={ this.handleClick('cancel') }>Cancel</button>
-          <button onClick={ this.handleClick('create') }>Create tag</button>
+          <button
+            className="new-tag-cancel"
+            onClick={ this.handleClick('cancel') }>
+            Cancel
+          </button>
+          <button
+            className="new-tag-create"
+            onClick={ this.handleClick('create') }>
+            Create tag
+          </button>
         </section>
       </section>
     );

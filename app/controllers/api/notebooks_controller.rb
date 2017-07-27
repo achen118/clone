@@ -6,7 +6,7 @@ class Api::NotebooksController < ApplicationController
     if @notebook.save
       render :show
     else
-      render json: @notebook.errors.full_messages
+      render json: @notebook.errors.full_messages, status: 422
     end
   end
 
@@ -15,7 +15,7 @@ class Api::NotebooksController < ApplicationController
     if @notebook && @notebook.update_attributes(notebook_params)
       render :show
     else
-      render json: @notebook.errors.full_messages
+      render json: @notebook.errors.full_messages, status: 422
     end
   end
 

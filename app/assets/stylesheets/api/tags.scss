@@ -85,6 +85,32 @@
    color: #C4C4C4;
 }
 
+.new-tag-create, .new-tag-cancel {
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 174px;
+  padding: 8px 0;
+}
+
+.new-tag-cancel {
+  background-color: #ECECEC;
+  color: #606060;
+  margin-right: 10px;
+  border: 1px solid #D9D9D9;
+}
+
+.new-tag-create {
+  background-color: #2DBE60;
+  color: white;
+  border: 1px solid #2DBE60;
+}
+
+.new-tag-create:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
 .tag-header {
   font-size: 21px;
   letter-spacing: 1px;

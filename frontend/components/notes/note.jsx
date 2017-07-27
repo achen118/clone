@@ -10,7 +10,6 @@ class Note extends React.Component {
 
   componentDidUpdate() {
     this.attachQuillRefs();
-    this.quillRef.focus();
   }
 
   componentWillUnmount() {

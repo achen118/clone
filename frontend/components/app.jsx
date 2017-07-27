@@ -12,8 +12,10 @@ class App extends React.Component {
   hideUserDropDown(event) {
     const dropdown = document.querySelector('.user-dropdown');
     const userPic = document.querySelector('.user-img');
-    if (event.target !== dropdown && event.target !== userPic) {
-      dropdown.classList.add('hidden');
+    if (dropdown) {
+      if (event.target !== dropdown && event.target !== userPic) {
+        dropdown.classList.add('hidden');
+      }
     }
   }
 

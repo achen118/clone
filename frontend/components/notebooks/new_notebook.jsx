@@ -2,6 +2,14 @@ import React from 'react';
 
 class NewNotebook extends React.Component {
 
+  componentDidMount() {
+    if (this.state.title) {
+      document.querySelector('.new-notebook-create').disabled = false;
+    } else {
+      document.querySelector('.new-notebook-create').disabled = true;
+    }
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -16,6 +24,7 @@ class NewNotebook extends React.Component {
       if (action === 'cancel') {
         this.props.history.goBack();
       } else {
+        console.log("hello");
         this.props.addNotebook(this.state);
         this.props.history.push('/notebooks');
       }
@@ -25,6 +34,12 @@ class NewNotebook extends React.Component {
   update(event) {
     this.setState({
       title: event.currentTarget.value
+    }, () => {
+      if (this.state.title) {
+        document.querySelector('.new-notebook-create').disabled = false;
+      } else {
+        document.querySelector('.new-notebook-create').disabled = true;
+      }
     });
   }
 
@@ -42,8 +57,16 @@ class NewNotebook extends React.Component {
           value={ this.state.name }
           onChange={ this.update } />
         <section>
-          <button onClick={ this.handleClick('cancel') }>Cancel</button>
-          <button onClick={ this.handleClick('create') }>Create notebook</button>
+          <button
+            className="new-notebook-cancel"
+            onClick={ this.handleClick('cancel') }>
+            Cancel
+          </button>
+          <button
+            className="new-notebook-create"
+            onClick={ this.handleClick('create') }>
+            Create notebook
+          </button>
         </section>
       </section>
     );

@@ -113,6 +113,32 @@
    color: #C4C4C4;
 }
 
+.new-notebook-create, .new-notebook-cancel {
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 174px;
+  padding: 8px 0;
+}
+
+.new-notebook-cancel {
+  background-color: #ECECEC;
+  color: #606060;
+  margin-right: 10px;
+  border: 1px solid #D9D9D9;
+}
+
+.new-notebook-create {
+  background-color: #2DBE60;
+  color: white;
+  border: 1px solid #2DBE60;
+}
+
+.new-notebook-create:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
 .notebook-index-item-container:hover {
   background-color: #40bc6c;
   cursor: pointer;
