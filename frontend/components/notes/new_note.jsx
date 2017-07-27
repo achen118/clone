@@ -40,7 +40,7 @@ class NewNote extends React.Component {
       title: "",
       body: "",
       plain_text_body: "",
-      notebook_id: this.props.notebooks.allIds[0]
+      notebook_id: this.notebookId
     };
     this.quillRef = null;      // Quill instance
     this.reactQuillRef = null; // ReactQuill component
@@ -48,6 +48,9 @@ class NewNote extends React.Component {
     this.updateTitle = this.updateTitle.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.handleAddNote = this.handleAddNote.bind(this);
+    this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
+    this.handleAddNotebook = this.handleAddNotebook.bind(this);
+    this.handleSelectNotebook = this.handleSelectNotebook.bind(this);
     // this.autosave = this.autosave.bind(this);
     // this.startAutosaveTimer = this.startAutosaveTimer.bind(this);
     // this.stopAutosaveTimer = this.stopAutosaveTimer.bind(this);
@@ -108,6 +111,23 @@ class NewNote extends React.Component {
     document.querySelector('.add-note').classList.add('hidden');
   }
 
+  toggleNotebookDropDown() {
+    document.querySelector('.notebook-dropdown').classList.toggle('hidden');
+  }
+
+  handleAddNotebook() {
+    this.props.history.push('/new-notebook');
+  }
+
+  handleSelectNotebook(event) {
+    if (this.notebookId !== event.target.id) {
+      this.notebookId = event.target.id;
+      this.setState({
+        notebook_id: this.notebookId
+      });
+    }
+  }
+
   // startAutosaveTimer(event) {
   //   clearTimeout(this.autosaveTimer);
   //   if (event.currentTarget.value) {
@@ -132,16 +152,22 @@ class NewNote extends React.Component {
   // }
 
   render() {
-    const { notebooks } = this.props;
-    let notebookSelectItems;
-    if (notebooks) {
+    const { notebooks, note } = this.props;
+    let notebookSelectItems, currentNotebook;
+    if (notebooks.allIds.length > 0) {
+      if (!this.notebookId) {
+        this.notebookId = notebooks.allIds[0];
+      }
+      currentNotebook = notebooks.byId[this.notebookId].title;
       notebookSelectItems = notebooks.allIds.map((notebookId, idx) =>
         <section
           key={ idx }
-          className="notebook-select-item-container">
+          className="notebook-select-item-container"
+          onClick={ this.handleSelectNotebook }>
           <li
             key={ idx }
-            className="notebook-select-item">
+            className="notebook-select-item"
+            id={ notebookId }>
             { notebooks.byId[notebookId].title }
           </li>
         </section>
@@ -154,9 +180,11 @@ class NewNote extends React.Component {
             src="https://res.cloudinary.com/malice/image/upload/v1500410337/notebook-small-gray_hutdbh.png"
             alt="Notebook Icon"
             className="small-notebook-icon"
-            onClick={ this.selectNotebook } />
+            onClick={ this.toggleNotebookDropDown } />
             <ul className="notebook-dropdown hidden">
-              <li className="select-add-notebook">
+              <li
+                className="select-add-notebook"
+                onClick={ this.handleAddNotebook }>
                 <img
                   src="https://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
                   alt="Add Notebook Icon"
@@ -167,8 +195,8 @@ class NewNote extends React.Component {
             </ul>
           <nav
             className="select-notebook"
-            onClick={ this.selectNotebook }>
-            Notebook
+            onClick={ this.toggleNotebookDropDown }>
+            { currentNotebook }
           </nav>
         </section>
         <button

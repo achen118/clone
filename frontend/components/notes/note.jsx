@@ -127,7 +127,7 @@ class Note extends React.Component {
   render() {
     const { notebooks, note } = this.props;
     let notebookSelectItems, currentNotebook;
-    if (notebooks) {
+    if (notebooks.allIds.length > 0) {
       currentNotebook = notebooks.byId[this.notebookId].title;
       notebookSelectItems = notebooks.allIds.map((notebookId, idx) =>
         <section
