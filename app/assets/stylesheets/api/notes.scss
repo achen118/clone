@@ -241,8 +241,6 @@
 }
 
 .cancel, .add-note {
-  background-color: #2DBE60;
-  color: white;
   font-weight: bold;
   font-size: 14px;
   border-radius: 5px;
@@ -253,8 +251,21 @@
   right: -10px;
 }
 
+.cancel {
+  background-color: #ECECEC;
+  color: #606060;
+  border: 1px solid #D9D9D9;
+}
+
 .add-note {
   margin-right: 90px;
+  background-color: #2DBE60;
+  color: white;
+  border: 1px solid #2DBE60;
+}
+
+.add-note:hover {
+  background-color: #28A956;
 }
 
 .add-note:disabled {
@@ -263,7 +274,7 @@
 }
 
 .cancel:hover {
-  background-color: #28A956;
+  background-color: #D9D9D9;
 }
 
 .note-container, .new-note-container {

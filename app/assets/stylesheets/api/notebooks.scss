@@ -129,10 +129,18 @@
   border: 1px solid #D9D9D9;
 }
 
+.new-notebook-cancel:hover {
+  background-color: #D9D9D9;
+}
+
 .new-notebook-create {
   background-color: #2DBE60;
   color: white;
   border: 1px solid #2DBE60;
+}
+
+.new-notebook-create:hover {
+  background-color: #28A956;
 }
 
 .new-notebook-create:disabled {

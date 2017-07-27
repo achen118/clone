@@ -101,10 +101,18 @@
   border: 1px solid #D9D9D9;
 }
 
+.new-tag-cancel:hover {
+  background-color: #D9D9D9;
+}
+
 .new-tag-create {
   background-color: #2DBE60;
   color: white;
   border: 1px solid #2DBE60;
+}
+
+.new-tag-create:hover {
+  background-color: #28A956;
 }
 
 .new-tag-create:disabled {
