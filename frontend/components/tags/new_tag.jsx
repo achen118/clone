@@ -31,8 +31,8 @@ class NewTag extends React.Component {
       if (action === 'cancel') {
         this.props.history.goBack();
       } else {
-        this.props.addTag(this.state);
-        this.props.history.push('/tags');
+        this.props.addTag(this.state)
+          .then(this.props.history.push('/tags'));
       }
     };
   }

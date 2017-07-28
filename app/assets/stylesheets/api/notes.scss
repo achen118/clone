@@ -242,7 +242,7 @@
   background: url('http://res.cloudinary.com/malice/image/upload/v1501249453/delete-big-green_b0dqxl.png') no-repeat center center;
 }
 
-.expand, .expand:hover {
+.expand, .expand:hover, .collapse, .collapse:hover {
   width: 35px;
   height: 35px;
   position: absolute;
@@ -258,6 +258,16 @@
 
 .expand:hover {
   background: url('https://res.cloudinary.com/malice/image/upload/v1500674963/expand-hover_mtvfug.png') no-repeat center center;
+  background-size: 34px;
+}
+
+.collapse {
+  background: url('https://res.cloudinary.com/malice/image/upload/v1501276005/collapse_omgfba.png') no-repeat center center;
+  background-size: 40px;
+}
+
+.collapse:hover {
+  background: url('https://res.cloudinary.com/malice/image/upload/v1501276005/collapse-hover_ydna03.png') no-repeat center center;
   background-size: 34px;
 }
 

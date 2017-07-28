@@ -118,6 +118,13 @@ class Notes extends React.Component {
   togglePanel() {
     this.setState({
       panelOpen: !this.state.panelOpen
+    }, () => {
+      if (document.querySelector('.collapse').classList.contains('hidden')) {
+        document.querySelector('.collapse').classList.remove('hidden');
+      } else {
+        document.querySelector('.collapse').classList.add('hidden');
+        document.querySelector('.expand').classList.remove('hidden');
+      }
     });
   }
 
@@ -174,7 +181,9 @@ class Notes extends React.Component {
         <section className={ contentClassName }>
           { noteDetail }
         </section>
-        <figure className="expand" onClick={ this.togglePanel }>
+        <figure className="expand hidden" onClick={ this.togglePanel }>
+        </figure>
+        <figure className="collapse hidden" onClick={ this.togglePanel }>
         </figure>
       </div>
     );
