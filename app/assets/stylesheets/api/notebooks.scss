@@ -1,3 +1,41 @@
+@keyframes modal-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes modal-fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.ReactModal__Overlay {
+  -webkit-animation: modal-fade-in .3s ease-in-out;
+  -moz-animation:    modal-fade-in .3s ease-in-out;
+  -o-animation:      modal-fade-in .3s ease-in-out;
+  animation:         modal-fade-in .3s ease-in-out;
+}
+
+.ReactModal__Content {
+  -webkit-animation: modal-fade-in .3s ease-in-out;
+  -moz-animation:    modal-fade-in .3s ease-in-out;
+  -o-animation:      modal-fade-in .3s ease-in-out;
+  animation:         modal-fade-in .3s ease-in-out;
+}
+
+.ReactModal__Overlay.fade-out {
+  -webkit-animation: modal-fade-out .3s;
+  -moz-animation:    modal-fade-out .3s;
+  -o-animation:      modal-fade-out .3s;
+  animation:         modal-fade-out .3s;
+}
+
+.ReactModal__Content.fade-out {
+  -webkit-animation: modal-fade-out .3s;
+  -moz-animation:    modal-fade-out .3s;
+  -o-animation:      modal-fade-out .3s;
+  animation:         modal-fade-out .3s;
+}
+
 .ReactModal__Overlay {
   z-index: 3;
 }

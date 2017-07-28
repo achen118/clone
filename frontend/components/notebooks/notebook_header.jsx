@@ -50,7 +50,9 @@ class NotebookHeader extends React.Component {
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({
+      modalIsOpen: true
+    });
   }
 
   afterOpenModal() {
@@ -58,7 +60,9 @@ class NotebookHeader extends React.Component {
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({
+      modalIsOpen: false
+    });
   }
 
   handleClick(event) {
