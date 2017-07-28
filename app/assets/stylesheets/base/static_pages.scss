@@ -13,19 +13,18 @@
 }
 
 body {
-   font-family: 'Gotham';
-   color: #747474;
-   font-size: 12px;
-   cursor: default;
-  //  background-color: #F6F6F6;
-    background-color: white;
+  font-family: 'Gotham';
+  color: #747474;
+  font-size: 12px;
+  cursor: default;
+  background-color: white;
 }
 
 a {
-   color: #2DBE60;
-   text-decoration: none;
-   font-family: 'Gotham';
-   font-weight: bold;
+  color: #2DBE60;
+  text-decoration: none;
+  font-family: 'Gotham';
+  font-weight: bold;
 }
 
 input:focus, button:focus {
@@ -33,6 +32,10 @@ input:focus, button:focus {
   -moz-appearance: none;
   appearance: none;
   outline: none;
+}
+
+input, button {
+  font-family: inherit;
 }
 
 strong {

@@ -240,7 +240,7 @@ class NewNote extends React.Component {
           onChange={ this.updateTitle } />
         <ReactQuill
           ref={(el) => { this.reactQuillRef = el; }}
-          placeholder="Just start typing..."
+          placeholder="Drag files here or just start typing..."
           value={this.state.body}
           onChange={this.updateQuill}
           theme={'snow'}
