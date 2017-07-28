@@ -42,15 +42,17 @@ As CleverNote is predominantly a single-page app, the majority of my components 
 
 This resulted in a single-page app with multiple modals and sliding components, pictured below:
 
-![CleverNote Home Page For A Logged In User]()
+![CleverNote Home Page For A Logged In User](https://res.cloudinary.com/malice/image/upload/v1501282963/Screenshot_from_2017-07-28_16-00-44_l4ujez.png)
 
 Notes are rendered in the Notes Index Container on the left-hand side of the home page, as well as in the Note Detail Container that spans the right-hand side of the page when a specific note is selected. Notes are allowed to be deleted in two different places: the notes index when a specific note is hovered on and at the top of the Note Detail Container. A note's created at and updated at date and time can also be viewed by clicking on the information icon at the top of the Note Detail Container.
 
-### Notebooks
+### Notebooks & Tags
 
-Each note must live within a single Notebook in CleverNote. 
+Each note must live within a single Notebook in CleverNote. However, notes can be easily moved from notebook to notebook when editing a note, right at the top of the rich-text-editor.
 
-### Tags
+Each note is allowed to having multiple tags, using the Taggings join table in the database. Each note can only be tagged by the same tag once. These tags can be added to a specific note both when creating or editing a note. Additionally, tags can be created on their own without having any notes associated with it.
+
+Both notebooks and tags are great tools for keeping a user's notes organized in a efficient manner so that they can access whatever they need based on a specific notebook or tag.
 
 ## Future Directions for the Project
 
