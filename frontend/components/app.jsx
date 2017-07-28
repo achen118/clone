@@ -31,7 +31,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div onClick={ this.hideUserDropDown }>
+      <div
+        onClick={ this.hideUserDropDown }
+        className="app-container">
         <Switch>
           <ProtectedRoute path="/tags/:tagName/notes/:noteId" component={ NotesContainer } />
           <ProtectedRoute path="/tags/:tagName" component={ NotesContainer } />
