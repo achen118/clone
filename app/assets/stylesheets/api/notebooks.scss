@@ -40,7 +40,7 @@
   z-index: 3;
 }
 
-.notebook-modal-container {
+.modal-container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -48,12 +48,12 @@
   justify-content: center;
 }
 
-.notebook-modal-icon {
+.modal-icon {
   width: 40px;
   height: auto;
 }
 
-.notebook-modal-header {
+.modal-header {
   padding: 20px;
   border-bottom: 1px solid #D9D9D9;
   margin-bottom: 6px;
@@ -64,11 +64,11 @@
   letter-spacing: .6px;
 }
 
-.notebook-modal-subheader {
+.modal-subheader {
   margin-top: 50px;
   font-weight: bold;
-  align-self: flex-start;
   font-size: 13px;
+  color: #4A4A4A;
 }
 
 .notebook-modal-input {
@@ -155,8 +155,8 @@
 .notebook-info {
   position: absolute;
   cursor: pointer;
-  right: 13px;
-  top: 13px;
+  right: 15px;
+  top: 15px;
   width: 24px;
   height: auto;
   z-index: 1;
@@ -230,7 +230,7 @@
    color: #C4C4C4;
 }
 
-.new-notebook-create, .new-notebook-cancel, .notebook-modal-cancel, .notebook-modal-save {
+.new-notebook-create, .new-notebook-cancel, .notebook-modal-cancel, .notebook-modal-save, .note-close-button {
   font-weight: bold;
   font-size: 14px;
   border-radius: 5px;
@@ -249,13 +249,13 @@
   background-color: #D9D9D9;
 }
 
-.new-notebook-create, .notebook-modal-save {
+.new-notebook-create, .notebook-modal-save, .note-close-button {
   background-color: #2DBE60;
   color: white;
   border: 1px solid #2DBE60;
 }
 
-.new-notebook-create:hover, .notebook-modal-save:hover {
+.new-notebook-create:hover, .notebook-modal-save:hover, .note-close-button:hover {
   background-color: #28A956;
 }
 

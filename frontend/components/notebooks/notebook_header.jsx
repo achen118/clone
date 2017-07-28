@@ -18,12 +18,9 @@ class NotebookHeader extends React.Component {
       title: "",
       modalIsOpen: false
     };
-    this.handleClick = this.handleClick.bind(this);
     this.updateTitle = this.updateTitle.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.customStyles = {
       content : {
@@ -35,7 +32,7 @@ class NotebookHeader extends React.Component {
         transform             : 'translate(-50%, -50%)',
         border                : 'null',
         background            : 'white',
-        width                 : '550px',
+        width                 : '400px',
         height                : 'auto'
       },
       overlay : {
@@ -55,18 +52,10 @@ class NotebookHeader extends React.Component {
     });
   }
 
-  afterOpenModal() {
-
-  }
-
   closeModal() {
     this.setState({
       modalIsOpen: false
     });
-  }
-
-  handleClick(event) {
-    this.openModal();
   }
 
   updateTitle(event) {
@@ -79,10 +68,6 @@ class NotebookHeader extends React.Component {
         document.querySelector('.notebook-modal-save').disabled = true;
       }
     });
-  }
-
-  handleCancel() {
-    this.closeModal();
   }
 
   handleSave() {
@@ -102,7 +87,7 @@ class NotebookHeader extends React.Component {
             src="https://res.cloudinary.com/malice/image/upload/v1501217872/info-big_c1nkdi.png"
             alt="Notebook Info"
             className="notebook-info"
-            onClick={ this.handleClick } />
+            onClick={ this.openModal } />
           <h1 className="notebook-header">{ notebooks.byId[notebookId].title }</h1>
           <ul className="notes-header-info">
             <li className="note-count">{ notes.allIds.length } notes</li>
@@ -114,16 +99,16 @@ class NotebookHeader extends React.Component {
           onRequestClose={this.closeModal}
           style={ this.customStyles }
           contentLabel="Notebook Info">
-          <section className="notebook-modal-container">
+          <section className="modal-container">
             <img
               src="https://res.cloudinary.com/malice/image/upload/v1501217872/info-big_c1nkdi.png"
               alt="Notebook Info Icon"
-              className="notebook-modal-icon" />
+              className="modal-icon" />
             <section
-              className="notebook-modal-header">
+              className="modal-header">
               NOTEBOOK INFO
             </section>
-            <span className="notebook-modal-subheader">Overview</span>
+            <span className="modal-subheader">Overview</span>
             <input
               value={ this.state.title }
               onChange={ this.updateTitle }
@@ -139,7 +124,7 @@ class NotebookHeader extends React.Component {
             <section
               className="notebook-modal-buttons">
               <button
-                onClick={ this.handleCancel }
+                onClick={ this.closeModal }
                 className="notebook-modal-cancel">
                 Cancel
               </button>
