@@ -8,6 +8,8 @@ import NotebooksIndexContainer from '../notebooks/notebooks_index_container';
 import TagsIndexContainer from '../tags/tags_index_container';
 import NotebookHeaderContainer from '../notebooks/notebook_header_container';
 import TagHeaderContainer from '../tags/tags_header_container';
+import NewNotebookContainer from '../notebooks/new_notebook_container';
+import NewTagContainer from '../tags/new_tag_container';
 
 class Notes extends React.Component {
 
@@ -29,6 +31,16 @@ class Notes extends React.Component {
         panelOpen: false
       });
     }
+    if (this.props.location.pathname === '/new-notebook') {
+      this.newNotebook = true;
+    } else {
+      this.newNotebook = false;
+    }
+    if (this.props.location.pathname === '/new-tag') {
+      this.newTag = true;
+    } else {
+      this.newTag = false;
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -48,20 +60,32 @@ class Notes extends React.Component {
       this.header = <TagHeaderContainer tagName={ nextProps.match.params.tagName } />;
     }
     if (nextProps.location.pathname === '/notebooks') {
+      this.newNotebook = false;
+      this.newTag = false;
       this.setState({
-        notebooksOpen: !this.state.notebooksOpen,
+        notebooksOpen: true,
         tagsOpen: false,
         panelOpen: true,
         overlay: true
       });
     } else if (nextProps.location.pathname === '/tags') {
+      this.newNotebook = false;
+      this.newTag = false;
       this.setState({
-        tagsOpen: !this.state.tagsOpen,
+        tagsOpen: true,
         notebooksOpen: false,
         panelOpen: true,
         overlay: true
       });
+    } else if (nextProps.location.pathname === '/new-notebook') {
+      this.newNotebook = true;
+      this.newTag = false;
+    } else if (nextProps.location.pathname === '/new-tag') {
+      this.newTag = true;
+      this.newNotebook = false;
     } else {
+      this.newTag = false;
+      this.newNotebook = false;
       this.setState({
         notebooksOpen: false,
         tagsOpen: false,
@@ -99,7 +123,13 @@ class Notes extends React.Component {
 
   render() {
     const { notes, note, location } = this.props;
-    let noteDetail, notebookIndex, tagIndex;
+    let noteDetail, notebookIndex, tagIndex, newNotebook, newTag;
+    if (this.newNotebook) {
+      newNotebook = <NewNotebookContainer />;
+    }
+    if (this.newTag) {
+      newTag = <NewTagContainer />;
+    }
     if (note) {
       noteDetail = <NoteDetailContainer
                     note={ note }
@@ -129,6 +159,8 @@ class Notes extends React.Component {
     }
     return (
       <div className="notes-container">
+        { newNotebook }
+        { newTag }
         { notebookIndex }
         { tagIndex }
         <section className="overlay hidden"></section>

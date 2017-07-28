@@ -1,8 +1,15 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class NewNotebook extends React.Component {
 
   componentDidMount() {
+  	const elem = ReactDOM.findDOMNode(this);
+  	elem.style.opacity = 0;
+  	window.requestAnimationFrame(function() {
+  		elem.style.transition = "opacity 500ms";
+  		elem.style.opacity = 1;
+  	});
     if (this.state.title) {
       document.querySelector('.new-notebook-create').disabled = false;
     } else {

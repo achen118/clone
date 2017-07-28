@@ -41,8 +41,8 @@ class App extends React.Component {
           <ProtectedRoute exact path="/notebooks" component={ NotesContainer } />
           <ProtectedRoute path="/notes/:noteId" component={ NotesContainer } />
           <ProtectedRoute path="/notes" component={ NotesContainer } />
-          <ProtectedRoute path="/new-tag" component={ NewTagContainer } />
-          <ProtectedRoute path="/new-notebook" component={ NewNotebookContainer } />
+          <ProtectedRoute path="/new-tag" component={ NotesContainer } />
+          <ProtectedRoute path="/new-notebook" component={ NotesContainer } />
           <ProtectedRoute path="/new-note" component={ NotesContainer } />
           <AuthRoute exact path="/" component={ SessionFormContainer } />
           <AuthRoute exact path="/signin" component={ SessionFormContainer } />

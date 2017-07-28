@@ -8,4 +8,13 @@
   cursor: default;
   box-shadow: 0 0 7px 3px #ECECEC;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-dropdown img {
+  width: 75px;
+  height: auto;
 }

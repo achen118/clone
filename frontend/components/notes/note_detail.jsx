@@ -62,7 +62,7 @@ class NoteDetail extends React.Component {
     } else {
       if (note) {
         showNote =
-        <section className="note-detail-outer">
+        <section>
           <section className="note-detail">
             <header className="note-detail-header">
               <figure

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .overlay {
@@ -13,10 +13,10 @@
   position: absolute;
   background-color: white;
   opacity: .9;
-  -webkit-animation: fade-in .3s;
-  -moz-animation:    fade-in .3s;
-  -o-animation:      fade-in .3s;
-  animation:         fade-in .3s;
+  -webkit-animation: fade-in .3s ease-in-out;
+  -moz-animation:    fade-in .3s ease-in-out;
+  -o-animation:      fade-in .3s ease-in-out;
+  animation:         fade-in .3s ease-in-out;
 }
 
 @keyframes fade-in {

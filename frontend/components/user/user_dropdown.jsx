@@ -16,6 +16,9 @@ class UserDropDown extends React.Component {
     return (
       <ul className="user-dropdown hidden">
         <li>
+          <img src={ currentUser.image_url } alt="Profile Picture" />
+        </li>
+        <li>
           { currentUser.email.toUpperCase() }
         </li>
         <li>
