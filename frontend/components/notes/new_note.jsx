@@ -23,8 +23,6 @@ class NewNote extends React.Component {
     this.attachQuillRefs();
     this.quillRef.focus();
     if (nextProps.notebooks.allIds.length > 0) {
-      console.log("YES");
-      console.log(nextProps.notebooks.allIds);
       this.setState({
         notebook_id: nextProps.notebooks.allIds[0]
       });
@@ -186,7 +184,6 @@ class NewNote extends React.Component {
         </span>
       </section>
     );
-    console.log(this.state);
     return(
       <section className="new-note-container">
         <section className="note-select-options">

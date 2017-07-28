@@ -54,7 +54,6 @@ export const deleteTagFromNote = (noteId, tagName) => {
 };
 
 export const updateTag = (oldTagName, newTag) => {
-  console.log(newTag);
   return $.ajax({
     method: 'PATCH',
     url: `/api/tags/${oldTagName}`,
