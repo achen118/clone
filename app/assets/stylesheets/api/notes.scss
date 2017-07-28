@@ -315,17 +315,13 @@
 
 .note-title, .new-note-title {
   position: absolute;
-  top: 74px;
+  top: 100px;
   left: 15px;
   color: #2DBE60;
   font-family: 'Caecilia Light';
   font-size: 28px;
   z-index: 1;
   width: 98%;
-}
-
-.new-note-title {
-  top: 50%;
 }
 
 .note-title::-webkit-input-placeholder, .new-note-title::-webkit-input-placeholder { /* WebKit, Blink, Edge */
