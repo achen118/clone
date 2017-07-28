@@ -38,7 +38,8 @@ As CleverNote is predominantly a single-page app, the majority of my components 
     <figure className="collapse hidden" onClick={ this.togglePanel }>
     </figure>
   </div>
-);```
+);
+```
 
 This resulted in a single-page app with multiple modals and sliding components, pictured below:
 
