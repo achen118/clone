@@ -155,6 +155,7 @@ class Note extends React.Component {
   }
 
   render() {
+    console.log(this.state.body);
     const { notebooks, note, tags } = this.props;
     let notebookSelectItems, currentNotebook, noteTagIndex;
     if (notebooks.allIds.length > 0) {

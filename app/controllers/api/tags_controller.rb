@@ -10,6 +10,15 @@ class Api::TagsController < ApplicationController
     end
   end
 
+  def update
+    @tag = current_user.tags.find_by(name: params[:name])
+    if @tag.update_attributes(tag_params)
+      render :show
+    else
+      render json: @tag.errors.full_messages, status: 422
+    end
+  end
+
   def destroy
     @tag = current_user.tags.find_by(name: params[:name])
     @tag.destroy

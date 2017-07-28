@@ -89,13 +89,12 @@ class NotebookHeader extends React.Component {
               className="notebook-info"
               onClick={ this.openModal } />
             <h1 className="notebook-header">{ notebooks.byId[notebookId].title }</h1>
-            <ul className="notes-header-info">
+            <ul className="notebooks-notes-header-info">
               <li className="note-count">{ notes.allIds.length } notes</li>
             </ul>
           </section>
           <Modal
             isOpen={this.state.modalIsOpen}
-            onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
             style={ this.customStyles }
             contentLabel="Notebook Info">

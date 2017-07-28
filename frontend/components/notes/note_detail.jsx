@@ -78,7 +78,6 @@ class NoteDetail extends React.Component {
           </section>
           <Modal
             isOpen={this.state.modalIsOpen}
-            onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
             style={ this.customStyles }
             contentLabel="Note Info">

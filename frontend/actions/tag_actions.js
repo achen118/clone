@@ -42,8 +42,8 @@ export const addTagToNote = (noteId, tagName) => dispatch => {
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const updateTag = tag => dispatch => {
-  return tagsAPIUtil.updateTag(tag)
+export const updateTag = (oldTagName, newTag) => dispatch => {
+  return tagsAPIUtil.updateTag(oldTagName, newTag)
     .then(updatedTag => {
       dispatch(receiveTag(updatedTag));
       dispatch(clearErrors());
