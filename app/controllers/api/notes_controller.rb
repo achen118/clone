@@ -7,6 +7,15 @@ class Api::NotesController < ApplicationController
     end
     @note.author = current_user
     if @note.save
+      if params[:note][:tags]
+        params[:note][:tags].each do |tag|
+          existing_tag = Tag.find_by(name: tag)
+          if !existing_tag
+            Tag.create(name: tag, author_id: current_user.id)
+          end
+          Tagging.create(tag_name: tag, note_id: @note.id)
+        end
+      end
       render :show
     else
       render json: @note.errors.full_messages, status: 422

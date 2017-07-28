@@ -290,9 +290,9 @@
   position: relative;
 }
 
-.note-container input, .new-note-container input {
+.note-title {
   position: absolute;
-  top: 65px;
+  top: 75px;
   left: 15px;
   color: #2DBE60;
   font-family: 'Caecilia Light';
@@ -301,21 +301,21 @@
   width: 98%;
 }
 
-.note-container input, .new-note-container input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+.note-title::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: #2DBE60;
 }
-.note-container input, .new-note-container input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+.note-title:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
    color: #2DBE60;
    opacity:  1;
 }
-.note-container input, .new-note-container input::-moz-placeholder { /* Mozilla Firefox 19+ */
+.note-title::-moz-placeholder { /* Mozilla Firefox 19+ */
    color: #2DBE60;
    opacity:  1;
 }
-.note-container input, .new-note-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.note-title:-ms-input-placeholder { /* Internet Explorer 10-11 */
    color: #2DBE60;
 }
-.note-container input, .new-note-container input::-ms-input-placeholder { /* Microsoft Edge */
+.note-title::-ms-input-placeholder { /* Microsoft Edge */
    color: #2DBE60;
 }
 

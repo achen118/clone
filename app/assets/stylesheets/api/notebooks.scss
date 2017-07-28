@@ -247,6 +247,19 @@
   cursor: pointer;
   color: #606060;
   margin-left: 8px;
+  font-weight: bold;
+}
+
+.select-notebook::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  margin-top: 2px;
+  margin-left: 8px;
+  vertical-align: top;
+  background: url('https://res.cloudinary.com/malice/image/upload/v1500438313/caret_gray_10x6_iz0o7w.png') center;
+  background-size: 10px 6px;
 }
 
 .small-notebook-icon {

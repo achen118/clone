@@ -12,13 +12,14 @@ export const fetchNotesFromTag = tagName => {
   });
 };
 
-export const addTagToNote = (noteId, tag) => {
+export const addTagToNote = (noteId, tagName) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/notes/${noteId}/taggings`,
+    url: `/api/taggings`,
     data: {
       tagging: {
-        tag_name: tag.name
+        tag_name: tagName,
+        note_id: noteId
       }
     }
   });
@@ -39,9 +40,15 @@ export const deleteTag = tag => {
   });
 };
 
-export const deleteTagFromNote = (noteId, tag) => {
+export const deleteTagFromNote = (noteId, tagName) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/notes/${noteId}/taggings/${tag.name}`
+    url: `/api/taggings/${tagName}`,
+    data: {
+      tagging: {
+        tag_name: tagName,
+        note_id: noteId
+      }
+    }
   });
 };

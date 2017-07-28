@@ -19,20 +19,16 @@ class NewNote extends React.Component {
     this.attachQuillRefs();
   }
 
-  // componentWillUnmount() {
-  //   clearTimeout(this.autosaveTimer);
-  // }
-  //
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props !== nextProps) {
-  //     clearTimeout(this.autosaveTimer);
-  //   }
-  // }
-
   componentWillReceiveProps(nextProps) {
     this.attachQuillRefs();
     this.quillRef.focus();
-    this.notebookId = nextProps.note.notebook_id;
+    if (nextProps.notebooks.allIds.length > 0) {
+      console.log("YES");
+      console.log(nextProps.notebooks.allIds);
+      this.setState({
+        notebook_id: nextProps.notebooks.allIds[0]
+      });
+    }
   }
 
   constructor(props) {
@@ -41,7 +37,9 @@ class NewNote extends React.Component {
       title: "",
       body: "",
       plain_text_body: "",
-      notebook_id: this.notebookId
+      notebook_id: this.props.notebooks.allIds[0],
+      tags: [],
+      newTag: ""
     };
     this.quillRef = null;      // Quill instance
     this.reactQuillRef = null; // ReactQuill component
@@ -52,11 +50,9 @@ class NewNote extends React.Component {
     this.toggleNotebookDropDown = this.toggleNotebookDropDown.bind(this);
     this.handleAddNotebook = this.handleAddNotebook.bind(this);
     this.handleSelectNotebook = this.handleSelectNotebook.bind(this);
-    // this.autosave = this.autosave.bind(this);
-    // this.startAutosaveTimer = this.startAutosaveTimer.bind(this);
-    // this.stopAutosaveTimer = this.stopAutosaveTimer.bind(this);
-    // this.autosaveTimer = null;
-    // this.autosaveInterval = 500;
+    this.handleDeleteTag = this.handleDeleteTag.bind(this);
+    this.updateNewTag = this.updateNewTag.bind(this);
+    this.addTagToNote = this.addTagToNote.bind(this);
     this.modules = {
       toolbar: [
         [{ 'font': [] }],
@@ -108,7 +104,8 @@ class NewNote extends React.Component {
   }
 
   handleAddNote() {
-    this.props.addNote(this.state).then(() => this.props.history.push('/notes'));
+    this.props.addNote(this.state)
+      .then(() => this.props.history.push('/notes'));
     document.querySelector('.add-note').classList.add('hidden');
   }
 
@@ -125,36 +122,39 @@ class NewNote extends React.Component {
       this.notebookId = event.target.id;
       this.setState({
         notebook_id: this.notebookId
-      }, () => this.startAutosaveTimer());
+      });
     }
   }
 
-  // startAutosaveTimer(event) {
-  //   clearTimeout(this.autosaveTimer);
-  //   if (event.currentTarget.value) {
-  //     this.autosaveTimer = setTimeout(this.autosave, this.autosaveInterval);
-  //   }
-  // }
-  //
-  // stopAutosaveTimer(event) {
-  //   clearTimeout(this.autosaveTimer);
-  // }
+  handleDeleteTag(event) {
+    const index = this.state.tags.indexOf(event.currentTarget.id);
+    const tagsDup = this.state.tags;
+    tagsDup.splice(index, 1);
+    this.setState({
+      tags: tagsDup,
+      newTag: ""
+    });
+  }
 
-  // autosave() {
-  //   this.setState({
-  //     plain_text_body: this.reactQuillRef.getEditor().getText()
-  //   }, () => {
-  //     if (this.state.id) {
-  //       this.props.updateNote(this.state);
-  //     } else {
-  //       this.props.addNote(this.state);
-  //     }
-  //   });
-  // }
+  updateNewTag(event) {
+    this.setState({
+      newTag: event.target.value
+    });
+  }
+
+  addTagToNote(event) {
+    const key = event.keyCode;
+    if (key === 13) {
+      this.setState({
+        tags: this.state.tags.concat(this.state.newTag),
+        newTag: ""
+      });
+    }
+  }
 
   render() {
-    const { notebooks, note } = this.props;
-    let notebookSelectItems, currentNotebook;
+    const { notebooks, note, tags } = this.props;
+    let notebookSelectItems, currentNotebook, noteTagIndex;
     if (notebooks.allIds.length > 0) {
       if (!this.notebookId) {
         this.notebookId = notebooks.allIds[0];
@@ -174,6 +174,19 @@ class NewNote extends React.Component {
         </section>
       );
     }
+    noteTagIndex = this.state.tags.map((tagName, idx) =>
+      <section
+        key={ idx }
+        className="note-tag-index-item">
+        { tagName }
+        <span
+          id={ tagName }
+          onClick={ this.handleDeleteTag }>
+          x
+        </span>
+      </section>
+    );
+    console.log(this.state);
     return(
       <section className="new-note-container">
         <section className="note-select-options">
@@ -182,23 +195,36 @@ class NewNote extends React.Component {
             alt="Notebook Icon"
             className="small-notebook-icon"
             onClick={ this.toggleNotebookDropDown } />
-            <ul className="notebook-dropdown hidden">
-              <li
-                className="select-add-notebook"
-                onClick={ this.handleAddNotebook }>
-                <img
-                  src="https://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
-                  alt="Add Notebook Icon"
-                  className="select-add-notebook-icon" />
-                Create new notebook
-              </li>
-              { notebookSelectItems }
-            </ul>
+          <ul className="notebook-dropdown hidden">
+            <li
+              className="select-add-notebook"
+              onClick={ this.handleAddNotebook }>
+              <img
+                src="https://res.cloudinary.com/malice/image/upload/v1500766546/add-notebook.png"
+                alt="Add Notebook Icon"
+                className="select-add-notebook-icon" />
+              Create new notebook
+            </li>
+            { notebookSelectItems }
+          </ul>
           <nav
             className="select-notebook"
             onClick={ this.toggleNotebookDropDown }>
             { currentNotebook }
           </nav>
+          <img
+            src="https://res.cloudinary.com/malice/image/upload/v1500410338/tag-small-gray_riahyt.png"
+            alt="Tag Icon"
+            className="small-tag-icon" />
+          <section className="note-tag-index">
+            { noteTagIndex }
+            <input
+              className="new-note-tag"
+              placeholder="+"
+              onChange={ this.updateNewTag }
+              onKeyDown={ this.addTagToNote }
+              value={ this.state.newTag } />
+          </section>
         </section>
         <button
           className="cancel hidden"
@@ -208,6 +234,7 @@ class NewNote extends React.Component {
           onClick ={ this.handleAddNote }>Save Note</button>
         <input
           type="text"
+          className="note-title"
           placeholder="Title your note"
           value={ this.state.title }
           onChange={ this.updateTitle } />

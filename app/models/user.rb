@@ -19,6 +19,7 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Tag,
     dependent: :destroy
+  has_many :taggings, through: :tags
 
   attr_reader :password
 

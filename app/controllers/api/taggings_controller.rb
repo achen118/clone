@@ -2,17 +2,20 @@ class Api::TaggingsController < ApplicationController
 
   def create
     @tagging = Tagging.new(tagging_params)
+    tag = Tag.find_by(name: params[:tagging][:tag_name])
+    if !tag
+      Tag.create(name: params[:tagging][:tag_name], author_id: current_user.id)
+    end
     if @tagging.save
-      render :show
+      return
     else
       render json: @tagging.errors.full_messages, status: 422
     end
   end
 
   def destroy
-    @tagging = current_user.notes.taggings.find_by(name: params[:tag_name])
-    @tagging.destroy!
-    render :show
+    @tagging = current_user.taggings.find_by(tag_name: params[:tagging][:tag_name], note_id: params[:tagging][:note_id])
+    @tagging.destroy
   end
 
   private

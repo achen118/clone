@@ -1,5 +1,6 @@
 class Tag < ApplicationRecord
   validates :name, :author, presence: true
+  validates :name, uniqueness: true
 
   belongs_to :author,
     primary_key: :id,

@@ -1,18 +1,21 @@
 import { connect } from 'react-redux';
 import Note from './note';
-import { updateNote } from '../../actions/note_actions';
+import { updateNote, fetchSingleNote } from '../../actions/note_actions';
 import { withRouter } from 'react-router-dom';
+import { addTagToNote, deleteTagFromNote } from '../../actions/tag_actions';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.currentUser,
     notebooks: state.notebooks
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateNote: note => dispatch(updateNote(note))
+    updateNote: note => dispatch(updateNote(note)),
+    fetchSingleNote: noteId => dispatch(fetchSingleNote(noteId)),
+    addTagToNote: (noteId, tagName) => dispatch(addTagToNote(noteId, tagName)),
+    deleteTagFromNote: (noteId, tagName) => dispatch(deleteTagFromNote(noteId, tagName))
   };
 };
 

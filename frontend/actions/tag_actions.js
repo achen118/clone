@@ -35,11 +35,9 @@ export const addTag = tag => dispatch => {
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const addTagToNote = (noteId, tag) => dispatch => {
-  return tagsAPIUtil.addTag(noteId, tag)
-    .then((note, newTag) => {
-      dispatch(receiveTag(newTag));
-      dispatch(receiveNoteDetail(note));
+export const addTagToNote = (noteId, tagName) => dispatch => {
+  return tagsAPIUtil.addTagToNote(noteId, tagName)
+    .then(() => {
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
@@ -59,9 +57,9 @@ export const deleteTag = tag => dispatch => {
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-export const deleteTagFromNote = (noteId, tag) => dispatch => {
-  return tagsAPIUtil.deleteTagFromNote(noteId, tag)
-    .then(deletedTag => {
+export const deleteTagFromNote = (noteId, tagName) => dispatch => {
+  return tagsAPIUtil.deleteTagFromNote(noteId, tagName)
+    .then(() => {
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
