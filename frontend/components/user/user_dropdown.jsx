@@ -18,11 +18,15 @@ class UserDropDown extends React.Component {
         <li>
           <img src={ currentUser.image_url } alt="Profile Picture" />
         </li>
-        <li>
+        <li className="user-email">
           { currentUser.email.toUpperCase() }
         </li>
-        <li>
-          <button onClick={ this.handleLogout }>Logout</button>
+        <li
+          onClick={ this.handleLogout }
+          className="user-logout">
+          <figure className="user-logout-icon">
+          </figure>
+          <span>Log out</span>
         </li>
       </ul>
     );
