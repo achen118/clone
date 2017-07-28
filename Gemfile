@@ -53,8 +53,10 @@ group :development do
   gem 'pry-rails'
 end
 
-gem 'rails_12factor', group: :production
-gem 'rails_real_favicon', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'rails_real_favicon'
+end
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
