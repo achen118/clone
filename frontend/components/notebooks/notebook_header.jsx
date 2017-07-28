@@ -81,62 +81,62 @@ class NotebookHeader extends React.Component {
     let header;
     if (notebooks.allIds.length > 0) {
       header =
-      <section>
-        <section className="notebook-header-container">
-          <img
-            src="https://res.cloudinary.com/malice/image/upload/v1501217872/info-big_c1nkdi.png"
-            alt="Notebook Info"
-            className="notebook-info"
-            onClick={ this.openModal } />
-          <h1 className="notebook-header">{ notebooks.byId[notebookId].title }</h1>
-          <ul className="notes-header-info">
-            <li className="note-count">{ notes.allIds.length } notes</li>
-          </ul>
-        </section>;
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={ this.customStyles }
-          contentLabel="Notebook Info">
-          <section className="modal-container">
+        <section>
+          <section className="notebook-header-container">
             <img
               src="https://res.cloudinary.com/malice/image/upload/v1501217872/info-big_c1nkdi.png"
-              alt="Notebook Info Icon"
-              className="modal-icon" />
-            <section
-              className="modal-header">
-              NOTEBOOK INFO
-            </section>
-            <span className="modal-subheader">Overview</span>
-            <input
-              value={ this.state.title }
-              onChange={ this.updateTitle }
-              className="notebook-modal-input" />
-            <section
-              className="notebook-modal-title">
-              TITLE
-            </section>
-            <section
-              className="notebook-modal-delete">
-              Delete Notebook
-            </section>
-            <section
-              className="notebook-modal-buttons">
-              <button
-                onClick={ this.closeModal }
-                className="notebook-modal-cancel">
-                Cancel
-              </button>
-              <button
-                onClick={ this.handleSave }
-                className="notebook-modal-save">
-                Save
-              </button>
-            </section>
+              alt="Notebook Info"
+              className="notebook-info"
+              onClick={ this.openModal } />
+            <h1 className="notebook-header">{ notebooks.byId[notebookId].title }</h1>
+            <ul className="notes-header-info">
+              <li className="note-count">{ notes.allIds.length } notes</li>
+            </ul>
           </section>
-        </Modal>
-      </section>;
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={ this.customStyles }
+            contentLabel="Notebook Info">
+            <section className="modal-container">
+              <img
+                src="https://res.cloudinary.com/malice/image/upload/v1501217872/info-big_c1nkdi.png"
+                alt="Notebook Info Icon"
+                className="modal-icon" />
+              <section
+                className="modal-header">
+                NOTEBOOK INFO
+              </section>
+              <span className="modal-subheader">Overview</span>
+              <input
+                value={ this.state.title }
+                onChange={ this.updateTitle }
+                className="notebook-modal-input" />
+              <section
+                className="notebook-modal-title">
+                TITLE
+              </section>
+              <section
+                className="notebook-modal-delete">
+                Delete Notebook
+              </section>
+              <section
+                className="notebook-modal-buttons">
+                <button
+                  onClick={ this.closeModal }
+                  className="notebook-modal-cancel">
+                  Cancel
+                </button>
+                <button
+                  onClick={ this.handleSave }
+                  className="notebook-modal-save">
+                  Save
+                </button>
+              </section>
+            </section>
+          </Modal>
+        </section>;
     }
     return (
       <div>

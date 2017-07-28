@@ -37,7 +37,6 @@ class NotebooksIndex extends React.Component {
           </figure>
           { notebooksIndex }
         </section>
-
       </div>
     );
   }
