@@ -13,10 +13,15 @@
   position: absolute;
   background-color: white;
   opacity: .9;
-  -webkit-animation: fade-in .3s ease-in-out;
-  -moz-animation:    fade-in .3s ease-in-out;
-  -o-animation:      fade-in .3s ease-in-out;
-  animation:         fade-in .3s ease-in-out;
+  // -webkit-animation: fade-in .3s ease-in-out;
+  // -moz-animation:    fade-in .3s ease-in-out;
+  // -o-animation:      fade-in .3s ease-in-out;
+  // animation:         fade-in .3s ease-in-out;
+  transition: opacity .3s;
+}
+
+.overlay.hidden {
+  opacity: 0;
 }
 
 @keyframes fade-in {
