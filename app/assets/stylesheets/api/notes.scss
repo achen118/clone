@@ -313,9 +313,9 @@
   position: relative;
 }
 
-.note-title {
+.note-title, .new-note-title {
   position: absolute;
-  top: 75px;
+  top: 35%;
   left: 15px;
   color: #2DBE60;
   font-family: 'Caecilia Light';
@@ -324,21 +324,25 @@
   width: 98%;
 }
 
-.note-title::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+.new-note-title {
+  top: 50%;
+}
+
+.note-title::-webkit-input-placeholder, .new-note-title::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: #2DBE60;
 }
-.note-title:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+.note-title:-moz-placeholder, .new-note-title:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
    color: #2DBE60;
    opacity:  1;
 }
-.note-title::-moz-placeholder { /* Mozilla Firefox 19+ */
+.note-title::-moz-placeholder, .new-note-title::-moz-placeholder { /* Mozilla Firefox 19+ */
    color: #2DBE60;
    opacity:  1;
 }
-.note-title:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.note-title:-ms-input-placeholder, .new-note-title:-ms-input-placeholder { /* Internet Explorer 10-11 */
    color: #2DBE60;
 }
-.note-title::-ms-input-placeholder { /* Microsoft Edge */
+.note-title::-ms-input-placeholder, .new-note-title::-ms-input-placeholder { /* Microsoft Edge */
    color: #2DBE60;
 }
 

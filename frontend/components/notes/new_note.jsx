@@ -234,7 +234,7 @@ class NewNote extends React.Component {
           onClick ={ this.handleAddNote }>Save Note</button>
         <input
           type="text"
-          className="note-title"
+          className="new-note-title"
           placeholder="Title your note"
           value={ this.state.title }
           onChange={ this.updateTitle } />
