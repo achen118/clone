@@ -109,13 +109,15 @@ class NotebookHeader extends React.Component {
                 NOTEBOOK INFO
               </section>
               <span className="modal-subheader">Overview</span>
-              <input
-                value={ this.state.title }
-                onChange={ this.updateTitle }
-                className="notebook-modal-input" />
-              <section
-                className="notebook-modal-title">
-                TITLE
+              <section className="title-and-input">
+                <input
+                  value={ this.state.title }
+                  onChange={ this.updateTitle }
+                  className="notebook-modal-input" />
+                <section
+                  className="notebook-modal-title">
+                  TITLE
+                </section>
               </section>
               <section
                 className="notebook-modal-delete">

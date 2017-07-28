@@ -60,7 +60,6 @@
   padding: 10px 10px 10px 60px;
   border-radius: 5px;
   box-sizing: border-box;
-  position: relative;
 }
 
 .notebook-modal-title {
@@ -68,8 +67,16 @@
   border: 1px solid #E1E1E1;
   border-radius: 5px;
   position: absolute;
-  top: 52%;
-  left: 8px;
+  left: 12px;
+  bottom: 12px;
+}
+
+.title-and-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
 }
 
 .notebook-modal-delete {
