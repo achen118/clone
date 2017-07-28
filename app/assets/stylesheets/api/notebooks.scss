@@ -1,3 +1,71 @@
+.ReactModal__Overlay {
+  z-index: 3;
+}
+
+.notebook-modal-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notebook-modal-icon {
+  width: 40px;
+  height: auto;
+}
+
+.notebook-modal-header {
+  padding: 20px;
+  border-bottom: 1px solid #D9D9D9;
+  margin-bottom: 6px;
+  margin-top: 13px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #87878A;
+  letter-spacing: .6px;
+}
+
+.notebook-modal-subheader {
+  margin-top: 50px;
+  font-weight: bold;
+  align-self: flex-start;
+  font-size: 13px;
+}
+
+.notebook-modal-input {
+  margin: 5px;
+  border: 1px solid #E1E1E1;
+  font-family: inherit;
+  width: 100%;
+  padding: 10px 10px 10px 60px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.notebook-modal-title {
+  padding: 5px;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 8px;
+}
+
+.notebook-modal-delete {
+  color: #2DBE60;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 50px;
+}
+
+.notebook-modal-delete:hover {
+  color: #28A956;
+  cursor: pointer;
+}
+
 .notebooksPanel {
   position: absolute;
   left: -1000px;
@@ -43,6 +111,17 @@
   padding: 35px 0 45px 0;
   text-align: center;
   margin-bottom: 15px;
+  position: relative;
+}
+
+.notebook-info {
+  position: absolute;
+  cursor: pointer;
+  right: 13px;
+  top: 13px;
+  width: 24px;
+  height: auto;
+  z-index: 1;
 }
 
 .notebooks-header {
@@ -68,14 +147,13 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
 }
 
 .notebook-icon img {
   width: 40px;
   height: 36px;
-  margin-top: 100px;
 }
 
 .new-notebook-header {
@@ -114,7 +192,7 @@
    color: #C4C4C4;
 }
 
-.new-notebook-create, .new-notebook-cancel {
+.new-notebook-create, .new-notebook-cancel, .notebook-modal-cancel, .notebook-modal-save {
   font-weight: bold;
   font-size: 14px;
   border-radius: 5px;
@@ -122,28 +200,28 @@
   padding: 8px 0;
 }
 
-.new-notebook-cancel {
+.new-notebook-cancel, .notebook-modal-cancel {
   background-color: #ECECEC;
   color: #606060;
   margin-right: 10px;
   border: 1px solid #D9D9D9;
 }
 
-.new-notebook-cancel:hover {
+.new-notebook-cancel:hover, .notebook-modal-cancel:hover {
   background-color: #D9D9D9;
 }
 
-.new-notebook-create {
+.new-notebook-create, .notebook-modal-save {
   background-color: #2DBE60;
   color: white;
   border: 1px solid #2DBE60;
 }
 
-.new-notebook-create:hover {
+.new-notebook-create:hover, .notebook-modal-save:hover {
   background-color: #28A956;
 }
 
-.new-notebook-create:disabled {
+.new-notebook-create:disabled, .notebook-modal-save:disabled {
   opacity: .5;
   cursor: default;
 }
@@ -260,6 +338,7 @@
   vertical-align: top;
   background: url('https://res.cloudinary.com/malice/image/upload/v1500438313/caret_gray_10x6_iz0o7w.png') center;
   background-size: 10px 6px;
+  position: absolute;
 }
 
 .small-notebook-icon {
