@@ -41,13 +41,13 @@ class SessionForm extends React.Component {
     const { formType, loggedIn, errors } = this.props;
     return (
       <div className="session-page">
-        <header className="session-page-header">
-          <figure>
-            <img src='https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png' alt='CleverNote Logo' />
-          </figure>
-          <h1 className="header-name">CLEVERNOTE</h1>
-        </header>
         <section className="session-form">
+          <header className="session-page-header">
+            <figure>
+              <img src='https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png' alt='CleverNote Logo' />
+            </figure>
+            <h1 className="header-name">CLEVERNOTE</h1>
+          </header>
           <form onSubmit={ this.handleSubmit }>
             <h1 className="session-title">
               { formType === 'signup' ? 'Create Account' : 'Sign in' }
@@ -83,20 +83,20 @@ class SessionForm extends React.Component {
               Demo
             </button>
           </form>
-        </section>
-        <section className="session-links">
-          { formType === 'signup' ?
-            <div>
-              <p className="already-have-account">Already have an account?</p>
-              <br />
-              <Link to='/signin' className="session-link">Sign in</Link>
-            </div> :
-            <div>
-              <p className="already-have-account">Don't have an account?</p>
-              <br />
-              <Link to='/signup' className="session-link">Create account</Link>
-            </div>
-          }
+          <section className="session-links">
+            { formType === 'signup' ?
+              <div>
+                <p className="already-have-account">Already have an account?</p>
+                <br />
+                <Link to='/signin' className="session-link">Sign in</Link>
+              </div> :
+              <div>
+                <p className="already-have-account">Don't have an account?</p>
+                <br />
+                <Link to='/signup' className="session-link">Create account</Link>
+              </div>
+            }
+          </section>
         </section>
       </div>
     );
