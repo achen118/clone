@@ -75,11 +75,6 @@ class Sidebar extends React.Component {
           >
         </figure>
         <figure
-          onClick={ this.handleClick('search') }
-          className="search search-hover"
-          >
-        </figure>
-        <figure
           onClick={ this.handleClick('notes') }
           className="notes notes-hover"
           >
@@ -104,3 +99,9 @@ class Sidebar extends React.Component {
 }
 
 export default Sidebar;
+
+// <figure
+//   onClick={ this.handleClick('search') }
+//   className="search search-hover"
+//   >
+// </figure>
