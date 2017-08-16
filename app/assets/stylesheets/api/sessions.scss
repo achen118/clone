@@ -4,8 +4,12 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-top: 4px solid #2DBE60;
-  background: url('https://res.cloudinary.com/malice/image/upload/v1501246739/Aurora_borealis_above_Lyngenfjorden__2012_March_arfapa.jpg') no-repeat center center;
-  overflow: hidden;
+  background: url('https://static.pexels.com/photos/433604/pexels-photo-433604.jpeg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .session-page-header {
@@ -25,7 +29,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 15px 15px 10px 15px;
-  margin-top: 50px;
 }
 
 header img {
@@ -39,9 +42,6 @@ header img {
   font-family: 'Caecilia Bold';
   -webkit-text-stroke: 1px #2DBE60;
   letter-spacing: 1px;
-  text-shadow: 0px 4px 3px rgba(0,0,0,0.5),
-               0px 8px 13px rgba(0,0,0,0.2),
-               0px 18px 23px rgba(0,0,0,0.2);
 }
 
 .session-form {
@@ -58,14 +58,14 @@ header img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: white;
-  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 8px;
   width: 20%;
   margin: 0 auto;
   padding: 30px;
 }
 
-.session-form, .session-form form input {
+.session-form form input {
   border: 1.5px solid #DEDEDE;
 }
 
@@ -148,7 +148,7 @@ header img {
 
 .session-title {
   font-family: 'Caecilia';
-  color: #6A6A6A;
+  color: white;
   font-size: 24px;
 }
 
