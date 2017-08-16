@@ -47,6 +47,7 @@ class SessionForm extends React.Component {
               <img src='https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png' alt='CleverNote Logo' />
             </figure>
             <h1 className="header-name">CLEVERNOTE</h1>
+            <h3 className="tagline">Create and organize your notes with notebooks and tags that you can access from anywhere...</h3>
           </header>
           <form onSubmit={ this.handleSubmit }>
             <h1 className="session-title">

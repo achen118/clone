@@ -61,7 +61,7 @@ header img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(232, 236, 246, .8);
   border-radius: 20px;
   width: 680px;
   height: auto;
@@ -155,6 +155,16 @@ header img {
   font-family: 'Caecilia';
   color: #6A6A6A;
   font-size: 24px;
+}
+
+.tagline {
+  font-size: 18px;
+  text-align: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  color: #6A6A6A;
+  line-height: 35px;
+  padding-top: 10px;
 }
 
 .session-link {
