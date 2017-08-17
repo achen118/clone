@@ -37,6 +37,7 @@ class Api::NotesController < ApplicationController
   end
 
   def index
+    render json: [] if current_user.notes.empty?
     if params[:notebook_id]
       @notes = current_user.notes.select do |note|
         note.notebook_id == params[:notebook_id].to_i

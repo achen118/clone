@@ -15,6 +15,8 @@ class Api::UsersController < ApplicationController
         image_url: "https://res.cloudinary.com/malice/image/upload/c_scale,w_100/v1500414084/default-profile-pic_bhulg4.svg"
       })
       if @user.save
+        login!(@user)
+        Notebook.create!(author_id: @user.id, title: "Notes")
         render json: @user
       else
         render json: @user.errors.full_messages, status: 422

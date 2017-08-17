@@ -32,12 +32,12 @@
 }
 
 header img {
-  width: 80px;
+  width: 65px;
   margin-bottom: 30px;
 }
 
 .header-name {
-  font-size: 28px;
+  font-size: 24px;
   color: #2DBE60;
   font-family: 'Caecilia Bold';
   -webkit-text-stroke: 1px #2DBE60;
@@ -106,21 +106,21 @@ header img {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #9B9B9B;
+  color: #9B9B9B;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color: #9B9B9B;
-   opacity:  1;
+  color: #9B9B9B;
+  opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color: #9B9B9B;
-   opacity:  1;
+  color: #9B9B9B;
+  opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #9B9B9B;
+  color: #9B9B9B;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-   color: #9B9B9B;
+  color: #9B9B9B;
 }
 
 .session-form input:focus {
@@ -158,7 +158,7 @@ header img {
 }
 
 .tagline {
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   padding-left: 80px;
   padding-right: 80px;
