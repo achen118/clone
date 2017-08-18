@@ -65,7 +65,7 @@ class Sidebar extends React.Component {
           <Link to="/notes">
             <img
               className="logo-img"
-              src="https://res.cloudinary.com/malice/image/upload/v1500404473/clevernotelogo_sss5gi.png"
+              src="https://www.evernote.com/redesign/global/img/elephant.png"
               alt="CleverNote Logo" />
           </Link>
         </figure>
