@@ -43,6 +43,7 @@ class SessionForm extends React.Component {
       <div className="session-page">
         <section className="session-form">
           <header className="session-page-header">
+            <i class="fa fa-github" aria-hidden="true"></i>
             <figure>
               <img src='https://www.evernote.com/redesign/global/img/elephant.png' alt='CleverNote Logo' />
             </figure>

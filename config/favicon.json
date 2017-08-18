@@ -1,5 +1,5 @@
 {
-    "master_picture": "app/assets/images/clevernotelogo.png",
+    "master_picture": "app/assets/images/elephant.png",
     "favicon_design": {
         "ios": {
             "picture_aspect": "background_and_margin",
@@ -10,7 +10,8 @@
                 "ios7_and_later_icons": false,
                 "precomposed_icons": false,
                 "declare_only_default_icon": true
-            }
+            },
+            "app_name": "CleverNote"
         },
         "desktop_browser": [
 
@@ -27,10 +28,13 @@
                     "big": false,
                     "rectangle": false
                 }
-            }
+            },
+            "app_name": "CleverNote"
         },
         "android_chrome": {
-            "picture_aspect": "no_change",
+            "picture_aspect": "background_and_margin",
+            "margin": "17%",
+            "background_color": "#2dbe60",
             "theme_color": "#2dbe60",
             "manifest": {
                 "name": "CleverNote",
@@ -45,8 +49,7 @@
             }
         },
         "safari_pinned_tab": {
-            "picture_aspect": "black_and_white",
-            "threshold": 70,
+            "picture_aspect": "silhouette",
             "theme_color": "#2dbe60"
         }
     },
