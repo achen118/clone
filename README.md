@@ -1,6 +1,6 @@
 # CleverNote
 
-[CleverNote live](https://clever-note.herokuapp.com)
+[CleverNote live](https://clevernote.pro)
 
 CleverNote is a full-stack web application that serves as a faithful clone of Evernote. CleverNote utilizes Ruby on Rails v5.1.2 on the back-end, a PostgreSQL database, and a React.js with a Redux architectural framework on the front-end.
 
