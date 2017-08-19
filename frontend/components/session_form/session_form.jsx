@@ -41,9 +41,14 @@ class SessionForm extends React.Component {
     const { formType, loggedIn, errors } = this.props;
     return (
       <div className="session-page">
+        <a href="https://github.com/achen118/clever-note">
+          <i className="fa fa-github fa-3x"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/achen118">
+          <i className="fa fa-linkedin-square fa-3x"></i>
+        </a>
         <section className="session-form">
           <header className="session-page-header">
-            <i class="fa fa-github" aria-hidden="true"></i>
             <figure>
               <img src='https://www.evernote.com/redesign/global/img/elephant.png' alt='CleverNote Logo' />
             </figure>
