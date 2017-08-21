@@ -28,6 +28,9 @@ class TagsIndexItem extends React.Component {
     const editInput = document.getElementById(this.props.tag.name);
     editInput.classList.remove('hidden');
     editInput.focus();
+    const tmpStr = editInput.value;
+    editInput.value = '';
+    editInput.value = tmpStr;
   }
 
   updateName(event) {
