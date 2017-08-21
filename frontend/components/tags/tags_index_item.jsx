@@ -41,6 +41,7 @@ class TagsIndexItem extends React.Component {
     if (key === 13) {
       this.props.updateTag(event.currentTarget.id, this.state)
         .then(() => {
+          this.props.fetchAllTags();
           document.getElementById(this.props.tag.name).classList.add('hidden');
         }, errors => this.setState({
             name: this.props.tag.name
