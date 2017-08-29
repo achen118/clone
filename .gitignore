@@ -25,4 +25,4 @@ bundle.js.map
 .DS_Store
 npm-debug.log
 
-app/assets/stylesheets/base/quill.snow.scss
+/app/assets/stylesheets/base/quill.snow.scss
