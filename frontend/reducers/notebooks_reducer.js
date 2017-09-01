@@ -18,10 +18,6 @@ const NotebooksReducer = (state = defaultState, action) => {
         nextState.allIds.push(notebook.id);
       });
       return nextState;
-    case RECEIVE_NOTEBOOK:
-      nextState.byId[action.notebook.id] = action.notebook;
-      nextState.allIds.unshift(action.notebook.id);
-      return nextState;
     case RECEIVE_NOTEBOOK_DETAIL:
       return action.notebook;
     case CLEAR_STORE:

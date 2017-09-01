@@ -3,20 +3,12 @@ import { receiveErrors, clearErrors } from './error_actions';
 import { receiveNotes, receiveNoteDetail } from './note_actions';
 
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
-export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
 export const RECEIVE_NOTEBOOK_DETAIL = "RECEIVE_NOTEBOOK_DETAIL";
 
 export const receiveNotebooks = notebooks => {
   return {
     type: RECEIVE_NOTEBOOKS,
     notebooks
-  };
-};
-
-export const receiveNotebook = notebook => {
-  return {
-    type: RECEIVE_NOTEBOOK,
-    notebook
   };
 };
 
@@ -30,7 +22,7 @@ export const receiveNotebookDetail = notebook => {
 export const addNotebook = notebook => dispatch => {
   return notebooksAPIUtil.addNotebook(notebook)
     .then(newNotebook => {
-      dispatch(receiveNotebook(newNotebook));
+      dispatch(fetchAllNotebooks());
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
@@ -38,7 +30,7 @@ export const addNotebook = notebook => dispatch => {
 export const updateNotebook = notebook => dispatch => {
   return notebooksAPIUtil.updateNotebook(notebook)
     .then(updatedNotebook => {
-      dispatch(receiveNotebook(updatedNotebook));
+      dispatch(fetchAllNotebooks());
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
