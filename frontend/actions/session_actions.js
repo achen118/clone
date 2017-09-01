@@ -1,6 +1,5 @@
 import * as sessionAPIUtil from '../util/session_api_util';
 import { receiveErrors, clearErrors } from './error_actions';
-import { addNotebook } from './notebook_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const CLEAR_STORE = "CLEAR_STORE";
@@ -39,14 +38,8 @@ export const logout = () => dispatch => {
 
 export const signup = user => dispatch => {
   return sessionAPIUtil.signup(user)
-    .then(currentUser => {
-      dispatch(receiveCurrentUser(currentUser));
-      dispatch(addNotebook({
-        notebook: {
-          title: "Notes",
-          author_id: currentUser.id
-        }
-      }));
-    }, errors => dispatch(receiveErrors(errors.responseJSON))
-  );
+    .then(
+      currentUser => dispatch(receiveCurrentUser(currentUser)),
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    );
 };
