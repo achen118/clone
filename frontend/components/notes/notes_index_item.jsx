@@ -14,7 +14,7 @@ class NotesIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date()
+      lastUpdate: timeSince(this.props.note.updated_at)
     };
     this.handleClick = this.handleClick.bind(this);
     this.updateDate = this.updateDate.bind(this);
@@ -22,7 +22,7 @@ class NotesIndexItem extends React.Component {
   }
 
   updateDate() {
-    this.setState({ date: new Date() });
+    this.setState({ lastUpdate: timeSince(this.props.note.updated_at) });
   }
 
   handleClick(noteId) {
@@ -48,7 +48,6 @@ class NotesIndexItem extends React.Component {
 
   render() {
     const { note, match } = this.props;
-    const lastUpdate = timeSince(this.state.date, new Date(note.updated_at));
     return (
       <div>
         <article
@@ -60,7 +59,7 @@ class NotesIndexItem extends React.Component {
             onClick={ this.handleDelete }>
           </figure>
           <h3 className="notes-index-title">{ note.title }</h3>
-          <h4 className="notes-index-updated">{ lastUpdate }</h4>
+          <h4 className="notes-index-updated">{ this.state.lastUpdate }</h4>
           <p className="notes-index-body">{ note.plain_text_body }</p>
         </article>
         <div className="bottom-border"></div>

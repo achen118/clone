@@ -1,6 +1,6 @@
-const timeSince = (currDate, prevDate) => {
+const timeSince = prevDate => {
+  const currDate = Date.now();
   const seconds = Math.floor((currDate - prevDate) / 1000);
-
   if (seconds < 60) {
     return `MOMENTS AGO`;
   }
@@ -51,9 +51,9 @@ const timeSince = (currDate, prevDate) => {
       return `${months} MONTHS AGO`;
     }
   }
-
-  return `${prevDate.getMonth()}/${prevDate.getDate()}/${prevDate.getFullYear()}`;
-
+  
+  prevDate = new Date(prevDate);
+  return `${prevDate.getMonth() + 1}/${prevDate.getDate()}/${prevDate.getFullYear()}`;
 };
 
 export default timeSince;

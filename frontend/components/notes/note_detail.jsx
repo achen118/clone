@@ -61,6 +61,32 @@ class NoteDetail extends React.Component {
       showNote =  <NewNoteContainer />;
     } else {
       if (note) {
+        const createdAtDate = new Date(note.created_at);
+        const updatedAtDate = new Date(note.updated_at);
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const cDayOfWeek = days[createdAtDate.getDay()];
+        const uDayOfWeek = days[updatedAtDate.getDay()];
+        const cMonth = months[createdAtDate.getMonth()];
+        const uMonth = months[updatedAtDate.getMonth()];
+        const cDate = createdAtDate.getDate();
+        const uDate = updatedAtDate.getDate();
+        const cYear = createdAtDate.getFullYear();
+        const uYear = updatedAtDate.getFullYear();
+        let cHours = createdAtDate.getHours();
+        let uHours = updatedAtDate.getHours();
+        let cMins = createdAtDate.getMinutes();
+        let uMins = updatedAtDate.getMinutes();
+        const cAmPm = cHours >= 12 ? 'PM' : 'AM';
+        const uAmPm = uHours >= 12 ? 'PM' : 'AM';
+        cHours = cHours % 12;
+        uHours = uHours % 12;
+        cHours = cHours ? cHours : 12;
+        uHours = cHours ? uHours : 12;
+        cMins = cMins < 10 ? '0' + cMins : cMins;
+        uMins = uMins < 10 ? '0' + uMins : uMins;
+        const createdAtDateString = `${cDayOfWeek}, ${cMonth} ${cDate} ${cYear}, ${cHours}:${cMins} ${cAmPm}`;
+        const updatedAtDateString = `${uDayOfWeek}, ${uMonth} ${uDate} ${uYear}, ${uHours}:${uMins} ${uAmPm}`;
         showNote =
         <section>
           <section className="note-detail">
@@ -99,7 +125,7 @@ class NoteDetail extends React.Component {
                   CREATED:
                 </li>
                 <li>
-                  { note.created_at }
+                  { createdAtDateString }
                 </li>
               </ul>
               <ul className="note-overview-item">
@@ -107,7 +133,7 @@ class NoteDetail extends React.Component {
                   UPDATED:
                 </li>
                 <li>
-                  { note.updated_at }
+                  { updatedAtDateString }
                 </li>
               </ul>
               <button
