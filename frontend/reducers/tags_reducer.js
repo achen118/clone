@@ -18,10 +18,6 @@ const TagsReducer = (state = defaultState, action) => {
         nextState.allNames.push(tag.name);
       });
       return nextState;
-    case RECEIVE_TAG:
-      nextState.byName[action.tag.name] = action.tag;
-      nextState.allNames.unshift(action.tag.name);
-      return nextState;
     case RECEIVE_TAG_DETAIL:
       return action.tag;
     case CLEAR_STORE:

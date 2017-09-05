@@ -13,13 +13,6 @@ export const receiveTags = tags => {
   };
 };
 
-export const receiveTag = tag => {
-  return {
-    type: RECEIVE_TAG,
-    tag
-  };
-};
-
 export const receiveTagDetail = tag => {
   return {
     type: RECEIVE_TAG_DETAIL,
@@ -30,7 +23,7 @@ export const receiveTagDetail = tag => {
 export const addTag = tag => dispatch => {
   return tagsAPIUtil.addTag(tag)
     .then(newTag => {
-      dispatch(receiveTag(newTag));
+      dispatch(fetchAllTags());
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
@@ -38,6 +31,7 @@ export const addTag = tag => dispatch => {
 export const addTagToNote = (noteId, tagName) => dispatch => {
   return tagsAPIUtil.addTagToNote(noteId, tagName)
     .then(() => {
+      dispatch(fetchAllTags());
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
@@ -45,7 +39,7 @@ export const addTagToNote = (noteId, tagName) => dispatch => {
 export const updateTag = (oldTagName, newTag) => dispatch => {
   return tagsAPIUtil.updateTag(oldTagName, newTag)
     .then(updatedTag => {
-      dispatch(receiveTag(updatedTag));
+      dispatch(fetchAllTags());
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
@@ -60,6 +54,7 @@ export const deleteTag = tag => dispatch => {
 export const deleteTagFromNote = (noteId, tagName) => dispatch => {
   return tagsAPIUtil.deleteTagFromNote(noteId, tagName)
     .then(() => {
+      dispatch(fetchAllTags());
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
