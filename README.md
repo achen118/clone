@@ -56,7 +56,7 @@ As CleverNote is predominantly a single-page app, the majority of my components 
 
 This resulted in a single-page app with multiple modals and sliding components, pictured below:
 
-![CleverNote Home Page For A Logged In User](https://res.cloudinary.com/malice/image/upload/v1501283513/Screenshot_from_2017-07-28_16-10-20_wk25ng.png)
+![CleverNote Home Page For A Logged In User](http://res.cloudinary.com/malice/image/upload/v1504919240/clevernotescreenshot2_hnsxdz.png)
 
 Notes are rendered in the Notes Index Container on the left-hand side of the home page, as well as in the Note Detail Container that spans the right-hand side of the page when a specific note is selected. Notes are allowed to be deleted in two different places: the notes index when a specific note is hovered on and at the top of the Note Detail Container. A note's created at and updated at date and time can also be viewed by clicking on the information icon at the top of the Note Detail Container.
 
