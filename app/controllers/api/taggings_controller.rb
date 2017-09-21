@@ -16,6 +16,10 @@ class Api::TaggingsController < ApplicationController
   def destroy
     @tagging = current_user.taggings.find_by(tag_name: params[:tagging][:tag_name], note_id: params[:tagging][:note_id])
     @tagging.destroy
+    if current_user.taggings.find_by(tag_name: params[:tagging][:tag_name]).empty?
+      @tag = Tag.find_by(name: params[:tagging][:tag_name])
+      @tag.destroy
+    end
   end
 
   private
