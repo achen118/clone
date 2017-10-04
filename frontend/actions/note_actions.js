@@ -1,5 +1,7 @@
 import * as notesAPIUtil from '../util/notes_api_util';
 import { receiveErrors, clearErrors } from './error_actions';
+import { fetchAllNotebooks } from './notebook_actions';
+import { fetchAllTags } from './tag_actions';
 
 export const RECEIVE_NOTES = "RECEIVE_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
@@ -38,6 +40,8 @@ export const addNote = note => dispatch => {
   return notesAPIUtil.addNote(note)
     .then(newNote => {
       dispatch(receiveNote(newNote));
+      dispatch(fetchAllNotebooks());
+      dispatch(fetchAllTags());
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
@@ -46,6 +50,8 @@ export const updateNote = note => dispatch => {
   return notesAPIUtil.updateNote(note)
     .then(updatedNote => {
       dispatch(receiveUpdatedNote(updatedNote));
+      dispatch(fetchAllNotebooks());
+      dispatch(fetchAllTags());
       dispatch(clearErrors());
     }, errors => dispatch(receiveErrors(errors.responseJSON)));
 };
