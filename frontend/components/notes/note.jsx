@@ -150,7 +150,7 @@ class Note extends React.Component {
         .then(() => this.props.fetchSingleNote(this.props.note.id),
           errors => this.setState({
             newTag: ""
-          }));
+          }, () => this.startAutosaveTimer()));
     }
   }
 
